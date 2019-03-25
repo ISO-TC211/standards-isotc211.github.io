@@ -1,0 +1,13 @@
+---
+layout: post
+title:  ISO/TC 211 Normative Statements and Conformance site launched!
+date:   2019-03-25 11:00:00 +0800
+categories: site update
+---
+The "`ISO/TC 211 Normative Statements and Conformance site`" is now launched.
+
+This action is performed in accordance with the request raised at
+https://github.com/ISO-TC211/www.isotc211.org/issues/8 by
+https://www.ribose.com[Ribose].
+
+Stay tuned!

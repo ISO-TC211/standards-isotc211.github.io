@@ -1,0 +1,38 @@
+---
+layout: home
+permalink: /
+---
+:page-liquid:
+
+[.section]
+== Usage
+
+Each part of each standard has a directory like: `https://standards.isotc211.org/{StandardNumber}/-{PartNumber}/{component}`.
+
+For example:
+
+* link:19112/-1/2/conf/srs[]
+* link:19112/-1/2/req/srs[]
+* link:19112/-1/2/conf/gaz[]
+* link:19112/-1/2/req/gaz[]
+* link:19112/-1/2/req/srs/srs[]
+* link:19112/-1/2/req/gaz/sch[]
+* link:19112/-1/2/req/gaz/mng[]
+* link:19112/-1/2/conf/srs/srs[]
+* link:19112/-1/2/conf/gaz/sch[]
+* link:19112/-1/2/conf/gaz/mng[]
+
+
+[.section]
+== Maintenance
+
+Comments, suggestions, change requests and revisions
+to ISO/TC 211 Normative Statements and Conformance resources
+are maintained in the https://github.com/ISO-TC211/standards.isotc211.org[GitHub repository]
+for the ISO/TC 211 Resources group.
+
+For more information, please visit
+the https://committee.iso.org/home/tc211[ISO/TC 211 committee page] and
+the https://www.isotc211.org[ISO/TC 211 resources page].
+
+This site is managed by ISO/TC 211 Resources Group and Ribose.

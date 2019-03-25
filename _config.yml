@@ -1,0 +1,53 @@
+title: Normative Statements and Conformance for ISO/TC 211 Geographic information/Geomatics standards
+title_html: "TC&nbsp;211 Normative Statements and Conformance"
+
+author: "ISO/TC 211"
+email: open.source@ribose.com
+
+description: >-
+  The normative statements and conformance repository for
+  geographic information technology from ISO/TC 211
+  Geographic information/Geomatics.
+
+tagline: >-
+  Normative statements and conformance repository for geographic information technology
+
+# Build settings
+markdown: kramdown
+
+theme: jekyll-theme-isotc211
+
+committee:
+  id: 211
+  name: Geographic information/Geomatics
+  link: https://committee.iso.org/home/tc211
+
+footer_nav:
+  - url: https://committee.iso.org/home/tc211
+    title: Committee Site
+
+social:
+  links:
+    - url: https://twitter.com/ISOTC211
+    - url: https://github.com/ISO-TC211
+    - url: https://www.facebook.com/groups/236669159734679/
+    - url: https://www.linkedin.com/groups/4222374
+
+powered_by:
+  url: https://open.ribose.com
+  title: Ribose
+  logo_path: /assets/logo-ribose.svg
+
+source: build_source
+include:
+  - build_source
+
+exclude:
+  - build_source
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
