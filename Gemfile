@@ -14,6 +14,7 @@ gem "jekyll-theme-isotc211", "~> 0.3"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem "jekyll-plugin-frontend-build"
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-data"
   gem "jekyll-asciidoc"
