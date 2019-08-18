@@ -7,7 +7,12 @@ permalink: /
 [.section]
 == Usage
 
-Each part of each standard has a directory like: `https://standards.isotc211.org/{StandardNumber}/-{PartNumber}/{component}`.
+The URL of each part of each standard has the following format:
+
+[source]
+--
+https://standards.isotc211.org/{StandardNumber}/-{PartNumber}/{component}
+--
 
 For example:
 
