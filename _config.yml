@@ -15,6 +15,8 @@ tagline: >-
 # Build settings
 markdown: kramdown
 
+font_awesome_kit_url: https://kit.fontawesome.com/77a8a07e0a.js
+
 theme: jekyll-theme-isotc211
 
 committee:
@@ -41,13 +43,3 @@ powered_by:
 source: build_source
 include:
   - build_source
-
-exclude:
-  - build_source
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
