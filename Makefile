@@ -10,8 +10,10 @@ clean:
 
 build_source:
 	mkdir -p $@; \
+	mkdir -p $@/standards; \
 	cp -a source/* build_source; \
 	cp -a standards/* build_source; \
+	cp -a standards/* build_source/standards; \
 
 _site: bundle build_source
 	bundle exec jekyll build

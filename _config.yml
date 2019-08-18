@@ -17,6 +17,13 @@ markdown: kramdown
 
 font_awesome_kit_url: https://kit.fontawesome.com/77a8a07e0a.js
 
+resource_listings:
+  standards:
+    index_url: 'standards'
+    index_title: "Standards"
+    resource_root: 'standards'
+    resource_label: "standard"
+
 theme: jekyll-theme-isotc211
 
 committee:
