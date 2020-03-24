@@ -1,1 +1,5 @@
-Content to be determined.
+A conformance quality level shall be specified as either:
+
+* a data quality measure and a value that expresses what is acceptable for that data quality
+measure, or
+* as a descriptive statement about a data quality element.

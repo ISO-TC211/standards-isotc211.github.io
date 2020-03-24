@@ -1,1 +1,3 @@
-Content to be determined.
+The data content and structure section shall be in accordance with the UML model in Figure 10, where
+each object of class DataContentAndStructure shall, for a specified specification scope, provide
+MD_ApplicationSchemaInformation or one or more of the subclasses of MD_ContentInformation.

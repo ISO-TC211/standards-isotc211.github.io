@@ -1,0 +1,2 @@
+If the specified data product is delivered via web services such as Web Map Service (WMS) and Web
+Feature Service (WFS) interfaces, the specific web service profile to be used shall be referenced.

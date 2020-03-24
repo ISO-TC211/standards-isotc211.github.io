@@ -1,1 +1,2 @@
-Content to be determined.
+The information describing a specification scope shall conform to the class SpecificationScope
+described in Figure 7, which shall specify the criteria.

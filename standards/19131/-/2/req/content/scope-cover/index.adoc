@@ -1,1 +1,2 @@
-Content to be determined.
+The union of the scopes defined in each of the SpecificationScope objects shall cover all the spatial,
+temporal and semantic extent of the data product.
