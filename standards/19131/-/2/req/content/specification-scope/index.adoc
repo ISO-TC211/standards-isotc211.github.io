@@ -1,1 +1,2 @@
-Content to be determined.
+If more than one scope exists with the same level, a levelName shall be provided.
+If MD_ScopeCode is not sufficient, additional values should be supplied in levelDescription.
