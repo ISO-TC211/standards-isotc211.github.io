@@ -1,1 +1,16 @@
-Content to be determined.
+=== Conformance test: Content of a data product specification
+
+[width="100%"]
+|====================
+|  Reference|  All normative statements in requirements class:
+https://standards.isotc211.org/19131/-/2/req/content
+| Test purpose: |  Verify that the content of a data product specification conforms to the UML
+model and additional requirements related to elements in the UML model.
+| Test method: |  Identify the individual objects and their attributes and associations to other
+objects. Verify that each such element is in conformance with multiplicity and
+data type as expressed in the UML model.
+For each individual object check for additional requirements beyond the
+semantics in the model. Verify that each such element meets the specified
+criteria.
+| Test type: |  Basic
+|====================

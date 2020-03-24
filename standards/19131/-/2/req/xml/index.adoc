@@ -1,1 +1,10 @@
-Content to be determined.
+=== Requirements class for the XML encoding of a data product specification
+
+[width="100%"]
+|====================
+| Standardization target
+type |  XML document representing a data product specification
+| Dependency |  https://standards.isotc211.org/19131/-/2/req/content
+
+|Requirement | https://standards.isotc211.org/19131/-/2/req/xml/xml-encoding
+|====================

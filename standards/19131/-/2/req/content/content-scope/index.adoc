@@ -1,1 +1,3 @@
-Content to be determined.
+For all instances of the DataContentAndStructure class, the union of the scopes defined in each of the
+associated SpecificationScope objects shall cover all the spatial, temporal and semantic extent of the
+data product.

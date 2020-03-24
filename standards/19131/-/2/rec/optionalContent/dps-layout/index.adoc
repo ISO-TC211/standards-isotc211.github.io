@@ -1,0 +1,19 @@
+A data product specification instance where human readability is prioritized, may be arranged in the
+following order:
+
+
+* abstract, keywords, topic categories and extent of the data product, for quick evaluation, as
+specified in 6.3.2.4, 6.3.2.6, 6.3.2.11 and 6.3.2.13;
+* about the data product specification, as specified in 6.2.7 and 6.2.8;
+* terms and abbreviations, as specified in 6.2.9 and 6.2.10;
+* identification section, as specified in 6.3;
+* scope section, as specified in 6.4;
+* data content and structure section, as specified in 6.5;
+* reference systems section, as specified in 6.6;
+* data quality section, as specified in 6.7;
+* data capture and production section, as specified in 6.8;
+* data maintenance section, as specified in 6.9;
+* portrayal section, as specified in 6.10;
+* delivery section, as specified in 6.11;
+* metadata section, as specified in 6.12;
+* additional information section, issues not covered by other clauses, as specified in 6.13.

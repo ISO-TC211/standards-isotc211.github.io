@@ -1,0 +1,2 @@
+To increase potential users’ understanding of what purposes the data product serves, the data product
+specification should provide use case(s).
