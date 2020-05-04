@@ -1,33 +1,33 @@
-=== Recommendations class for the content of a data product specification
+== Recommendations class for the content of a data product specification
 
-[width="100%",options="footer"]
+[cols="a,a",width="100%"]
 |===
 
-h| Standardization target type
+| Standardization target type
 | Instance of a data product specification, regardless of data encoding
 
-h| Dependency
+| Dependency
 | https://standards.isotc211.org/19131/-/2/req/content
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/useCase
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentfeatures
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentcoverage
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentapplication
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentcomplete
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/metadataminimum
 
-h| Recommendation
+| Recommendation
 | https://standards.isotc211.org/19131/-/2/rec/optionalContent/dps-layout
 
 |===
