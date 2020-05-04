@@ -2,14 +2,32 @@
 
 [width="100%",options="footer"]
 |===
-| Standardization target
-type |  Instance of a data product specification, regardless of data encoding
-| Dependency |  https://standards.isotc211.org/19131/-/2/req/content
-| Recommendation |  https://standards.isotc211.org/19131/-/2/rec/optionalContent/useCase
-|Recommendation | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentfeatures 
-|Recommendation  | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentcoverage 
-|Recommendation  | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentapplication 
-|Recommendation | https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentcomplete 
-|Recommendation |  https://standards.isotc211.org/19131/-/2/rec/optionalContent/metadataminimum
-|Recommendation | https://standards.isotc211.org/19131/-/2/rec/optionalContent/dps-layout 
+
+h| Standardization target type
+| Instance of a data product specification, regardless of data encoding
+
+h| Dependency
+| https://standards.isotc211.org/19131/-/2/req/content
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/useCase
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentfeatures
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentcoverage
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentapplication
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/contentcomplete
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/metadataminimum
+
+h| Recommendation
+| https://standards.isotc211.org/19131/-/2/rec/optionalContent/dps-layout
+
 |===
