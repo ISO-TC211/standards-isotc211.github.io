@@ -1,7 +1,7 @@
 === Requirements class for the content of a data product specification
 
 [width="100%"]
-|====================
+|===
 | Standardization target
 type |  Instance of a data product specification, regardless of data encoding
 | Dependency |  https://standards.isotc211.org/19103/-/1/ (Conceptual schema language)
@@ -38,4 +38,4 @@ Fundamentals)
 |Requirement | https://standards.isotc211.org/19131/-/2/req/content/metadata-scope
 |Requirement | https://standards.isotc211.org/19131/-/2/req/content/additional-model
 |Requirement | https://standards.isotc211.org/19131/-/2/req/content/additional-content
-|====================
+|===

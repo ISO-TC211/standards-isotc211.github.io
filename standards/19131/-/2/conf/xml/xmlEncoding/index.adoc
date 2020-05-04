@@ -1,12 +1,12 @@
 === Conformance test: XML encoding
 
 [width="100%"]
-|====================
-|  Reference|  All normative statements in requirements class:
+|===
+| Reference|  All normative statements in requirements class:
 https://standards.isotc211.org/19131/-/2/req/xml
-| Test purpose: |  VVerify the syntax of a data product specification in the form of an XML
+| Test purpose: |  Verify the syntax of a data product specification in the form of an XML
 document.
 | Test method: |  Validate the XML document using the XML schema
-https://schemas.isotc211.org/19131/-/dps/2.0/dps.xsd.
+https://schemas.isotc211.org/19131/-/dps/2.0/dps.xsd
 | Test type: |  Basic
-|====================
+|===
