@@ -1,108 +1,108 @@
-=== Requirements class for the content of a data product specification
+== Requirements class for the content of a data product specification
 
 [cols="a,a",width="100%"]
 |===
 
-h| Standardization target type
+| Standardization target type
 | Instance of a data product specification, regardless of data encoding
 
-h| Dependency
+| Dependency
 | https://standards.isotc211.org/19103/-/1/ (Conceptual schema language)
 
-h| Dependency
+| Dependency
 | https://standards.isotc211.org/19108/-/1/ (Temporal schema)
 
-h| Dependency
+| Dependency
 | https://standards.isotc211.org/19115/-1/1/ (Metadata – Part 1: Fundamentals)
 
-h| Dependency
+| Dependency
 | https://standards.isotc211.org/19157/-/1/ (Data quality)
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/specification-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/specification-language
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/identification-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/extent
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/scope-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/scope-cover
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/specification-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/scope-identification
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/content-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/content-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/reference-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/reference-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/quality-level
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/quality-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/quality-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/capture-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/capture-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/maintenance-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/maintenance-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/maintenanceupdateFrequency
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/portrayal-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/portrayal-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/delivery-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/delivery-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/delivery-specification
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/metadata-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/metadata-scope
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/additional-model
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/content/additional-content
 
 |===

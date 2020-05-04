@@ -1,15 +1,15 @@
-=== Requirements class for the XML encoding of a data product specification
+== Requirements class for the XML encoding of a data product specification
 
 [cols="a,a",width="100%"]
 |===
 
-h| Standardization target type
+| Standardization target type
 | XML document representing a data product specification
 
-h| Dependency
+| Dependency
 | https://standards.isotc211.org/19131/-/2/req/content
 
-h| Requirement
+| Requirement
 | https://standards.isotc211.org/19131/-/2/req/xml/xml-encoding
 
 |===
