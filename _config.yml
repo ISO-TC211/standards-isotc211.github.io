@@ -17,6 +17,11 @@ markdown: kramdown
 
 font_awesome_kit_url: https://kit.fontawesome.com/77a8a07e0a.js
 
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
 resource_listings:
   standards:
     index_url: 'standards'
