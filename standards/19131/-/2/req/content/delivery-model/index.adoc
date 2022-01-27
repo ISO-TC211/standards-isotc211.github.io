@@ -1,2 +1,0 @@
-The data product delivery section shall conform to the UML model described in Figure 22. An object of
-the class Delivery shall specify information for a certain specification scope of the data product.

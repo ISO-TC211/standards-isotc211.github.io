@@ -1,2 +1,0 @@
-A unique DataProductSpecification instance shall be used for each language a data product specification
-is written in.

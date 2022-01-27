@@ -1,3 +1,0 @@
-The attribute userDefinedMaintenanceAndUpdateFrequency shall only be used if none of the
-predefined codes in MD_MaintenanceFrequenceCode matches the update frequency for the data
-product.

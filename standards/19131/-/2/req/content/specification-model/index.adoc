@@ -1,1 +1,0 @@
-A data product specification shall include sections and data in conformance to UML model in Figure 3.
