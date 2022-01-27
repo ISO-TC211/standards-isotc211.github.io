@@ -1,0 +1,2 @@
+For all instances of the ReferenceSystem class, the union of the scopes defined in each of the associated
+SpecificationScope objects shall cover all the spatial, temporal and semantic extent of the data product.

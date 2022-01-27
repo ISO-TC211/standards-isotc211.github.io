@@ -1,0 +1,7 @@
+The data quality section shall be in accordance with the UML model in Figure 14, where each object of
+the class DataQuality shall provide information about a set of conformance quality levels and the
+specification scope for which these are applicable.
+
+A conformance quality level shall be specified by an object of class ConformanceQualityLevel with an
+attribute element to identify the appropriate data quality element which shall be in conformance with
+ISO 19157.

@@ -1,0 +1,2 @@
+The data maintenance section shall conform to the UML model described in Figure 18. An object of the
+class Maintenance shall specify information for a certain specification scope of the data product.
