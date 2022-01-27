@@ -1,2 +1,0 @@
-Information in the metadata section shall conform to the model described in Figure 24. An object of
-class Metadata shall specify information for a certain specification scope of the data product.

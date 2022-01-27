@@ -16,14 +16,8 @@ https://standards.isotc211.org/{StandardNumber}/-{PartNumber}/{component}
 
 For example:
 
-* link:19131/-/2/conf/content[]
-* link:19131/-/2/conf/content/allContent[]
-* link:19131/-/2/conf/xml[]
-* link:19131/-/2/conf/xml/xmlEncoding[]
-* link:19131/-/2/rec/optionalContent[]
-* link:19131/-/2/req/content[]
-* link:19131/-/2/req/xml[]
-
+* link:19112/-1/2/conf/gaz[]
+* link:19112/-1/2/req/gaz/sch[]
 
 [.section]
 == Maintenance

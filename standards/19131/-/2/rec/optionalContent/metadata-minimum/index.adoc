@@ -1,3 +1,0 @@
-The data product specification should at least specify that metadata about the owner of the data
-product and when the data product was last updated, shall be included in the metadata for the data
-product.

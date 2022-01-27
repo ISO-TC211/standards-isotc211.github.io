@@ -1,2 +1,0 @@
-When application schemas are provided, the application schemas should cover the complete data
-product.

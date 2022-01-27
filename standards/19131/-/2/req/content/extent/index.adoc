@@ -1,2 +1,0 @@
-For the attribute extent there shall always exist at least one instance describing the geographic area
-using subtype EX_GeographicExtent of EX_Extent.

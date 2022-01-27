@@ -1,2 +1,0 @@
-The additional information section shall conform to the model described in Figure 26. An object of the
-class AdditionalInformation shall specify information for a certain specification scope.
