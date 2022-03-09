@@ -6,7 +6,8 @@ bundle:
 	bundle
 
 clean:
-	rm -rf _site build_source
+	bundle exec jekyll clean
+	rm -rf build_source
 
 build_source:
 	mkdir -p $@; \
