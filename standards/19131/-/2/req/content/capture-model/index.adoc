@@ -1,0 +1,3 @@
+The data capture and production section shall be in accordance with the UML model in Figure 16. An
+object of the class DataCaptureAndProduction shall specify information for a certain specification scope
+of the data product.

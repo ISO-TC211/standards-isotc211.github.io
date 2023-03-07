@@ -1,0 +1,2 @@
+The reference system section shall be in accordance with the UML model in Figure 12. An object of the
+class ReferenceSystem shall specify information for a certain specification scope of the data product.

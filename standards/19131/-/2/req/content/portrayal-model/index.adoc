@@ -1,0 +1,2 @@
+Information in the portrayal section shall conform to the model described in Figure 20. An object of the
+class Portrayal shall provide references to portrayal specifications for a certain specification scope.

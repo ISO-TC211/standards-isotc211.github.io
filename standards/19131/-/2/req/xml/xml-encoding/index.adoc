@@ -1,0 +1,2 @@
+A data product specification XML document shall be conformant with the XML schema
+https://schemas.isotc211.org/19131/-/dps/2.0/dps.xsd
