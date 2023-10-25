@@ -2,3 +2,4 @@
 _site
 build_source/*
 node_modules
+Gemfile.lock
