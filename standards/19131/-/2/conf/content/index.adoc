@@ -1,0 +1,15 @@
+== Content conformance class
+
+[cols="a,a",width="100%"]
+|===
+
+| Standardization target type
+| Instance of a data product specification, regardless of data encoding
+
+| Requirements class
+| https://standards.isotc211.org/19131/-/2/req/content
+
+| Test
+| https://standards.isotc211.org/19131/-/2/conf/content/allContent
+
+|===

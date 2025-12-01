@@ -1,0 +1,1 @@
+When a feature catalogue is provided, it should be realized in accordance with ISO 19110.

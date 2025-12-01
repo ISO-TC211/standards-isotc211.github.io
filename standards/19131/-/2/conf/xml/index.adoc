@@ -1,0 +1,18 @@
+== XML encoding conformance class
+
+[cols="a,a",width="100%"]
+|===
+
+| Standardization target type
+| XML document representing a data product specification
+
+| Dependency
+| https://standards.isotc211.org/19131/-/2/conf/content
+
+| Requirements class
+| https://standards.isotc211.org/19131/-/2/req/xml
+
+| Test
+| https://standards.isotc211.org/19131/-/2/conf/xml/xmlEncoding
+
+|===

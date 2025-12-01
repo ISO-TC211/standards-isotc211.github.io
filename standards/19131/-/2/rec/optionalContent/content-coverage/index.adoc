@@ -1,0 +1,1 @@
+When a coverage description is provided, it should be realized in accordance with ISO 19123.

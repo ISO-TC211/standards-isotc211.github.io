@@ -1,0 +1,3 @@
+The identification section shall conform to the UML model described in Figure 5. A single object of the
+class IdentificationSection shall specify information for the entire data product by specifying a
+specification scope that comprises the entire data product.

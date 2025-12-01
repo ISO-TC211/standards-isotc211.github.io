@@ -1,0 +1,2 @@
+The additional information section shall not contain information covered elsewhere in the data
+product specification.
