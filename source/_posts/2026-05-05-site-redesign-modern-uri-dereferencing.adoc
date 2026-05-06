@@ -35,6 +35,7 @@ making it easy to access the complete published document.
 * **Supported standards** --
 The site currently provides URI dereferencing for:
 
+  * https://www.iso.org/standard/80874.html[ISO 19115-3:2023] — Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts
   * https://www.iso.org/standard/87753.html[ISO 19135:2026] — Procedures for registration
   * https://www.iso.org/standard/70742.html[ISO 19112:2019] — Spatial referencing by geographic identifiers
 
