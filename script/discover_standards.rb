@@ -110,7 +110,9 @@ pending_refs = if File.exist?(PENDING_PATH)
 else
   Set.new
 end
-inventory.each { |e| e["pending"] = true if pending_refs.include?(e["reference"]) }
+inventory.each do |e|
+  e["pending"] = true if pending_refs.any? { |p| e["reference"] == p || e["reference"].start_with?("#{p}:") }
+end
 
 # Identify new entries against existing inventory
 existing_refs = if File.exist?(YAML_PATH)
