@@ -2,47 +2,25 @@
 conformance_classes:
 - identifier: "/conf/change"
   name: Change object requirements
-  description: This conformance class defines the requirements for change object implementation
-    and governance in a register.
   target: "/req/change"
   tests:
   - identifier: "/conf/change/creation"
     name: Change object creation verification
     targets:
     - "/req/change/creation"
-    purpose: Verify that the register supports creation of change objects that record
-      actions resulting in register content changes.
-    method: Validate that change objects are created for actions that modify concepts,
-      concept versions, register item classes, and register items, and that these
-      objects serve as proper records of the changes.
     type: Conformance
   - identifier: "/conf/change/information"
     name: Change object information completeness
     targets:
     - "/req/change/information"
-    purpose: Verify that change objects record all required information including
-      action performed, object identifiers, changed content, and metadata.
-    method: Inspect change objects to ensure they contain the action performed, links
-      to modified object identifiers, actual changed information (new/replaced/removed
-      content), change metadata including time, and register-required metadata.
     type: Validation
   - identifier: "/conf/change/metadata"
     name: Change object metadata validation
     targets:
     - "/req/change/metadata"
-    purpose: Verify that change objects store appropriate metadata supporting management
-      and status within the register.
-    method: Validate that change objects include metadata such as identifier, name,
-      description, creation date, last modified date, version, and other relevant
-      attributes as defined by the register specification.
     type: Validation
   - identifier: "/conf/change/object-identifier"
     name: Change object identifier assignment
     targets:
     - "/req/change/object-identifier"
-    purpose: Verify that change objects are assigned proper object identifiers for
-      tracking and referencing.
-    method: Confirm that each change object has at least one object identifier assigned
-      according to the register specification, and that identifiers enable proper
-      tracking and referencing of specific changes.
     type: Conformance

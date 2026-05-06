@@ -2,88 +2,40 @@
 conformance_classes:
 - identifier: "/conf/register-item-class"
   name: Requirements of register item classes
-  description: This conformance class defines the requirements for register item class
-    implementation in a register.
   target: "/req/register-item-class"
   tests:
   - identifier: "/conf/register-item-class/creation"
     name: Register item class creation test
     targets:
     - "/req/register-item-class/creation"
-    purpose: Verify that the register supports creation of register item classes to
-      describe information requirements of register items.
-    method: |
-      . Attempt to create a new register item class in the register
-      . Verify that the register accepts the creation request
-      . Confirm that the register item class is successfully stored and accessible
     type: Conformance
   - identifier: "/conf/register-item-class/information-requirements"
     name: Information requirements description test
     targets:
     - "/req/register-item-class/information-requirements"
-    purpose: Verify that a register item class describes the information requirements
-      of register items.
-    method: |
-      . Examine an existing register item class
-      . Verify that it contains a description of information requirements for register items
-      . Confirm that the requirements are clearly defined and accessible
     type: Conformance
   - identifier: "/conf/register-item-class/structural-requirements"
     name: Structural requirements definition test
     targets:
     - "/req/register-item-class/structural-requirements"
-    purpose: Verify that a register item class defines the structural requirements
-      of register items.
-    method: |
-      . Examine a register item class
-      . Verify that it defines structural requirements for register items
-      . Confirm that the structural requirements are complete and enforceable
     type: Conformance
   - identifier: "/conf/register-item-class/referenced"
     name: Concept version reference test
     targets:
     - "/req/register-item-class/referenced"
-    purpose: Verify that a register item class is referenced by one concept version
-      that belongs to a concept definition.
-    method: |
-      . Examine a register item class
-      . Verify that it is referenced by exactly one concept version
-      . Confirm that the concept version belongs to a concept definition
-      . Validate the referential integrity between the register item class and concept version
     type: Conformance
   - identifier: "/conf/register-item-class/metadata"
     name: Register item class metadata test
     targets:
     - "/req/register-item-class/metadata"
-    purpose: Verify that a register item class has associated metadata that supports
-      the management and status of the register item class within the register.
-    method: |
-      . Examine a register item class
-      . Verify that it has associated metadata
-      . Confirm that the metadata supports management and status tracking
-      . Validate that metadata includes relevant attributes for register management
     type: Conformance
   - identifier: "/conf/register-item-class/identifier"
     name: Functional identifier assignment test
     targets:
     - "/req/register-item-class/identifier"
-    purpose: Verify that a register item class in the register is assigned a functional
-      identifier.
-    method: |
-      . Examine a register item class
-      . Verify that it has been assigned a functional identifier
-      . Confirm that the functional identifier is unique within the register
-      . Validate that the identifier follows the expected format
     type: Conformance
   - identifier: "/conf/register-item-class/object-identifier"
     name: Object identifier assignment test
     targets:
     - "/req/register-item-class/object-identifier"
-    purpose: Verify that a register item class in the register is assigned an object
-      identifier for permanent identification.
-    method: |
-      . Examine a register item class
-      . Verify that it has been assigned an object identifier
-      . Confirm that the object identifier is permanent and non-redirectable
-      . Validate that the object identifier is unique and persistent
     type: Conformance

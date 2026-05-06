@@ -2,15 +2,10 @@
 conformance_classes:
 - identifier: "/conf/conceptual-model"
   name: Adherence to conceptual model
-  description: This conformance class defines validates an implementation against
-    the conceptual model.
   target: "/req/conceptual-model"
   tests:
   - identifier: "/conf/conceptual-model/implementation"
     name: Validation of implementation to conceptual model
     targets:
     - "/req/conceptual-model/implementation"
-    purpose: Verify that the implementation adheres to the conceptual model.
-    method: Ensure that every model specified in the conceptual model is implemented
-      in the system and satisfies the modelled structural and behavioural requirements.
     type: Validation

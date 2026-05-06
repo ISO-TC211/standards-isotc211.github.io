@@ -3,66 +3,22 @@ normative_statements_classes:
 - identifier: "/req/identifiers"
   name: Identifier implementation and governance
   subject: identifier
-  description: Requirements on identifier implementation and governance.
   normative_statements:
   - identifier: "/req/identifiers/object-identifier-scheme"
     name: Definition of object identifier scheme
-    statement: The object identification scheme, including methods and structures
-      used to construct them, shall be defined.
-    guidance:
-    - The register specification can document the scheme used for object identifiers
-      as part of describing methods to construct identifiers.
-    - Design or selection of an identifier scheme is an implementation concern external
-      to the scope of this document.
   - identifier: "/req/identifiers/functional-identifier-scheme"
     name: Definition of functional identifier scheme
-    statement: The functional identification scheme, including methods and structures
-      used to construct them, shall be defined.
-    guidance:
-    - The register specification can document the scheme used for functional identifiers
-      as part of describing methods to construct identifiers.
-    - Design or selection of an identifier scheme is an implementation concern external
-      to the scope of this document.
-    - A functional identifier is also called an "access identifier" in some contexts.
   - identifier: "/req/identifiers/functional-identifier-hierarchy"
     name: Functional identifier scheme supports hierarchical specification
-    statement: A functional identifier within the register shall support specification
-      of hierarchy.
-    guidance:
-    - A functional identifier that supports hierarchy allows for representation of
-      the multiple components that make up an identifier, including the nature of
-      the identified item, and parameters such as the version of the item.
-    - A functional identifier could support specification of hierarchy by allowing
-      delimiters between the multiple components that make up an identifier.
     examples:
     - URI, URN and URLs are possible identification schemes that support a hierarchical
       specification.
   - identifier: "/req/identifiers/functional-identifier-persistence"
     name: Functional identifiers are persistent in semantics
-    statement: The meaning of functional identifiers in the register shall be defined
-      and persists throughout the lifetime of the register.
-    guidance:
-    - Semantics of both the object identifier and the functional identifier have to
-      be persistent.
-    - Functional identifiers can persist after register decommission if the identifiers
-      remain useful.
-    - To facilitate persistent information access, functional identifiers will ensure
-      that the information referenced reflects the original intent of the identifier.
   - identifier: "/req/identifiers/uniqueness"
     name: Identifiers are unique
-    statement: All identifiers, including object identifiers and functional identifiers,
-      used within the register, shall be unique within the register.
-    guidance:
-    - An identifier is unique within the register to allow unambiguous identification
-      within the register.
   - identifier: "/req/identifiers/register-identifier"
     name: Register is assigned a globally unique identifier
-    statement: The register shall be assigned a globally unique identifier.
-    guidance:
-    - URIs can be used as globally unique identifiers since it depends on the domain
-      name system (DNS) for uniqueness.
-    - URNs can be used as globally unique identifiers since they are registered at
-      IANA, the authoritative organization for URNs.
     examples:
     - The URI identifier:[https://geodetic.isotc211.org] is a unique identifier for
       a register, as it is namespaced by the domain name `isotc211.org`, a globally
@@ -74,11 +30,3 @@ normative_statements_classes:
       registered at IANA, the authoritative organization for URNs.
   - identifier: "/req/identifiers/component-identification"
     name: Identification of components
-    statement: The identifier schemes shall be capable of identifying all elements
-      on the concept and content planes of the register.
-    guidance:
-    - The association of how the identifier schemes link to the elements on the concept
-      and content planes of the register are to be documented in the register specification.
-    - These elements include concepts, concept versions, register item classes, register
-      items and change objects. Inner elements of these elements could also be identified
-      by the identifier scheme.

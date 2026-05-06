@@ -3,9 +3,6 @@ normative_statements_classes:
 - identifier: "/req/actions"
   name: Action capabilities requirements
   subject: register
-  description: |
-    The register supports various actions that allow for the management of its
-    content through the defined primitives and structures.
   dependencies:
   - "/req/actions/add-concept"
   - "/req/actions/add-concept-version"
@@ -17,491 +14,167 @@ normative_statements_classes:
   - "/req/actions/clarification-change"
   - "/req/actions/correctional-change"
   - "/req/actions/concept-definition"
-  guidance:
-  - The register is able to perform the required actions at a minimum. Optional actions
-    may be supported as defined by the register specification.
 - identifier: "/req/actions/core"
   name: Core requirements for actions
   subject: register
-  description: Basic requirements for action capabilities of the register.
   normative_statements:
   - identifier: "/req/actions/core/definition"
     name: Definition of actions
-    statement: |
-      The register shall declare and define the actions it supports, including
-      any optional actions provided by the framework.
-    guidance:
-    - This description is to be made in the register specification.
   - identifier: "/req/actions/core/changes"
     name: Changes retained for actions
-    statement: |
-      The register shall retain changes caused by actions and support the
-      retrieval of these changes.
-    guidance:
-    - Change objects are created to record each action that modifies register content,
-      and for composite actions, every change that the full action encompasses.
   - identifier: "/req/actions/core/extensions"
     name: Extensions to actions
-    statement: |
-      The register shall support extensions to the standard actions through
-      additional custom actions as needed and have them declared and defined.
-    guidance:
-    - Additional statuses, relations and composite actions can be used to facilitate
-      additional capabilities for the operation of the register.
 - identifier: "/req/actions/add-concept"
   name: Requirements of the concept addition action
   subject: concept
-  description: 'The concept addition action is used to add a new concept to the register.
-
-    '
-  guidance:
-  - A concept does not depend on the existence of a concept version, and can be used
-    to link with other concepts.
   normative_statements:
   - identifier: "/req/actions/add-concept/implementation"
     name: Concept addition implementation
-    statement: 'Addition of a concept shall be accomplished by creation of a new concept.
-
-      '
 - identifier: "/req/actions/add-concept-version"
   name: Requirements of the concept version addition action
   subject: concept version
-  description: 'The concept version addition action is used to add a new concept version
-    to the register.
-
-    '
   normative_statements:
   - identifier: "/req/actions/add-concept-version/implementation"
     name: Concept version addition implementation
-    statement: |
-      Addition of a concept shall be accomplished by creation of a new concept
-      version, and if appropriate, the creation of a new register item that is
-      associated with the concept version.
 - identifier: "/req/actions/invalidation"
   name: Requirements of the concept version invalidation action
   subject: concept version
-  description: 'The invalidation action is used to mark a concept version as "don''t
-    use".
-
-    '
-  guidance:
-  - By default, the "valid" status of a concept version is "true". This action changes
-    the "valid" status of the concept version to "false".
   normative_statements:
   - identifier: "/req/actions/invalidation/implementation"
     name: Concept version invalidation implementation
-    statement: |
-      Invalidating a concept version shall be accomplished by setting the
-      "valid" status of a concept version from "true" to "false".
 - identifier: "/req/actions/unpublish"
   name: Requirements of the concept version unpublish action
   subject: concept version
-  description: 'The unpublish action is used to mark a concept version as "outdated".
-
-    '
-  guidance:
-  - By default, the "publish" status of a concept version is "true". This action changes
-    the "publish" status of the concept version to "false".
   normative_statements:
   - identifier: "/req/actions/unpublish/implementation"
     name: Concept version unpublish implementation
-    statement: |
-      Unpublishing a concept version shall be accomplished by setting the
-      "publish" status of a concept version from "true" to "false".
 - identifier: "/req/actions/concept-supersession"
   name: Requirements of the concept supersession action
   subject: concept
-  description: |
-    A concept supersession is an action that marks an existing concept as being
-    superseded by a nominated concept.
-  guidance:
-  - The semantics of the old and new concepts are assumed to be different. A concept
-    version level supersession does not imply concept supersession.
-  - The supersession relation between concepts indicates that the new concept is intended
-    to replace the old concept.
   normative_statements:
   - identifier: "/req/actions/concept-supersession/implementation"
     name: Concept supersession implementation
-    statement: |
-      A concept supersession shall be enacted by:
-
-      * given the old and new concepts;
-      * establish a "supersession" relation from the old concept to the new concept.
 - identifier: "/req/actions/concept-version-supersession"
   name: Requirements of the concept version supersession action
   subject: concept version
-  description: |
-    The concept version supersession is an action that marks an existing concept
-    version as being superseded by a nominated concept version. Both concept
-    versions belong to the same concept.
-  guidance:
-  - A concept version supersession is implemented by establishing a supersession relation
-    from the superseded concept version to the superseding concept version.
-  - The supersession relation between concepts indicates that the new concept is intended
-    to replace the old concept.
   normative_statements:
   - identifier: "/req/actions/concept-version-supersession/implementation"
     name: Concept version supersession implementation
-    statement: |
-      A concept version supersession shall be enacted by:
-
-      * given the superseded and superseding concept versions;
-      * establish a "supersession" relation from the superseded concept version to
-        the superseding concept version;
-      * update the concept to point its "current version" relation to the
-        superseding concept version.
 - identifier: "/req/actions/substantive-change"
   name: Requirements of the substantive change action
   subject: concept version
-  description: |
-    The substantive change action is used to make a significant change to a concept
-    that affects its meaning or usage. This action is also called the "major change"
-    action.
-  guidance:
-  - This action creates a new concept version with a new register item that has the
-    changed content, and creates a supersession relation between the new concept version
-    and the previous concept version.
   normative_statements:
   - identifier: "/req/actions/substantive-change/implementation"
     name: Substantive change implementation
-    statement: |
-      Enacting a substantive change shall involve:
-
-      * create a new concept version that is associated with the parent concept,
-        with a major version that is newer than the latest assigned major version;
-      * create a new concept version that is associated with the new major
-        concept version, with a version that indicates it is the first minor version
-        of the major version, and linking it as the current minor version of the
-        major concept version;
-      * create a new register item that is associated with the minor concept version;
-      * update the parent concept to point to the new major concept version as the
-        current version;
-      * create a supersession relation between the previous major concept version
-        and the new major concept version.
   - identifier: "/req/actions/substantive-change/versioning"
     name: Substantive change versioning
-    statement: |
-      The assignment of a version to the resulting concept version shall follow the
-      established versioning scheme.
 - identifier: "/req/actions/clarification-change"
   name: Requirements of the clarification change action
   subject: concept version
-  description: |
-    The clarification change action is used to make a small change to a concept that
-    does not affect its meaning or usage. This action is also called the "minor
-    change" action.
-  guidance:
-  - This action assumes that the concept versioning has at least two layers representing
-    at least the substantive and minor changes. The minor change only affects the
-    second layer and does not affect the first layer.
   normative_statements:
   - identifier: "/req/actions/clarification-change/implementation"
     name: Clarification change implementation
-    statement: |
-      Enacting a clarification change shall involve:
-
-      * create a new concept version with a minor version that is associated with the
-        parent concept version with a major version, with a version that is newer than
-        the latest assigned minor version;
-      * create a new register item that is associated with the concept version;
-      * update the parent major concept version to point to the new minor concept
-        version as the current version;
-      * create a supersession relation between the new concept version and the
-        previous concept version.
   - identifier: "/req/actions/clarification-change/patch-version-support"
     name: Clarification change patch version support
-    statement: |
-      If the register supports patch versioning, the clarification change action
-      shall be performed at the patch version level, where a new patch version is
-      created and associated with the concept version, and the parent concept is
-      updated to point to the new patch version as the current version.
 - identifier: "/req/actions/correctional-change"
   name: Requirements of the correctional change action
   subject: concept version
-  description: |
-    The correction action is used to correct a concept or a concept version that
-    contains an error that does not affect its meaning or usage, marking the
-    previous concept version as invalid.
   dependencies:
   - "/req/actions/substantive-change"
   - "/req/actions/clarification-change"
   - "/req/actions/invalidation"
-  guidance:
-  - |-
-    This action is a compound action that incorporates a substantive or clarification change to concept version and an invalidation action on the previous concept version.
-    This is an optional capability.
   normative_statements:
   - identifier: "/req/actions/correctional-change/implementation"
     name: Correctional change implementation
-    statement: |
-      Performing a correction action shall involve:
-
-      * performing a substantive or clarification change to the concept version;
-      * performing an invalidation action on the previous concept version.
 - identifier: "/req/actions/redaction"
   name: Requirements of the redaction action
   subject: concept version
-  description: |
-    The redaction action is used to remove some or all content of a concept version,
-    which indicates a redaction of the managed content of the associated register item.
-    This is an optional capability.
   dependencies:
   - "/req/actions/substantive-change"
   - "/req/actions/clarification-change"
   - "/req/actions/invalidation"
-  guidance:
-  - The metadata of the register item is retained, but the managed content is either
-    hidden or removed. This action is a compound action.
   normative_statements:
   - identifier: "/req/actions/redaction/compound-definition"
     name: Redaction action compound action definition
-    statement: |
-      Performing a redaction action shall involve:
-
-      * performing a minor or substantive change to the concept version;
-      * performing an invalidation action on the previous concept version;
-      * performing a redaction of the managed content of the register item.
   - identifier: "/req/actions/redaction/implementation"
     name: Redaction action implementation
-    statement: |
-      The actual redaction action shall be performed using these steps:
-
-      * update the concept version to indicate that its associated register item
-        is redacted;
-      * redact the managed content of the specific register item, which indicates that
-        the managed content is either hidden or removed, depending on the specified
-        rules of the register;
-      * the metadata of the register item is retained, which indicates that the register
-        item identifier can still be resolved to its metadata, but the managed content
-        is no longer accessible;
-      * create a new change object to reflect the redaction action, without indicating
-        the specific content changes to preserve the intent of redaction.
 - identifier: "/req/actions/delete-concept"
   name: Requirements of the delete concept action
   subject: concept
-  description: |
-    The delete concept action is used to permanently remove or hide a concept
-    from the register, which indicates that the concept will no longer be
-    accessible or addressable. This is an optional capability.
-  guidance:
-  - The framework does not mandate the deletion concept action nor impose specific
-    requirements on the deletion process. This allows for flexibility in how deletions
-    are managed if the action is to be adopted in a register.
   normative_statements:
   - identifier: "/req/actions/delete-concept/commitments"
     name: Deletion commitments
-    statement: |
-      The deletion action shall adhere to the register commitments, whether the concept is either removed from the register or "marked" as deleted depends on the
-      register's deletion and retention policy.
   - identifier: "/req/actions/delete-concept/metadata-retention"
     name: Deletion metadata retention
-    statement: 'The metadata of the deleted concept shall survive and be marked as
-      "deleted" in a deletion.
-
-      '
 - identifier: "/req/actions/delete-concept-version"
   name: Requirements of the delete concept version action
   subject: concept version
-  description: |
-    The delete concept version action is used to permanently remove or hide a concept
-    version from the register, which indicates that the concept version will no longer be
-    accessible or addressable. This is an optional capability.
-  guidance:
-  - The framework does not mandate the deletion concept version action nor impose
-    specific requirements on the deletion process. This allows for flexibility in
-    how deletions are managed if the action is to be adopted in a register.
   normative_statements:
   - identifier: "/req/actions/delete-concept-version/commitments"
     name: Deletion commitments
-    statement: |
-      The deletion action shall adhere to the register commitments, whether
-      the concept version and its associated register item are either removed
-      from the register or "marked" as deleted depends on the register's
-      deletion and retention policy.
   - identifier: "/req/actions/delete-concept-version/metadata-retention"
     name: Deletion metadata retention
-    statement: |
-      The metadata of the deleted concept version and its associated register
-      item shall survive and be marked as "deleted" in a deletion.
 - identifier: "/req/actions/concept-definition"
   name: Requirements of concept definition actions
   subject: concept definition
-  description: |
-    A concept definition defines the requirements of how a concept is realised in the
-    register. It is a formal description of the concept, which may include its
-    attributes, relations, and constraints.
   dependencies:
   - "/req/actions/add-concept-definition"
   - "/req/actions/add-concept-definition-version"
-  guidance:
-  - Concept definitions commonly evolve in the context of updating existing concepts
-    to reflect new or updated requirements, usage needs, or understanding.
 - identifier: "/req/actions/add-concept-definition"
   name: Requirements of the concept definition addition action
   subject: register
-  description: 'This action creates a new concept definition in the register as a
-    concept.
-
-    '
   normative_statements:
   - identifier: "/req/actions/add-concept-definition/implementation"
     name: Concept definition addition implementation
-    statement: |
-      A concept definition shall be added to the register with these steps, given
-      that the concept already exists in the concept plane:
-
-      * create a new concept in the concept plane to represent the concept
-        definition linking to the existing concept it realises;
-      * enact the add a concept definition version action for the first concept
-        definition version.
 - identifier: "/req/actions/add-concept-definition-version"
   name: Requirements of the concept definition version addition action
   subject: register
-  description: |
-    This action creates a new version of a concept definition in the register
-    as a concept version.
   normative_statements:
   - identifier: "/req/actions/add-concept-definition-version/implementation"
     name: Concept definition version addition implementation
-    statement: |
-      A concept definition version shall be added to the register with these steps,
-      given that the concept definition already exists in the concept plane:
-
-      * create a new concept version in the concept plane that is associated with
-      the concept definition;
-
-      * create a new register item class that is associated with the concept version
-      of the concept definition, to contain the information requirements of the
-      concept.
 - identifier: "/req/actions/migrate-concept-definition"
   name: Requirements of concept definition migration actions
   subject: concept definition
-  description: |
-    Concept realisations can migrate to new concept definitions with or without
-    changing the underlying semantics of the concept. This is an optional capability.
-  guidance:
-  - Migration may involve unchanged semantics, changed semantics, or addition of new
-    realisations through evolved concept definitions.
   normative_statements:
   - identifier: "/req/actions/migrate-concept-definition/unchanged-semantics"
     name: Migration with unchanged semantics
-    statement: |
-      Migration to a new concept definition without semantic changes shall be
-      accomplished by creating a new concept version associated with the new
-      concept definition while preserving the concept semantics.
   - identifier: "/req/actions/migrate-concept-definition/changed-semantics"
     name: Migration with changed semantics
-    statement: |
-      Migration to an evolved concept definition with semantic changes shall be
-      accomplished by creating a new concept version that incorporates additional,
-      modified, or removed semantics as defined by the evolved concept definition.
   - identifier: "/req/actions/migrate-concept-definition/new-semantics"
     name: New realisation through evolved definition
-    statement: |
-      Adding a concept realisation through new semantics provided in an evolved
-      concept definition shall be accomplished by creating new concept realisations
-      that depend on the new concept definition.
 - identifier: "/req/actions/concept-domains"
   name: Requirements of concept domain actions
   subject: concept domain
-  description: |
-    Concept domains are arbitrary concept groupings that can be used to organise and
-    manage concepts within a register. This is an optional capability.
-  guidance:
-  - Concept domains are built through concept specialisation, which utilises the "has
-    concept" relation to separate a narrower concept from its broader concept.
   normative_statements:
   - identifier: "/req/actions/concept-domains/support-domain-specialisation"
     name: Concept domain specialisation support
-    statement: |
-      Concept domains shall be supported through concept specialisation using
-      the concept relations of: "has concept", "has definition", "has
-      version", and "instance of".
 - identifier: "/req/actions/concept-incorporation"
   name: Requirements of concept incorporation actions
   subject: concept incorporation
-  description: |
-    A concept can be realised in a manner that its definition depends on the
-    definition of another concept. This is an optional capability.
-  guidance:
-  - In concept incorporation, the incorporating concept and the incorporated concepts
-    are managed independently but also interdependently.
   normative_statements:
   - identifier: "/req/actions/concept-incorporation/create"
     name: Incorporating concept creation
-    statement: |
-      Creating a new incorporating concept shall be accomplished by ensuring the
-      incorporated concept is defined, creating the corresponding concept and concept
-      definition for the incorporating concept, and ensuring the concept definition
-      appropriately reflects the incorporated concept requirements.
   - identifier: "/req/actions/concept-incorporation/update"
     name: Incorporating concept updates
-    statement: |
-      Updating an incorporating concept shall be accomplished by creating a new
-      concept version that reflects changes to the arrangements of incorporated concepts
-      and updating with appropriate version references.
   - identifier: "/req/actions/concept-incorporation/modify"
     name: Incorporated concept modifications
-    statement: |
-      Modifying an incorporated concept shall be accomplished by creating a new
-      concept version of the incorporated concept and updating version references,
-      unless the changes alter the meaning of the incorporated concept.
 - identifier: "/req/actions/concept-composition"
   name: Requirements of concept composition actions
   subject: concept composition
-  description: |
-    A composed concept is a concept that is a combination of other concepts,
-    where the composed concept is realised through the realisation of its parts.
-    This is an optional capability.
-  guidance:
-  - Concept composition is realised through "has part" relations from the composed
-    concept, indicating that the composed concept consists of many parts.
   normative_statements:
   - identifier: "/req/actions/concept-composition/create"
     name: Composed concept creation
-    statement: |
-      Creating a composed concept shall be accomplished by creating concepts for
-      the composed concept and its parts, creating concept definitions for each,
-      and linking the concept definitions of the parts to the composed concept definition.
   - identifier: "/req/actions/concept-composition/realise"
     name: Composed concept realisation
-    statement: |
-      Realising a composed concept shall be accomplished by creating concept versions
-      for the parts linked to the composed concept and creating register items
-      associated with the concept definitions of the parts.
   - identifier: "/req/actions/concept-composition/modify-part"
     name: Composed concept part modification
-    statement: |
-      Modifying composed concept parts shall be accomplished by creating new concepts
-      and concept definitions for new parts, or creating new concept versions for
-      the composed concept that contain only the applicable parts.
 - identifier: "/req/actions/concept-inheritance"
   name: Requirements of concept inheritance actions
   subject: concept inheritance
-  description: |
-    A concept that inherits from another concept is called an inherited concept.
-    An inherited concept typically inherits the properties of the inheriting concept.
-    This is an optional capability.
-  guidance:
-  - Concept inheritance is realised through "has concept" relations, "inherits" relations
-    between concept definitions and concept versions, and register item class inheritance.
   normative_statements:
   - identifier: "/req/actions/concept-inheritance/create"
     name: Inherited concept creation
-    statement: |
-      Adding a concept as an inherited concept shall be accomplished by creating
-      the inherited concept with "has concept" relations, creating concept definitions
-      with "inherits" relations, and creating register item classes with inheritance
-      relations to the inheriting concept.
   - identifier: "/req/actions/concept-inheritance/realise"
     name: Inherited concept realisation
-    statement: |
-      Realising an inherited concept shall be accomplished by creating concept
-      instances with proper inheritance relations and register items that inherit
-      from the register item classes of the inherited concept definitions.
   - identifier: "/req/actions/concept-inheritance/modify"
     name: Inherited concept definition updates
-    statement: |
-      Modifying inherited concept definitions shall be accomplished by creating
-      new concept versions of the inherited concept definition and updating
-      inheritance relations to the appropriate inheriting register item classes.

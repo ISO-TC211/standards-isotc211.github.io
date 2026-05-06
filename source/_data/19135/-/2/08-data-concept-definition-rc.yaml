@@ -3,29 +3,12 @@ normative_statements_classes:
 - identifier: "/req/concept-definition"
   name: Requirements of concept definition
   subject: concept
-  description: 'A concept definition provides the necessary information to understand
-    and implement a concept.
-
-    '
   dependencies:
   - "/req/concept-definition"
   normative_statements:
   - identifier: "/req/concept-definition/version"
     name: Concept definition as concept
-    statement: The register shall support the creation of concept definitions that
-      define the information requirements of a concept in its concept versions.
   - identifier: "/req/concept-definition/requirement-definitions"
     name: Definable information requirements
-    statement: |
-      A concept definition shall define the information requirements of a concept, including:
-
-      * common attributes of each register item;
-      * internal constraints that apply to each register item;
-      * cross-reference constraints that apply to each register item.
   - identifier: "/req/concept-definition/evolution"
     name: Concept definition supports definition evolution
-    statement: A concept definition shall support versioning, allowing for the evolution
-      of the information requirements over time.
-    guidance:
-    - A concept definition is itself a concept, therefore this is not a limitation
-      if the register satisfies the framework.

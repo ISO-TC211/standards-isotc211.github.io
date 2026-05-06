@@ -3,120 +3,55 @@ normative_statements_classes:
 - identifier: "/req/concept-version-status"
   name: Requirements of concept version statuses
   subject: concept version
-  description: 'Status values indicate the administrative status of a concept version.
-
-    '
   dependencies:
   - "/req/concept-version-status/core"
   - "/req/concept-version-status/validity"
   - "/req/concept-version-status/publication"
   - "/req/concept-version-status/redaction"
   - "/req/concept-version-status/deletion"
-  guidance:
-  - The redaction and deletion statuses are optional to this requirements class.
 - identifier: "/req/concept-version-status/core"
   name: Core requirements of concept version status
   subject: concept version
-  description: 'Basic functionality of concept version statuses.
-
-    '
   normative_statements:
   - identifier: "/req/concept-version-status/core/definition"
     name: Concept version statuses are defined
-    statement: Concept version statuses supported by the register shall be defined
-      with their meaning documented and are applied as appropriate.
   - identifier: "/req/concept-version-status/core/assignment"
     name: Concept version statuses are assigned
-    statement: A concept version status shall be assigned to each concept version
-      in a register indicating their administrative status in relation to the register.
   - identifier: "/req/concept-version-status/core/temporal-applicability"
     name: Specification of temporal applicability
-    statement: A concept version status shall support the specification of one or
-      more temporal constraints in which the status is applicable.
-    guidance:
-    - Types of temporal constraints supported are implementation specific.
   - identifier: "/req/concept-version-status/core/retention"
     name: Retention of status changes
-    statement: Changes to concept version statuses shall be covered by the register's
-      change retention commitments.
   - identifier: "/req/concept-version-status/core/extensibility"
     name: Extensibility
-    statement: Additional statuses, if any, shall be defined for use within a register.
-    guidance:
-    - Additional statuses and their usage are to be defined and documented in the
-      register specification.
   - identifier: "/req/concept-version-status/core/versioned"
     name: Statuses are versioned
-    statement: The register shall support versioning of statuses to support necessary
-      changes to those statuses if required.
 - identifier: "/req/concept-version-status/validity"
   name: Requirements of the validity status
   subject: concept
-  description: 'The validity status of a concept version indicates whether the concept
-    version is acceptable for use.
-
-    '
   normative_statements:
   - identifier: "/req/concept-version-status/validity/set"
     name: Setting validity of a concept version
-    statement: The validity of a concept version shall be set to either "valid" or
-      "invalid".
-    guidance:
-    - In the previous edition (<<iso19135-1-2015>>), only one concept version in a
-      "register item series" linked by supersession relations should be marked "valid".
-      This document no longer carries that requirement, and the notion of "register
-      item series" is no longer used.
 - identifier: "/req/concept-version-status/publication"
   name: Requirements of the publication status
   subject: concept
-  description: 'The publication status of a concept version indicates whether the
-    concept version is up-to-date or no longer current.
-
-    '
-  guidance:
-  - The "unpublished" concept version is said to be "retired" in the previous edition
-    (<<iso19135-1-2015>>).
   normative_statements:
   - identifier: "/req/concept-version-status/publication/set"
     name: Setting publication of a concept version
-    statement: The publication status of a concept version shall be set to either
-      "published" or "unpublished".
-    guidance:
-    - Differing from previous editions of this document, an unpublished concept version
-      does not imply that its content is invalid, but simply that the concept version
-      is no longer current.
 - identifier: "/req/concept-version-status/redaction"
   name: Requirements of the redaction status
   subject: concept
-  description: 'The redaction status of a concept version indicates whether the concept
-    version has had some or all of its managed content redacted.
-
-    '
   normative_statements:
   - identifier: "/req/concept-version-status/redaction/set"
     name: Setting redaction status of a concept version
-    statement: A concept version shall be marked as either "not redacted" when it
-      has no redacted content or "redacted" when at least a part of its managed content
-      is redacted.
   - identifier: "/req/concept-version-status/redaction/record"
     name: Record of date and time of redaction
-    statement: The date and time of redaction of the managed content shall be recorded.
 - identifier: "/req/concept-version-status/deletion"
   name: Requirements of the deletion status
   subject: concept
-  description: 'The deletion status of a concept version indicates whether the concept
-    version has had its content deleted from the register.
-
-    '
   normative_statements:
   - identifier: "/req/concept-version-status/deletion/set"
     name: Setting deletion status of a concept version
-    statement: A concept version shall be marked as "not deleted" when it has no deleted
-      content or "deleted" when its managed content is deleted.
   - identifier: "/req/concept-version-status/deletion/record"
     name: Record of date and time of deletion
-    statement: The date and time of deletion of the managed content shall be recorded.
   - identifier: "/req/concept-version-status/deletion/retention"
     name: Retention of register item of deleted content
-    statement: A concept version representing deleted managed content shall retain
-      its metadata and its associated register item.

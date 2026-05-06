@@ -3,7 +3,6 @@ normative_statements_classes:
 - identifier: "/req/gaz"
   name: Gazetteer requirements
   subject: gazetteer
-  description: Requirements for gazetteer structure and content.
   dependencies:
   - "/req/srs"
   normative_statements:
@@ -14,7 +13,6 @@ normative_statements_classes:
 - identifier: "/req/srs"
   name: Spatial Reference System requirements
   subject: spatial reference system
-  description: Requirements for spatial reference system definitions.
   normative_statements:
   - identifier: "/req/srs/srs"
     name: SRS implementation

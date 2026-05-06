@@ -1,0 +1,111 @@
+---
+conformance_classes:
+- identifier: "/conf/metadata-core"
+  name: Metadata core
+  target: "/req/metadata-core"
+  subject: Metadata instance
+  tests:
+  - identifier: "/conf/metadata-core/basic"
+    name: Metadata basic data requirements
+    targets:
+    - "/req/metadata-core/basic"
+  - identifier: "/conf/metadata-core/application"
+    name: Metadata application information data requirements
+    targets:
+    - "/req/metadata-core/application"
+  - identifier: "/conf/metadata-core/identification"
+    name: Identification information data requirements
+    targets:
+    - "/req/metadata-core/identification"
+  - identifier: "/conf/metadata-core/constraints"
+    name: Constraint information data requirements
+    targets:
+    - "/req/metadata-core/constraints"
+  - identifier: "/conf/metadata-core/lineage"
+    name: Lineage information data requirements
+    targets:
+    - "/req/metadata-core/lineage"
+  - identifier: "/conf/metadata-core/maintenance"
+    name: Maintenance information data requirements
+    targets:
+    - "/req/metadata-core/maintenance"
+  - identifier: "/conf/metadata-core/spatial-representation"
+    name: Spatial representation information data requirements
+    targets:
+    - "/req/metadata-core/spatial-representation"
+  - identifier: "/conf/metadata-core/reference-system"
+    name: Reference system information data requirements
+    targets:
+    - "/req/metadata-core/reference-system"
+  - identifier: "/conf/metadata-core/content"
+    name: Content information data requirements
+    targets:
+    - "/req/metadata-core/content"
+  - identifier: "/conf/metadata-core/portrayal-catalogue"
+    name: Portrayal catalogue information data requirements
+    targets:
+    - "/req/metadata-core/portrayal-catalogue"
+  - identifier: "/conf/metadata-core/distribution"
+    name: Distribution information data requirements
+    targets:
+    - "/req/metadata-core/distribution"
+  - identifier: "/conf/metadata-core/metadata-extension"
+    name: Metadata extension information data requirements
+    targets:
+    - "/req/metadata-core/metadata-extension"
+  - identifier: "/conf/metadata-core/application-schema"
+    name: Application schema information data requirements
+    targets:
+    - "/req/metadata-core/application-schema"
+  - identifier: "/conf/metadata-core/service-metadata"
+    name: Service metadata information data requirements
+    targets:
+    - "/req/metadata-core/service-metadata"
+  - identifier: "/conf/metadata-core/extent"
+    name: Extent information data requirements
+    targets:
+    - "/req/metadata-core/extent"
+  - identifier: "/conf/metadata-core/citation"
+    name: Citation, responsibility and party information data requirements
+    targets:
+    - "/req/metadata-core/citation"
+  - identifier: "/conf/metadata-core/common"
+    name: Commonly used classes data requirements
+    targets:
+    - "/req/metadata-core/common"
+  - identifier: "/conf/metadata-core/multilingual"
+    name: Multilingual support data requirements
+    targets:
+    - "/req/metadata-core/multilingual"
+- identifier: "/conf/metadata-extend"
+  name: Metadata extensions and profiles
+  target: "/req/metadata-extend"
+  subject: Metadata scheme
+  dependencies:
+  - "/req/metadata-core"
+  tests:
+  - identifier: "/conf/metadata-extend/extension"
+    name: Metadata extension
+    targets:
+    - "/req/metadata-extend/extension"
+  - identifier: "/conf/metadata-extend/profile"
+    name: Metadata profile
+    targets:
+    - "/req/metadata-extend/profile"
+- identifier: "/conf/metadata-extensions"
+  name: Extensions for acquisition and processing
+  target: "/req/metadata-extensions"
+  subject: Metadata instance
+  dependencies:
+  - "/req/metadata-core"
+  tests:
+  - identifier: "/conf/metadata-extensions/acquisition"
+    name: Acquisition information data requirements
+    targets:
+    - "/req/metadata-extensions/acquisition"
+  - identifier: "/conf/metadata-extensions/extended-lineage"
+    name: Extended lineage information data requirements
+    targets:
+    - "/req/metadata-extensions/extended-lineage"
+    dependencies:
+    - "/req/metadata-core/lineage"

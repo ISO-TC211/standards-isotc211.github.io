@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
 gem "jekyll-theme-isotc211", "~> 1.0"
+gem "modspec", "~> 0.2"
 
 group :jekyll_plugins do
   gem "jekyll-feed"
@@ -11,3 +12,7 @@ group :jekyll_plugins do
 end
 
 gem "webrick"
+
+group :test do
+  gem "rspec"
+end

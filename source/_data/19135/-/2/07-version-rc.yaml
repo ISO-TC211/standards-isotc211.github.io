@@ -3,31 +3,11 @@ normative_statements_classes:
 - identifier: "/req/versioning"
   name: Versioning scheme implementation and governance
   subject: versioning
-  description: Requirements on versioning scheme implementation and governance.
   normative_statements:
   - identifier: "/req/versioning/scheme"
     name: Versioning scheme definition
-    statement: Versioning scheme(s) used for assigning versions in a register shall
-      be defined, including its semantics, implementation and structures used to construct
-      them.
-    guidance:
-    - The definition of the versioning scheme is to be documented in the register
-      specification.
-    - A register could apply different versioning schemes for different concept definitions,
-      as long as the version is uniquely assigned to every concept version that utilizes
-      the same concept definition.
-    - Design or selection of a versioning scheme is an implementation concern external
-      to the scope of this document.
   - identifier: "/req/versioning/hierarchical"
     name: Version layer support
-    statement: The versioning scheme shall support version layers with a clear hierarchy
-      amongst the layers, where the definition of those layers is suitable for the
-      register.
-    guidance:
-    - The framework requires at least two layers of versioning to differentiate substantive
-      and non-substantive changes.
-    - Additional version layers may be supported to facilitate additional change distinctions
-      as defined in the register specification.
     examples:
     - |
       A semantic versioning scheme of "major.minor" includes versions like
@@ -40,20 +20,6 @@ normative_statements_classes:
       "v2.0.2" and "v2.0.3".
   - identifier: "/req/versioning/specification-granularity"
     name: Version semantics for specification granularity
-    statement: The versioning scheme shall support differentiation in specification
-      granularity, allowing for granular versioning by specifying versions that only
-      consist of a single top-level layer to a combination of layers.
-    guidance:
-    - The versioning scheme should allow for both coarse and fine-grained versioning.
-    - |
-      A versioning scheme can support both "v1" and "v1.0" as valid versions,
-      where "v1" represents a major version and "v1.0" represents a minor
-      version. In a typical major.minor versioning scheme, "v1" could be seen
-      as a broader version that points to the family of "v1.x" and when used
-      specifically would refer to "v1.n" when "n" is the latest minor version,
-      while "v1.3" provides a specific iteration.
-    - This allows for flexibility in specifying version needs, enabling users to specify
-      versions at different levels of granularity based on their needs.
     examples:
     - |
       A major-minor version scheme can support "v1", "v2", "v3" for major
@@ -63,39 +29,14 @@ normative_statements_classes:
       defined of the versioning scheme.
   - identifier: "/req/versioning/semantics"
     name: Version supports change distinction semantics
-    statement: The versioning scheme shall support representation and distinction
-      of the meaning of a substantive change and a non-substantive change.
-    guidance:
-    - Substantive changes typically indicate significant modification of semantics
-      or technical parameters, while non-substantive changes are typically clarifying
-      or editorial modifications that do not alter the fundamental meaning or use
-      of the concept.
-    - Additional change semantics and the distinctions of them via versioning may
-      be defined in documented information.
     examples:
     - In a versioning scheme that supports major and minor versions, substantive changes
       can be represented by a major version, while non-substantive changes can be
       represented by a minor version.
   - identifier: "/req/versioning/uniqueness"
     name: Version uniqueness
-    statement: An assigned version shall be unique within the scope of the type of
-      object that is referenced with the version in the register.
-    guidance:
-    - In the framework, every concept version of a realised concept is identified
-      by a version, which is unique amongst all realised concepts of the same concept
-      definition.
   - identifier: "/req/versioning/comparison"
     name: Version ordering and comparison
-    statement: The versioning scheme shall support ordering of versions and comparison
-      of versions within the same concept.
-    guidance:
-    - Version ordering enables determination of which version is newer or older.
-    - Version ordering does not mean ordering of comparison of character strings,
-      but a defined, semantically aware ordering.
-    - Comparison rules should be clearly defined for all supported version layers.
-    - The ordering should be consistent with the semantic meaning of version changes.
-    - It is possible to issue new minor versions of an older major version such as
-      a new v1.1, when there is an existing v2.0.
     examples:
     - 'In a monotonic "major.minor" versioning scheme, the versions v2.0 > v1.9 >
       v1.1 > v1.0.
@@ -109,11 +50,3 @@ normative_statements_classes:
       "date > stage > iteration".
   - identifier: "/req/versioning/lifecycle"
     name: Version lifecycle management
-    statement: |
-      The versioning scheme shall define semantics of version
-      layers and the lifecycle of versions, indicating:
-
-      * the semantics of the version layers and what each layer represents;
-      * the association of the version layers to change distinction;
-      * when should a new version be created and assigned.
-    guidance: []

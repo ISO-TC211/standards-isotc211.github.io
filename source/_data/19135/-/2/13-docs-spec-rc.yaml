@@ -3,138 +3,68 @@ normative_statements_classes:
 - identifier: "/req/register-specification"
   name: Requirements of the register specification
   subject: register specification
-  description: |
-    A register specification describes governance and requirements of the register
-    and its contents.
   normative_statements:
   - identifier: "/req/register-specification/reference-source"
     name: Reference ISO 19135 as normative reference in register specification
-    statement: The register specification shall cite this document as a normative
-      reference using a dated citation.
   - identifier: "/req/register-specification/referencing-requirements"
     name: Reference requirements from ISO 19135 in the register specification
-    statement: The register specification shall either reference requirements or requirements
-      classes inherited from this document citing provision identifiers, or incorporate
-      the text of provisions provided by this document faithfully.
-    guidance:
-    - The electronic insert of this document can be used for incorporating text of
-      provisions provided by this document.
   - identifier: "/req/register-specification/extended-requirements"
     name: Definition of requirements extended beyond ISO 19135 in the register specification
-    statement: The register specification shall describe for every extended or modified
-      provision the exact changes compared with the corresponding provision from this
-      document.
-    guidance:
-    - In some cases, the register specification may choose to extend or modify requirements
-      stated in this document, such as restricting conditions of a requirement statement.
-      It is necessary for the register specification to explicitly state what has
-      been extended or changed.
   - identifier: "/req/register-specification/specify-metadata"
     name: Specification of register metadata
-    statement: The metadata of a register shall be specified in the register specification,
-      including its scope.
   - identifier: "/req/register-specification/define-roles-responsibilities"
     name: Definition of roles and responsibilities in the register specification
-    statement: The register specification shall define the roles and responsibilities
-      involved in the management of the register (<<roles>>).
   - identifier: "/req/register-specification/define-governance"
     name: Definition of governance processes in the register specification
-    statement: The register specification shall define the management processes, governance
-      rules and procedures for the register.
   - identifier: "/req/register-specification/define-content-requirements"
     name: Definition of register content requirements in the register specification
-    statement: The register specification shall define the types of concepts that
-      can be realised in the register and their concept definitions.
   - identifier: "/req/register-specification/document-addition-modification-rules"
     name: Documentation of rules and guidelines on addition and modification in the
       register specification
-    statement: The register specification shall document rules and guidelines on what
-      constitutes an addition or modification of a concept or a concept version.
     dependencies:
     - "/req/concept-actions/addition"
   - identifier: "/req/register-specification/document-substantive-change"
     name: Documentation of what constitutes substantive change in the register specification
-    statement: The register specification shall define what proposed changes to register
-      content are considered to be substantive and non-substantive.
     dependencies:
     - "/req/roles/register-owner/define-substantive-change"
   - identifier: "/req/register-specification/define-basic-data-elements"
     name: Definition of basic data elements in the register specification
-    statement: The register specification shall describe the format and granularity
-      of basic data elements that can be used in concept definitions in the register.
-    guidance:
-    - Basic data elements could be date and time elements (such as time intervals),
-      spatial coordinates, identifiers, units, etc.
   - identifier: "/req/register-specification/identifier-scheme"
     name: Define the identifier scheme in the register specification
-    statement: The register specification shall define the identifier scheme used
-      in the register and their mapping to components in the register.
     dependencies:
     - "/req/identifiers"
   - identifier: "/req/register-specification/versioning-scheme"
     name: Define versioning schemes in the register specification
-    statement: The register specification shall define all versioning schemes, including
-      the version layer semantics, used in the register.
     dependencies:
     - "/req/versioning"
   - identifier: "/req/register-specification/versioning-assignment-criteria"
     name: Define versioning assignment criteria in the register specification
-    statement: The register specification shall define the versioning assignment criteria,
-      including the meaning for every version layer, which will be taken into account
-      during the versioning process.
-    guidance:
-    - The register specification has to describe the conditions on when a new version
-      (and the version layer) is issued or superseded.
     dependencies:
     - "/req/versioning"
   - identifier: "/req/register-specification/define-proposer-criteria"
     name: Definition of proposer eligibility criteria in the register specification
-    statement: The register specification shall define the eligibility criteria for
-      proposers of the register.
     dependencies:
     - "/req/roles/register-owner/specify-proposer-criteria"
   - identifier: "/req/register-specification/define-proposal-process"
     name: Definition of the proposal process in the register specification
-    statement: The register specification shall define the steps of the proposal process.
   - identifier: "/req/register-specification/define-proposal-submission-requirements"
     name: Definition of proposal submission requirements in the register specification
-    statement: The register specification shall define the submission requirements
-      for submitting a proposal.
   - identifier: "/req/register-specification/define-proposal-information-requirements"
     name: Definition of mandatory information in submitting a proposal in the register
       specification
-    statement: The register specification shall define the information requirements
-      for submitting a proposal.
-    guidance:
-    - |
-      Different kinds of registers require different levels of formalism in proposals
-      for actions.
-      The following information could be considered mandatory in submitting a proposal:
-
-      . details and contact information of the proposer;
-      . details of the proposed action(s) and parameters;
-      . justification for the proposal.
   - identifier: "/req/register-specification/define-approval-time-limit"
     name: Definition of the time limit of the approval process in the register specification
-    statement: The register specification shall define the time limit of the approval
-      process.
     dependencies:
     - "/req/approval-process/decide-by-time-limit"
     - "/req/roles/register-owner/specify-approval-time-limit"
   - identifier: "/req/register-specification/specify-appeal-availability"
     name: Specification of availability of an appeal process
-    statement: The register specification shall specify whether an appeal process
-      is implemented.
   - identifier: "/req/register-specification/define-appeal-process"
     name: Definition of the appeal process if available in the register specification
-    statement: The register specification shall specify the appeal process in the
-      register specification, if the appeal process is implemented.
     dependencies:
     - "/req/register-specification/specify-appeal-availability"
   - identifier: "/req/register-specification/define-appeal-time-limit"
     name: Definition of the time limit of the appeal process in the register specification
-    statement: The register specification shall specify the time limit of the appeal
-      process in the register specification, if the appeal process is implemented.
     dependencies:
     - "/req/register-specification/specify-appeal-availability"
     - "/req/appeal-process/forward-by-time-limit"
@@ -142,64 +72,34 @@ normative_statements_classes:
   - identifier: "/req/register-specification/define-appeal-information-requirements"
     name: Definition of mandatory information in submitting an appeal if available
       in the register specification
-    statement: The register specification shall define the required information for
-      initiating an appeal process, if an appeal process is implemented.
-    guidance:
-    - |
-      The following information could be considered mandatory in submitting an appeal:
-
-      . justification for the appeal;
-      . statement of impact if the appeal is not successful.
     dependencies:
     - "/req/register-specification/specify-appeal-availability"
   - identifier: "/req/register-specification/define-access-criteria"
     name: Definition of access criteria in the register specification
-    statement: The register specification shall define the access criteria for the
-      register.
   - identifier: "/req/register-specification/define-security-requirements"
     name: Definition of security requirements in the register specification
-    statement: The register specification shall define the security requirements for
-      the register.
   - identifier: "/req/register-specification/define-relations"
     name: Definition of concept relations in the register specification
-    statement: The register specification shall define relations supported by the
-      register.
     dependencies:
     - "/req/relations-core/definition"
   - identifier: "/req/register-specification/define-concept-version-statuses"
     name: Definition of concept version statuses in the register specification
-    statement: The register specification shall define concept version statuses supported
-      by the register.
     dependencies:
     - "/req/concept-version-status/definition"
   - identifier: "/req/register-specification/define-concepts-content"
     name: Document concepts and content allowed in the register
-    statement: The register specification shall define concepts and content and their
-      requirements allowed to be managed in the register.
-    guidance:
-    - Concept definitions are also part of this description.
   - identifier: "/req/register-specification/define-temporal-applicability-rules"
     name: Document temporal applicability rules for statuses and relations in the
       register specification
-    statement: The register specification shall define temporal applicability rules
-      for statuses and relations.
   - identifier: "/req/register-specification/custom-relations"
     name: Definition of extended relations in the register specification
-    statement: The register specification shall define any additional relations beyond
-      those defined in this document.
     dependencies:
     - "/req/relations/core/extensibility"
   - identifier: "/req/register-specification/custom-statuses"
     name: Definition of extended statuses in the register specification
-    statement: The register specification shall define any additional concept version
-      statuses beyond those defined in this document.
     dependencies:
     - "/req/concept-version-status/core/extensibility"
   - identifier: "/req/register-specification/document-changes"
     name: Changes to the register specification are retained
-    statement: Changes to the register specification, and the justifications of those
-      changes, shall be retained.
   - identifier: "/req/register-specification/availability-of-changes"
     name: Changes to the register specification are made available
-    statement: The register specification version adopted and in force shall be made
-      available to those with the need to know, as defined in the register specification.

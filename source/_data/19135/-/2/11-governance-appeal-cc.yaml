@@ -2,97 +2,55 @@
 conformance_classes:
 - identifier: "/conf/appeal-process"
   name: Requirements of the appeal process
-  description: This conformance class defines the requirements for appeal process
-    implementation in a register.
   target: "/req/appeal-process"
   tests:
   - identifier: "/conf/appeal-process/inform-appeal-eligibility"
     name: Appeal eligibility notification
     targets:
     - "/req/appeal-process/inform-appeal-eligibility"
-    purpose: Verify that the register manager informs the proposer of appeal eligibility
-      and deadline for rejected proposals
-    method: Check that when a proposal is rejected and an appeal process is implemented,
-      the register manager provides clear information about appeal eligibility and
-      deadlines to the proposer
     type: Conformance
   - identifier: "/conf/appeal-process/submit-appeal"
     name: Appeal submission conformance
     targets:
     - "/req/appeal-process/submit-appeal"
-    purpose: Verify that the proposer follows the rules for appeal as defined in the
-      register specification
-    method: Check that when submitting an appeal, the proposer adheres to all rules
-      and procedures as documented in the register specification
     type: Conformance
   - identifier: "/conf/appeal-process/withdraw-appeal"
     name: Appeal withdrawal capability
     targets:
     - "/req/appeal-process/withdraw-appeal"
-    purpose: Verify that the proposer has the option to withdraw an appeal at any
-      time during the appeal process
-    method: Check that the appeal process allows proposers to withdraw their appeal
-      at any stage of the process
     type: Conformance
   - identifier: "/conf/appeal-process/forward-to-owner"
     name: Appeal forwarding to owner
     targets:
     - "/req/appeal-process/forward-to-owner"
-    purpose: Verify that the register manager forwards appeals to the register owner
-    method: Check that upon receiving an appeal from the proposer, the register manager
-      properly forwards the appeal to the register owner
     type: Conformance
   - identifier: "/conf/appeal-process/issue-decision"
     name: Appeal decision issuance
     targets:
     - "/req/appeal-process/issue-decision"
-    purpose: Verify that the register owner decides whether to accept or reject the
-      appeal in conformance with the register specification
-    method: Check that the register owner makes appeal decisions according to the
-      procedures and criteria defined in the register specification
     type: Conformance
   - identifier: "/conf/appeal-process/decide-by-time-limit"
     name: Appeal decision time limit compliance
     targets:
     - "/req/appeal-process/decide-by-time-limit"
-    purpose: Verify that the register owner issues the appeal decision within the
-      required time limit
-    method: Check that the register owner completes the appeal decision process within
-      the time limit specified in the register specification
     type: Conformance
   - identifier: "/conf/appeal-process/inform-decision"
     name: Appeal decision notification to manager
     targets:
     - "/req/appeal-process/inform-decision"
-    purpose: Verify that the register owner informs the register manager of the appeal
-      decision
-    method: Check that the register owner properly communicates the appeal decision
-      to the register manager
     type: Conformance
   - identifier: "/conf/appeal-process/forward-by-time-limit"
     name: Appeal decision forwarding time limit compliance
     targets:
     - "/req/appeal-process/forward-by-time-limit"
-    purpose: Verify that the register manager forwards the appeal decision to the
-      proposer within the required time limit
-    method: Check that the register manager communicates the appeal decision to the
-      proposer within the time limit specified by the register owner
     type: Conformance
   - identifier: "/conf/appeal-process/incorporate-approved-appeal"
     name: Approved appeal incorporation
     targets:
     - "/req/appeal-process/incorporate-approved-appeal"
-    purpose: Verify that the register manager incorporates the appealed proposal if
-      the register owner has approved the appeal
-    method: Check that when an appeal is approved by the register owner, the register
-      manager properly incorporates the original proposal into the register
     type: Conformance
   - identifier: "/conf/appeal-process/retain-submission-decision"
     name: Appeal documentation retention
     targets:
     - "/req/appeal-process/retain-submission-decision"
-    purpose: Verify that the register manager retains documentation on the submission
-      of the appeal and the deliberations taken
-    method: Check that the register manager maintains comprehensive records of appeal
-      submissions and all related deliberations and decisions
     type: Conformance

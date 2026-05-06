@@ -3,22 +3,10 @@ normative_statements_classes:
 - identifier: "/req/roles/register-manager"
   name: Responsibilities of the register manager
   subject: register manager
-  description: |
-    The register manager is responsible for managing the register, as appointed by the
-    register owner.
   normative_statements:
   - identifier: "/req/roles/register-manager/manage-by-register-specification"
     name: Management of the register using the register specification
-    statement: The register manager shall manage the register in accordance with the
-      register specification (<<register-specification>>), which describes the processes
-      defined in <<management>>.
   - identifier: "/req/roles/register-manager/distribute-proposal-process-information"
     name: Dissemination of proposal process information
-    statement: The register manager shall be responsible for disseminating the information
-      necessary for submitting proposals to eligible proposers (<<proposal-instructions>>).
-    guidance: The register manager of a non-public register may disseminate information
-      to eligible proposers in private.
   - identifier: "/req/roles/register-manager/accept-proposals"
     name: Acceptance of proposals
-    statement: The register manager shall process proposals from proposers (<<role-proposer>>)
-      according to <<process-proposal>>.

@@ -2,72 +2,40 @@
 conformance_classes:
 - identifier: "/conf/versioning"
   name: Versioning scheme implementation and governance
-  description: This conformance class defines the requirements for versioning scheme
-    implementation and governance in a register specification.
   target: "/req/versioning"
   tests:
   - identifier: "/conf/versioning/scheme"
     name: Versioning scheme definition validation
     targets:
     - "/req/versioning/scheme"
-    purpose: Verify that versioning scheme is properly defined with semantics, implementation
-      and structures.
-    method: Document inspection to ensure the register specification defines versioning
-      scheme(s) with their semantics, implementation details, and construction structures.
     type: Validation
   - identifier: "/conf/versioning/hierarchical"
     name: Version layer hierarchy validation
     targets:
     - "/req/versioning/hierarchical"
-    purpose: Verify that the versioning scheme supports version layers with clear
-      hierarchy suitable for the register.
-    method: Ensure the version layer structure has at least two layers exist for differentiating
-      substantive and non-substantive changes, with clear hierarchy definition.
     type: Conformance
   - identifier: "/conf/versioning/specification-granularity"
     name: Specification granularity validation
     targets:
     - "/req/versioning/specification-granularity"
-    purpose: Verify that the versioning scheme supports differentiation in specification
-      granularity for flexible versioning.
-    method: Ensure the version specification supports different granularity levels,
-      ensuring support for both single top-level layers and combinations of layers.
     type: Conformance
   - identifier: "/conf/versioning/semantics"
     name: Change distinction semantics validation
     targets:
     - "/req/versioning/semantics"
-    purpose: Verify that the versioning scheme supports representation and distinction
-      of substantive and non-substantive changes.
-    method: Ensure the version semantics support a clear distinction between substantive
-      changes and non-substantive changes, and any other change categories defined.
     type: Conformance
   - identifier: "/conf/versioning/uniqueness"
     name: Version uniqueness validation
     targets:
     - "/req/versioning/uniqueness"
-    purpose: Verify that assigned versions are unique within the scope of the type
-      of object referenced.
-    method: Ensure the version assignment demonstrates uniqueness within the scope
-      of concept versions for the same concept definition.
     type: Conformance
   - identifier: "/conf/versioning/comparison"
     name: Version ordering and comparison validation
     targets:
     - "/req/versioning/comparison"
-    purpose: Verify that the versioning scheme supports ordering and comparison of
-      versions within the same concept.
-    method: Ensure the version ordering and comparison logic achieves semantically
-      aware ordering, provides clear comparison rules for all version layers, and
-      is consistent with semantic meaning of changes.
     type: Conformance
   - identifier: "/conf/versioning/lifecycle"
     name: Version lifecycle management validation
     targets:
     - "/req/versioning/lifecycle"
-    purpose: Verify that the versioning scheme defines semantics of version layers
-      and lifecycle of versions.
-    method: Document inspection to ensure the register specification defines version
-      layer semantics, association to change distinction, and criteria for creating
-      new versions.
     type: Validation

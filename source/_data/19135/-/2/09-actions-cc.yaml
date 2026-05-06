@@ -2,8 +2,6 @@
 conformance_classes:
 - identifier: "/conf/actions"
   name: Action capabilities requirements
-  description: This conformance class defines the requirements for action capabilities
-    implementation in a register.
   dependencies:
   - "/conf/actions/add-concept"
   - "/conf/actions/add-concept-version"
@@ -18,170 +16,107 @@ conformance_classes:
   target: "/req/actions"
 - identifier: "/conf/actions/core"
   name: Core requirements for actions
-  description: This conformance class defines the basic requirements for action capabilities
-    of the register.
   target: "/req/actions/core"
   tests:
   - identifier: "/conf/actions/core/definition"
     name: Action support declaration
     targets:
     - "/req/actions/core/definition"
-    purpose: Verify that the register declares and defines all supported actions
-    method: Check that the register specification contains a complete list of supported
-      actions with their definitions, including any optional actions
     type: Conformance
   - identifier: "/conf/actions/core/changes"
     name: Change retention
     targets:
     - "/req/actions/core/changes"
-    purpose: Verify that changes caused by actions are retained and retrievable
-    method: Execute an action that modifies register content, then verify that the
-      change is recorded and can be retrieved from the register
     type: Conformance
   - identifier: "/conf/actions/core/extensions"
     name: Extension declaration
     targets:
     - "/req/actions/core/extensions"
-    purpose: Verify that any additional actions beyond the framework are declared
-      and defined
-    method: Check that the register specification declares and defines any additional
-      actions not specified in the framework
     type: Conformance
 - identifier: "/conf/actions/add-concept"
   name: Requirements of the concept addition action
-  description: This conformance class defines the requirements for the concept addition
-    action.
   target: "/req/actions/add-concept"
   tests:
   - identifier: "/conf/actions/add-concept/implementation"
     name: Concept addition capability
     targets:
     - "/req/actions/add-concept/implementation"
-    purpose: Verify that the register can add new concepts
-    method: Attempt to add a new concept to the register and verify that it is created
-      successfully
     type: Conformance
 - identifier: "/conf/actions/add-concept-version"
   name: Requirements of the concept version addition action
-  description: This conformance class defines the requirements for the concept version
-    addition action.
   target: "/req/actions/add-concept-version"
   tests:
   - identifier: "/conf/actions/add-concept-version/implementation"
     name: Concept version addition capability
     targets:
     - "/req/actions/add-concept-version/implementation"
-    purpose: Verify that the register can add new concept versions
-    method: Attempt to add a new concept version to an existing concept and verify
-      that it is created successfully with appropriate register item association
     type: Conformance
 - identifier: "/conf/actions/invalidation"
   name: Requirements of the concept version invalidation action
-  description: This conformance class defines the requirements for the concept version
-    invalidation action.
   target: "/req/actions/invalidation"
   tests:
   - identifier: "/conf/actions/invalidation/implementation"
     name: Concept version invalidation capability
     targets:
     - "/req/actions/invalidation/implementation"
-    purpose: Verify that the register can invalidate concept versions
-    method: Set a concept version's valid status from true to false and verify the
-      change is applied correctly
     type: Conformance
 - identifier: "/conf/actions/unpublish"
   name: Requirements of the concept version unpublish action
-  description: This conformance class defines the requirements for the concept version
-    unpublish action.
   target: "/req/actions/unpublish"
   tests:
   - identifier: "/conf/actions/unpublish/implementation"
     name: Concept version unpublish capability
     targets:
     - "/req/actions/unpublish/implementation"
-    purpose: Verify that the register can unpublish concept versions
-    method: Set a concept version's publish status from true to false and verify the
-      change is applied correctly
     type: Conformance
 - identifier: "/conf/actions/concept-supersession"
   name: Requirements of the concept supersession action
-  description: This conformance class defines the requirements for the concept supersession
-    action.
   target: "/req/actions/concept-supersession"
   tests:
   - identifier: "/conf/actions/concept-supersession/implementation"
     name: Concept supersession capability
     targets:
     - "/req/actions/concept-supersession/implementation"
-    purpose: Verify that the register can establish concept supersession relations
-    method: Create a supersession relation between an old concept and a new concept
-      and verify the relation is established correctly
     type: Conformance
 - identifier: "/conf/actions/concept-version-supersession"
   name: Requirements of the concept version supersession action
-  description: This conformance class defines the requirements for the concept version
-    supersession action.
   target: "/req/actions/concept-version-supersession"
   tests:
   - identifier: "/conf/actions/concept-version-supersession/implementation"
     name: Concept version supersession capability
     targets:
     - "/req/actions/concept-version-supersession/implementation"
-    purpose: Verify that the register can establish concept version supersession relations
-    method: Create a supersession relation between concept versions of the same concept
-      and verify the relation and current version pointer are updated correctly
     type: Conformance
 - identifier: "/conf/actions/substantive-change"
   name: Requirements of the substantive change action
-  description: This conformance class defines the requirements for the substantive
-    change action.
   target: "/req/actions/substantive-change"
   tests:
   - identifier: "/conf/actions/substantive-change/implementation"
     name: Substantive change capability
     targets:
     - "/req/actions/substantive-change/implementation"
-    purpose: Verify that the register can perform substantive changes with proper
-      implementation
-    method: Execute a substantive change action and verify that new major and minor
-      concept versions are created, register item is associated, current version pointers
-      are updated, and supersession relation is established
     type: Conformance
   - identifier: "/conf/actions/substantive-change/versioning"
     name: Substantive change versioning
     targets:
     - "/req/actions/substantive-change/versioning"
-    purpose: Verify that substantive changes follow the established versioning scheme
-    method: Execute a substantive change action and verify that the resulting concept
-      version follows the established versioning scheme
     type: Conformance
 - identifier: "/conf/actions/clarification-change"
   name: Requirements of the clarification change action
-  description: This conformance class defines the requirements for the clarification
-    change action.
   target: "/req/actions/clarification-change"
   tests:
   - identifier: "/conf/actions/clarification-change/implementation"
     name: Clarification change capability
     targets:
     - "/req/actions/clarification-change/implementation"
-    purpose: Verify that the register can perform clarification changes
-    method: Execute a clarification change action and verify that a new minor concept
-      version is created, register item is associated, current version pointer is
-      updated, and supersession relation is established
     type: Conformance
   - identifier: "/conf/actions/clarification-change/patch-version-support"
     name: Clarification change patch support
     targets:
     - "/req/actions/clarification-change/patch-version-support"
-    purpose: Verify patch version support for clarification changes if implemented
-    method: If the register supports patch versioning, execute a clarification change
-      at patch level and verify proper patch version creation and association
     type: Conformance
 - identifier: "/conf/actions/correctional-change"
   name: Requirements of the correctional change action
-  description: This conformance class defines the requirements for the correctional
-    change action.
   dependencies:
   - "/conf/actions/substantive-change"
   - "/conf/actions/clarification-change"
@@ -192,13 +127,9 @@ conformance_classes:
     name: Correctional change capability
     targets:
     - "/req/actions/correctional-change/implementation"
-    purpose: Verify that the register can perform correctional changes
-    method: Execute a correctional change action and verify that both the change (substantive
-      or clarification) and invalidation actions are performed correctly
     type: Conformance
 - identifier: "/conf/actions/redaction"
   name: Requirements of the redaction action
-  description: This conformance class defines the requirements for the redaction action.
   dependencies:
   - "/conf/actions/substantive-change"
   - "/conf/actions/clarification-change"
@@ -209,234 +140,146 @@ conformance_classes:
     name: Redaction compound action definition
     targets:
     - "/req/actions/redaction/compound-definition"
-    purpose: Verify that redaction is performed as a compound action
-    method: If redaction is supported, execute a redaction action and verify that
-      the compound action steps are performed correctly
     type: Conformance
   - identifier: "/conf/actions/redaction/implementation"
     name: Redaction implementation
     targets:
     - "/req/actions/redaction/implementation"
-    purpose: Verify that redaction is implemented correctly
-    method: If redaction is supported, execute a redaction action and verify that
-      content is redacted while metadata is retained, and change object is created
-      without revealing redacted content
     type: Conformance
 - identifier: "/conf/actions/delete-concept"
   name: Requirements of the delete concept action
-  description: This conformance class defines the requirements for the delete concept
-    action.
   target: "/req/actions/delete-concept"
   tests:
   - identifier: "/conf/actions/delete-concept/commitments"
     name: Concept deletion commitments
     targets:
     - "/req/actions/delete-concept/commitments"
-    purpose: Verify that concept deletion adheres to register commitments
-    method: If concept deletion is supported, execute a concept deletion and verify
-      that it adheres to register commitments regarding removal or marking as deleted
     type: Conformance
   - identifier: "/conf/actions/delete-concept/metadata-retention"
     name: Concept deletion metadata retention
     targets:
     - "/req/actions/delete-concept/metadata-retention"
-    purpose: Verify that concept metadata is retained during deletion
-    method: If concept deletion is supported, execute a concept deletion and verify
-      that metadata is retained and marked as deleted
     type: Conformance
 - identifier: "/conf/actions/delete-concept-version"
   name: Requirements of the delete concept version action
-  description: This conformance class defines the requirements for the delete concept
-    version action.
   target: "/req/actions/delete-concept-version"
   tests:
   - identifier: "/conf/actions/delete-concept-version/commitments"
     name: Concept version deletion commitments
     targets:
     - "/req/actions/delete-concept-version/commitments"
-    purpose: Verify that concept version deletion adheres to register commitments
-    method: If concept version deletion is supported, execute a concept version deletion
-      and verify that it adheres to register commitments regarding removal or marking
-      as deleted
     type: Conformance
   - identifier: "/conf/actions/delete-concept-version/metadata-retention"
     name: Concept version deletion metadata retention
     targets:
     - "/req/actions/delete-concept-version/metadata-retention"
-    purpose: Verify that concept version metadata is retained during deletion
-    method: If concept version deletion is supported, execute a concept version deletion
-      and verify that metadata is retained and marked as deleted
     type: Conformance
 - identifier: "/conf/actions/concept-definition"
   name: Requirements of concept definition actions
-  description: This conformance class defines the requirements for concept definition
-    actions.
   dependencies:
   - "/conf/actions/add-concept-definition"
   - "/conf/actions/add-concept-definition-version"
   target: "/req/actions/concept-definition"
 - identifier: "/conf/actions/add-concept-definition"
   name: Requirements of the concept definition addition action
-  description: This conformance class defines the requirements for the concept definition
-    addition action.
   target: "/req/actions/add-concept-definition"
   tests:
   - identifier: "/conf/actions/add-concept-definition/implementation"
     name: Concept definition addition capability
     targets:
     - "/req/actions/add-concept-definition/implementation"
-    purpose: Verify that the register can add concept definitions
-    method: Add a new concept definition to the register and verify that it is created
-      in the concept plane with proper linking to the existing concept
     type: Conformance
 - identifier: "/conf/actions/add-concept-definition-version"
   name: Requirements of the concept definition version addition action
-  description: This conformance class defines the requirements for the concept definition
-    version addition action.
   target: "/req/actions/add-concept-definition-version"
   tests:
   - identifier: "/conf/actions/add-concept-definition-version/implementation"
     name: Concept definition version addition capability
     targets:
     - "/req/actions/add-concept-definition-version/implementation"
-    purpose: Verify that the register can add concept definition versions
-    method: Add a new concept definition version and verify that it is created with
-      proper concept version association and register item class creation
     type: Conformance
 - identifier: "/conf/actions/migrate-concept-definition"
   name: Requirements of concept definition migration actions
-  description: This conformance class defines the requirements for concept definition
-    migration actions.
   target: "/req/actions/migrate-concept-definition"
   tests:
   - identifier: "/conf/actions/migrate-concept-definition/unchanged-semantics"
     name: Migration with unchanged semantics
     targets:
     - "/req/actions/migrate-concept-definition/unchanged-semantics"
-    purpose: Verify concept definition migration without semantic changes if supported
-    method: If migration is supported, migrate a concept to a new definition without
-      semantic changes and verify that concept semantics are preserved
     type: Conformance
   - identifier: "/conf/actions/migrate-concept-definition/changed-semantics"
     name: Migration with changed semantics
     targets:
     - "/req/actions/migrate-concept-definition/changed-semantics"
-    purpose: Verify concept definition migration with semantic changes if supported
-    method: If migration is supported, migrate a concept to an evolved definition
-      with semantic changes and verify that new semantics are incorporated correctly
     type: Conformance
   - identifier: "/conf/actions/migrate-concept-definition/new-semantics"
     name: New realisation through evolved definition
     targets:
     - "/req/actions/migrate-concept-definition/new-semantics"
-    purpose: Verify new concept realisation through evolved definitions if supported
-    method: If migration is supported, create new concept realisations through evolved
-      definitions and verify proper dependency on new concept definitions
     type: Conformance
 - identifier: "/conf/actions/concept-domains"
   name: Requirements of concept domain actions
-  description: This conformance class defines the requirements for concept domain
-    actions.
   target: "/req/actions/concept-domains"
   tests:
   - identifier: "/conf/actions/concept-domains/support-domain-specialisation"
     name: Concept domain specialisation support
     targets:
     - "/req/actions/concept-domains/support-domain-specialisation"
-    purpose: Verify concept domain support through specialisation if implemented
-    method: If concept domains are supported, create concept domains through specialisation
-      using required relations and verify proper concept organisation
     type: Conformance
 - identifier: "/conf/actions/concept-incorporation"
   name: Requirements of concept incorporation actions
-  description: This conformance class defines the requirements for concept incorporation
-    actions.
   target: "/req/actions/concept-incorporation"
   tests:
   - identifier: "/conf/actions/concept-incorporation/create"
     name: Incorporating concept creation
     targets:
     - "/req/actions/concept-incorporation/create"
-    purpose: Verify incorporating concept creation if supported
-    method: If concept incorporation is supported, create an incorporating concept
-      and verify that incorporated concepts are defined and requirements are reflected
-      properly
     type: Conformance
   - identifier: "/conf/actions/concept-incorporation/update"
     name: Incorporating concept updates
     targets:
     - "/req/actions/concept-incorporation/update"
-    purpose: Verify incorporating concept updates if supported
-    method: If concept incorporation is supported, update an incorporating concept
-      and verify that new concept version reflects changes to incorporated concept
-      arrangements
     type: Conformance
   - identifier: "/conf/actions/concept-incorporation/modify"
     name: Incorporated concept modifications
     targets:
     - "/req/actions/concept-incorporation/modify"
-    purpose: Verify incorporated concept modifications if supported
-    method: If concept incorporation is supported, modify an incorporated concept
-      and verify that new concept version is created with updated version references
     type: Conformance
 - identifier: "/conf/actions/concept-composition"
   name: Requirements of concept composition actions
-  description: This conformance class defines the requirements for concept composition
-    actions.
   target: "/req/actions/concept-composition"
   tests:
   - identifier: "/conf/actions/concept-composition/create"
     name: Composed concept creation
     targets:
     - "/req/actions/concept-composition/create"
-    purpose: Verify composed concept creation if supported
-    method: If concept composition is supported, create a composed concept and verify
-      that concepts and definitions for parts are created with proper linking
     type: Conformance
   - identifier: "/conf/actions/concept-composition/realise"
     name: Composed concept realisation
     targets:
     - "/req/actions/concept-composition/realise"
-    purpose: Verify composed concept realisation if supported
-    method: If concept composition is supported, realise a composed concept and verify
-      that concept versions for parts are created with associated register items
     type: Conformance
   - identifier: "/conf/actions/concept-composition/modify-part"
     name: Composed concept part modification
     targets:
     - "/req/actions/concept-composition/modify-part"
-    purpose: Verify composed concept part modification if supported
-    method: If concept composition is supported, modify composed concept parts and
-      verify that new concepts/definitions are created or concept versions contain
-      applicable parts
     type: Conformance
 - identifier: "/conf/actions/concept-inheritance"
   name: Requirements of concept inheritance actions
-  description: This conformance class defines the requirements for concept inheritance
-    actions.
   target: "/req/actions/concept-inheritance"
   tests:
   - identifier: "/conf/actions/concept-inheritance/create"
     name: Inherited concept creation
     targets:
     - "/req/actions/concept-inheritance/create"
-    purpose: Verify inherited concept creation if supported
-    method: If concept inheritance is supported, create an inherited concept and verify
-      proper relations, concept definitions, and register item class inheritance
     type: Conformance
   - identifier: "/conf/actions/concept-inheritance/realise"
     name: Inherited concept realisation
     targets:
     - "/req/actions/concept-inheritance/realise"
-    purpose: Verify inherited concept realisation if supported
-    method: If concept inheritance is supported, realise an inherited concept and
-      verify proper inheritance relations and register item inheritance
     type: Conformance
   - identifier: "/conf/actions/concept-inheritance/modify"
     name: Inherited concept definition updates
     targets:
     - "/req/actions/concept-inheritance/modify"
-    purpose: Verify inherited concept definition updates if supported
-    method: If concept inheritance is supported, modify inherited concept definitions
-      and verify new concept versions and updated inheritance relations
     type: Conformance

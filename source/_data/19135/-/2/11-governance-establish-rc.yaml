@@ -3,31 +3,16 @@ normative_statements_classes:
 - identifier: "/req/establishment-process"
   name: Requirements of the establishment process
   subject: establishment process
-  description: |
-    The establishment process creates the register with a defined purpose.
-    Any entity may establish a register.
   normative_statements:
   - identifier: "/req/establishment-process/consider-scope"
     name: Consider scope
-    statement: In establishing the register, the purpose and scope of the register
-      shall be considered.
   - identifier: "/req/establishment-process/consider-audience"
     name: Consider audience
-    statement: In establishing the register, the intended audience of the register
-      shall be considered.
   - identifier: "/req/establishment-process/consider-governance"
     name: Consider governance processes
-    statement: In establishing the register, governance processes that are applicable
-      and suitable for the register shall be considered.
   - identifier: "/req/establishment-process/consider-content"
     name: Consider content
-    statement: In establishing the register, the type of content of the register and
-      the requirements of them shall be considered.
   - identifier: "/req/establishment-process/consider-commitments"
     name: Consider commitments
-    statement: In establishing the register, the commitments that the register adheres
-      to shall be considered.
   - identifier: "/req/establishment-process/document-consider"
     name: Document considerations
-    statement: The considerations taken into account during the establishment process
-      shall be documented.

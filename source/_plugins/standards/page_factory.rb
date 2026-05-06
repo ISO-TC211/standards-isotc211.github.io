@@ -56,7 +56,7 @@ module StandardsGenerator
       ident = klass.identifier.to_s
       is_req = klass.is_a?(Modspec::NormativeStatementsClass)
 
-      render_data = model_to_hash(klass)
+      render_data = ModelSerializer.serialize(klass)
       std.field_policy.strip_from!(render_data)
 
       data = {
@@ -80,7 +80,7 @@ module StandardsGenerator
       parent_ident = parent.identifier.to_s
       is_req = item.is_a?(Modspec::NormativeStatement)
 
-      render_data = model_to_hash(item)
+      render_data = ModelSerializer.serialize(item)
       std.field_policy.strip_from!(render_data)
 
       data = {
@@ -130,63 +130,6 @@ module StandardsGenerator
       end
 
       xrefs
-    end
-
-    def model_to_hash(model)
-      case model
-      when Modspec::NormativeStatementsClass
-        {
-          'subject' => model.subject,
-          'description' => model.description,
-          'guidance' => array_or_nil(model.guidance),
-          'dependencies' => array_or_nil(model.dependencies&.map(&:to_s)),
-          'requirements' => Array(model.normative_statements).map { |ns| statement_to_hash(ns) }
-        }.compact
-      when Modspec::ConformanceClass
-        {
-          'description' => model.description,
-          'guidance' => array_or_nil(model.guidance),
-          'dependencies' => array_or_nil(model.dependencies&.map(&:to_s)),
-          'target' => model.target.to_s.empty? ? nil : model.target.to_s,
-          'tests' => Array(model.tests).map { |t| test_to_hash(t) }
-        }.compact
-      when Modspec::NormativeStatement
-        statement_to_hash(model)
-      when Modspec::ConformanceTest
-        test_to_hash(model)
-      else
-        {}
-      end
-    end
-
-    def statement_to_hash(ns)
-      {
-        'identifier_fragment' => ns.identifier.to_s.split('/').last,
-        'name' => ns.name,
-        'statement' => ns.statement,
-        'subject' => ns.subject,
-        'guidance' => array_or_nil(ns.guidance),
-        'examples' => ns.respond_to?(:examples) ? array_or_nil(ns.examples) : nil
-      }.compact
-    end
-
-    def test_to_hash(test)
-      {
-        'identifier_fragment' => test.identifier.to_s.split('/').last,
-        'name' => test.name,
-        'targets' => array_or_nil(test.targets&.map(&:to_s)),
-        'purpose' => test.purpose,
-        'method' => test.test_method,
-        'type' => test.type,
-        'description' => test.description,
-        'guidance' => array_or_nil(test.guidance),
-        'examples' => test.respond_to?(:examples) ? array_or_nil(test.examples) : nil
-      }.compact
-    end
-
-    def array_or_nil(arr)
-      return nil if arr.nil? || (arr.respond_to?(:empty?) && arr.empty?)
-      arr
     end
   end
 end

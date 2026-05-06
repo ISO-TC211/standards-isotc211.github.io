@@ -1,0 +1,86 @@
+---
+normative_statements_classes:
+- identifier: "/req/metadata-core"
+  name: Metadata core
+  subject: Metadata instance
+  normative_statements:
+  - identifier: "/req/metadata-core/basic"
+    name: Metadata basic data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/application"
+    name: Metadata application information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/identification"
+    name: Identification information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/constraints"
+    name: Constraint information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/lineage"
+    name: Lineage information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/maintenance"
+    name: Maintenance information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/spatial-representation"
+    name: Spatial representation information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/reference-system"
+    name: Reference system information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/content"
+    name: Content information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/portrayal-catalogue"
+    name: Portrayal catalogue information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/distribution"
+    name: Distribution information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/metadata-extension"
+    name: Metadata extension information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/application-schema"
+    name: Application schema information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/service-metadata"
+    name: Service metadata information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/extent"
+    name: Extent information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/citation"
+    name: Citation, responsibility and party information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/common"
+    name: Commonly used classes data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-core/multilingual"
+    name: Multilingual support data requirements
+    subject: Metadata instance
+- identifier: "/req/metadata-extend"
+  name: Metadata extensions and profiles
+  subject: Metadata scheme
+  dependencies:
+  - "/req/metadata-core"
+  normative_statements:
+  - identifier: "/req/metadata-extend/extension"
+    name: Metadata extension
+    subject: Metadata scheme
+  - identifier: "/req/metadata-extend/profile"
+    name: Metadata profile
+    subject: Metadata scheme
+- identifier: "/req/metadata-extensions"
+  name: Extensions for acquisition and processing
+  subject: Metadata instance
+  dependencies:
+  - "/req/metadata-core"
+  normative_statements:
+  - identifier: "/req/metadata-extensions/acquisition"
+    name: Acquisition information data requirements
+    subject: Metadata instance
+  - identifier: "/req/metadata-extensions/extended-lineage"
+    name: Extended lineage information data requirements
+    subject: Metadata instance
+    dependencies:
+    - "/req/metadata-core/lineage"

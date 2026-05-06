@@ -1,0 +1,36 @@
+---
+normative_statements_classes:
+- identifier: "/req/metadata-minimal-xml"
+  name: Metadata information minimum interchange
+  subject: Metadata instance
+  dependencies:
+  - "/req/metadata-xml/basic"
+  - "/req/metadata-xml/citation"
+  - "/req/metadata-xml/common"
+  - "/req/metadata-xml/identification"
+  - "/req/metadata-xml/multilingual"
+  - "/req/metadata-xml/extent"
+  - "/req/metadata-xml/service-metadata"
+  normative_statements:
+  - identifier: "/req/metadata-minimal-xml/valid"
+    name: Valid minimum metadata XML instance
+  - identifier: "/req/metadata-minimal-xml/namespaces"
+    name: Namespaces required by minimum metadata XML instance
+  - identifier: "/req/metadata-minimal-xml/root-element"
+    name: Root element of the metadata minimal instance is a MD_Metadata element
+  - identifier: "/req/metadata-minimal-xml/contact-information"
+    name: Provides contact information related to the metadata
+    dependencies:
+    - "/req/metadata-xml/citation"
+  - identifier: "/req/metadata-minimal-xml/creation-date"
+    name: Provides creation date of the metadata
+  - identifier: "/req/metadata-minimal-xml/metadata-scope"
+    name: Provides metadata scope of the metadata
+  - identifier: "/req/metadata-minimal-xml/identification"
+    name: Provides identification of the metadata
+    dependencies:
+    - "/req/metadata-xml/identification"
+  - identifier: "/req/metadata-minimal-xml/defines-abstract-classes"
+    name: Defines necessary abstract classes
+  - identifier: "/req/metadata-minimal-xml/allowed-namespaces"
+    name: Allowed namespaces of the metadata minimal instance

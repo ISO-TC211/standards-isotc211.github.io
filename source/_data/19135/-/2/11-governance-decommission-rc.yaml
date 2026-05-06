@@ -3,59 +3,11 @@ normative_statements_classes:
 - identifier: "/req/decommission-process"
   name: Requirements of the decommission process
   subject: decommission process
-  description: |
-    The decommission of a register can severely impact its users. The
-    decommission process consists of steps to minimize negative impact to
-    register users.
   normative_statements:
   - identifier: "/req/decommission-process/considerations"
     name: Consideration of the decision to decommission a register
-    statement: The register owner shall carefully consider the decision to decommission
-      a register.
-    guidance:
-    - |
-      The register owner will carefully consider the following when deciding to
-      decommission a register:
-
-      * The impact the decommissioning will have on its users and its interested
-      parties, including legal implications and contractual obligations;
-
-      * The need to offer continued availability of register content to its users,
-      including:
-
-      ** the register specification,
-      ** metadata of the register,
-      ** register item class definitions,
-      ** register items,
-      ** metadata and identifiers of register items;
-
-      * Recourse for its users and interested parties, including any plan to offer
-      existing register content through another register or another entity;
-
-      * Whether the register should be archived, in case that the register may be
-      reactivated in the future or deleted, with no possibility for reactivation.
   - identifier: "/req/decommission-process/document-information"
     name: Documentation of the decision and information relevant to the decommissioning
       of the register
-    statement: The register owner shall document the decision and information relevant
-      to the decommissioning of a register.
-    guidance:
-    - |
-      When a decision by the register owner is made to decommission a register, the
-      following information should be documented as needed:
-
-      * justification of the decision to decommission the register;
-
-      * if the register is decommissioned as an archive for future reactivation,
-      instructions on how to reactivate the register;
-
-      * steps for information discovery in case of legal or regulatory needs or
-      contractual obligations;
-
-      * if recourse for its users and interested parties exists, instructions for
-      accessing the register's content.
   - identifier: "/req/decommission-process/inform-interested-parties"
     name: Notification of interested parties about decommissioning of the register
-    statement: The register owner shall inform the interested parties of the register,
-      including its users, about the decommission of the register and any available
-      recourse.
