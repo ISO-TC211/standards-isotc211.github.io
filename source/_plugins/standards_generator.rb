@@ -41,6 +41,32 @@ module StandardsGenerator
         end
       end
 
+      # Phase 2: placeholder standards from tc211_standards.yaml inventory
+      tc211_path = File.join(site.source, "_data", "tc211_standards.yaml")
+      if File.exist?(tc211_path)
+        tc211_entries = YAML.safe_load_file(tc211_path, permitted_classes: [Symbol]) || []
+        known_labels = catalog.map { |e| e["label"] }.to_set
+
+        tc211_entries.each do |entry|
+          next if known_labels.include?(entry["reference"])
+
+          factory.create_placeholder_page(entry)
+
+          std_key = entry["part"] ? "#{entry['number']}-#{entry['part']}" : entry["number"]
+          catalog << {
+            "number" => std_key,
+            "label" => entry["reference"],
+            "subtitle" => entry["title"],
+            "url" => "/#{std_key}/",
+            "edition" => entry["edition"],
+            "req_count" => 0,
+            "conf_count" => 0,
+            "populated" => false,
+            "iso_standard_url" => "https://www.iso.org/standard/#{entry['iso_id']}.html"
+          }
+        end
+      end
+
       site.data['standards_catalog'] = catalog.sort_by { |e| e['number'] }
     end
 
@@ -61,6 +87,7 @@ module StandardsGenerator
       }
       entry['iso_standard_url'] = std.iso_standard_url if std.iso_standard_url
       entry['iso_preview_url'] = std.iso_preview_url if std.iso_preview_url
+      entry['populated'] = req_count > 0 || conf_count > 0
 
       first_rc = classes.find { |k| k.is_a?(Modspec::NormativeStatementsClass) && Array(k.normative_statements).any? }
       first_cc = classes.find { |k| k.is_a?(Modspec::ConformanceClass) }
