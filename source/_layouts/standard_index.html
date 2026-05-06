@@ -44,6 +44,8 @@ layout: default
     {% endif %}
   </div>
 
+  {% if page.req_classes.size > 0 or page.conf_classes.size > 0 %}
+
   <!-- Requirements Classes -->
   <section class="standard-section" id="req-section">
     <h2 class="standard-section__title">
@@ -95,6 +97,23 @@ layout: default
       {% endfor %}
     </div>
   </section>
+
+  {% else %}
+  <div class="documentation">
+    <div class="standard-notice">
+      <h2>Awaiting Machine-Readable Data</h2>
+      <p>
+        This ISO/TC 211 standard does not yet have machine-readable requirements
+        or conformance classes available on this site.
+      </p>
+      <p>
+        Standards authors are invited to contribute requirements and conformance
+        data in the YAML format described in
+        <a href="https://github.com/ISO-TC211/standards.isotc211.org/blob/main/README.adoc">README.adoc</a>.
+      </p>
+    </div>
+  </div>
+  {% endif %}
 </div>
 
 <script>

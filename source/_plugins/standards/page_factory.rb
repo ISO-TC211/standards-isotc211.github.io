@@ -22,6 +22,28 @@ module StandardsGenerator
       @site.pages << page
     end
 
+    def create_placeholder_page(entry)
+      std_key = entry["part"] ? "#{entry['number']}-#{entry['part']}" : entry["number"]
+
+      data = {
+        "layout" => "standard_index",
+        "title" => entry["title"],
+        "standard_number" => std_key,
+        "page_path" => std_key,
+        "description" => "This standard does not yet have machine-readable requirements " \
+                         "or conformance data on this site.",
+        "uri_base" => "#{entry['number']}/-#{entry['part'] || ''}/#{entry['edition']}/",
+        "req_classes" => [],
+        "conf_classes" => [],
+        "iso_standard_url" => "https://www.iso.org/standard/#{entry['iso_id']}.html"
+      }
+
+      page = Jekyll::PageWithoutAFile.new(@site, @site.source, "", "#{std_key}/index.html")
+      page.data = data
+      page.content = ""
+      @site.pages << page
+    end
+
     def create_standard_index_page(std, classes)
       req_classes = classes.select { |k| k.is_a?(Modspec::NormativeStatementsClass) }.map do |k|
         { 'identifier' => k.identifier.to_s, 'name' => k.name }
