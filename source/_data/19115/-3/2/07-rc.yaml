@@ -1,0 +1,58 @@
+---
+normative_statements_classes:
+- identifier: "/req/metadata-minimal-xml"
+  name: Metadata information minimum interchange
+  subject: Metadata instance
+  guidance:
+  - If the scope of the metadata is equal to "dataset", the xref:https://standards.isotc211.org/19115/-1/1/req/metadata-xml/extent[style=modspec%]
+    requirements class applies.
+  - If the scope of the metadata is equal to "service", the xref:https://standards.isotc211.org/19115/-1/1/req/metadata-xml/service-metadata[style=modspec%]
+    requirements class applies.
+  dependencies:
+  - "/req/metadata-xml/basic"
+  - "/req/metadata-xml/citation"
+  - "/req/metadata-xml/common"
+  - "/req/metadata-xml/identification"
+  - "/req/metadata-xml/multilingual"
+  - "/req/metadata-xml/extent"
+  - "/req/metadata-xml/service-metadata"
+  normative_statements:
+  - identifier: "/req/metadata-minimal-xml/valid"
+    name: Valid minimum metadata XML instance
+  - identifier: "/req/metadata-minimal-xml/namespaces"
+    name: Namespaces required by minimum metadata XML instance
+    guidance:
+    - If the scope of the metadata is equal to `dataset`, the xref:https://standards.isotc211.org/19115/-1/1/req/metadata-xml/extent[style=modspec%]
+      requirements class applies, which requires importing the `gex` namespace.
+    - If the scope of the metadata is equal to `service`, the xref:https://standards.isotc211.org/19115/-1/1/req/metadata-xml/service-metadata[style=modspec%]
+      requirements class applies, which requires importing the `srv` namespace.
+    - The `mdb` namespace is needed for the definition of MD_Metadata.
+    - The `mcc` namespace is needed for the definition of MD_MetadataScope.
+    - The `mri` namespace is needed for the definition of MD_Identification.
+    - The `gco` namespace is needed for the definition of CharacterString.
+    - The `lan` namespace is needed for the definition of PT_Locale.
+    - The `cit` namespace is needed for the definition of CI_Citation, CI_Date.
+    - The `gex` namespace is needed for the definition of EX_GeographicBoundingBox,
+      EX_GeographicDescription.
+    - The `srv` namespace is needed for the definition of SV_ServiceIdentification.
+  - identifier: "/req/metadata-minimal-xml/root-element"
+    name: Root element of the metadata minimal instance is a MD_Metadata element
+  - identifier: "/req/metadata-minimal-xml/contact-information"
+    name: Provides contact information related to the metadata
+    dependencies:
+    - "/req/metadata-xml/citation"
+  - identifier: "/req/metadata-minimal-xml/creation-date"
+    name: Provides creation date of the metadata
+  - identifier: "/req/metadata-minimal-xml/metadata-scope"
+    name: Provides metadata scope of the metadata
+  - identifier: "/req/metadata-minimal-xml/identification"
+    name: Provides identification of the metadata
+    dependencies:
+    - "/req/metadata-xml/identification"
+  - identifier: "/req/metadata-minimal-xml/defines-abstract-classes"
+    name: Defines necessary abstract classes
+    guidance:
+    - While these classes do not appear in instance documents, the `mcc` namespace
+      schema needs to be imported to validate documents.
+  - identifier: "/req/metadata-minimal-xml/allowed-namespaces"
+    name: Allowed namespaces of the metadata minimal instance

@@ -1,0 +1,505 @@
+---
+conformance_classes:
+- identifier: "/conf/metadata-xml/application"
+  name: Validation of XML instance for metadata application information
+  target: "/req/metadata-xml/application"
+  dependencies:
+  - "/conf/extended-types-xml"
+  - "/conf/extended-metadata-xml"
+  tests:
+  - identifier: "/conf/metadata-xml/application/valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/application/valid"
+    type: Validation
+- identifier: "/conf/metadata-xml/basic"
+  name: Validation of XML instance for metadata basic information
+  target: "/req/metadata-xml/basic"
+  dependencies:
+  - "/conf/metadata-minimal-xml"
+  - "/conf/metadata-xml/common"
+  - "/conf/metadata-xml/multilingual"
+  tests:
+  - identifier: "/conf/metadata-xml/basic/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/basic/valid"
+  - identifier: "/conf/metadata-xml/basic/identification"
+    name: Verify presence of identification information
+    targets:
+    - "/req/metadata-xml/basic/identification"
+  - identifier: "/conf/metadata-xml/basic/parent-metadata"
+    name: Verify identification information exists of upper-level object if exists
+    targets:
+    - "/req/metadata-xml/basic/parent-metadata"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/basic/language"
+    name: Verify presence of language information
+    targets:
+    - "/req/metadata-xml/basic/language"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/basic/character-encoding"
+    name: Verify presence of character encoding information
+    targets:
+    - "/req/metadata-xml/basic/character-encoding"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/basic/metadata-scope-name"
+    name: Verify presence of metadata scope name
+    targets:
+    - "/req/metadata-xml/basic/metadata-scope-name"
+- identifier: "/conf/metadata-xml/identification"
+  name: Validation of XML instance for identification information
+  target: "/req/metadata-xml/identification"
+  dependencies:
+  - "/conf/metadata-minimal-xml"
+  - "/conf/metadata-xml/common"
+  - "/conf/metadata-xml/citation"
+  - "/conf/gml-wrapper-xml"
+  tests:
+  - identifier: "/conf/metadata-xml/identification/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/identification/valid"
+  - identifier: "/conf/metadata-xml/identification/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/identification/topic-category"
+    - "/req/metadata-xml/identification/associated-resource"
+  - identifier: "/conf/metadata-xml/identification/citation"
+    name: Check MD_Identification property "citation"
+    targets:
+    - "/req/metadata-xml/identification/citation"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/identification/abstract"
+    name: Validate presence of MD_Identification property "abstract"
+    targets:
+    - "/req/metadata-xml/identification/abstract"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/identification/representative-fraction-denominator"
+    name: Validate value of MD_RepresentativeFraction property "denominator"
+    targets:
+    - "/req/metadata-xml/identification/representative-fraction-denominator"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/constraints"
+  name: Validation of XML instance for constraint information
+  target: "/req/metadata-xml/constraints"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/constraints/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/constraints/valid"
+  - identifier: "/conf/metadata-xml/constraints/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/constraints/legal-constraints"
+    - "/req/metadata-xml/constraints/other-restrictions"
+    - "/req/metadata-xml/constraints/releasability"
+- identifier: "/conf/metadata-xml/lineage"
+  name: Validation of XML instance for resource lineage information
+  target: "/req/metadata-xml/lineage"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  - "/conf/gml-wrapper-xml"
+  - "/conf/metadata-extensions/extended-lineage"
+  tests:
+  - identifier: "/conf/metadata-xml/lineage/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/lineage/valid"
+  - identifier: "/conf/metadata-xml/lineage/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/lineage/lineage-content"
+    - "/req/metadata-xml/lineage/source"
+- identifier: "/conf/metadata-xml/maintenance"
+  name: Validation of XML instance for maintenance information
+  target: "/req/metadata-xml/maintenance"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/maintenance/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/maintenance/valid"
+  - identifier: "/conf/metadata-xml/maintenance/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/maintenance/frequency"
+- identifier: "/conf/metadata-xml/spatial-representation"
+  name: Validation of XML instance for spatial representation information
+  target: "/req/metadata-xml/spatial-representation"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  - "/conf/gml-wrapper-xml"
+  tests:
+  - identifier: "/conf/metadata-xml/spatial-representation/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/spatial-representation/valid"
+  - identifier: "/conf/metadata-xml/spatial-representation/georectified-check-point-description-value"
+    name: Validate MD_Georectified instances with "checkPointAvailability" property
+      provides description
+    targets:
+    - "/req/metadata-xml/spatial-representation/georectified-check-point-description-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/spatial-representation/geometric-object-count-value"
+    name: Validate value of MD_GeometricObjects property "geometricObjectsCount"
+    targets:
+    - "/req/metadata-xml/spatial-representation/geometric-object-count-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/reference-system"
+  name: Validation of XML instance for reference system information
+  target: "/req/metadata-xml/reference-system"
+  dependencies:
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/reference-system/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/reference-system/valid"
+  - identifier: "/conf/metadata-xml/reference-system/identifier"
+    name: Valid MD_ReferenceSystem with identification properties
+    targets:
+    - "/req/metadata-xml/reference-system/identifier"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/reference-system/coordinate-epoch"
+    name: Valid MD_ReferenceSystem with property "crs"
+    targets:
+    - "/req/metadata-xml/reference-system/coordinate-epoch"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/content"
+  name: Validation of XML instance for content information
+  target: "/req/metadata-xml/content"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  - "/conf/metadata-xml/multilingual"
+  - "/conf/gml-wrapper-xml"
+  tests:
+  - identifier: "/conf/metadata-xml/content/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/content/valid"
+  - identifier: "/conf/metadata-xml/content/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/content/inline-feature-catalogue"
+    - "/req/metadata-xml/content/dimension-units"
+    - "/req/metadata-xml/content/feature-catalogue"
+    guidance: 'This automated conformance test satisfies multiple requirements.
+
+      '
+  - identifier: "/conf/metadata-xml/content/feature-catalogue"
+    name: Validate feature catalogue identification
+    targets:
+    - "/req/metadata-xml/content/feature-catalogue"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/content/image-illumination-elevation-angle-value"
+    name: Value of MD_ImageDescription property "illuminationElevationAngle"
+    targets:
+    - "/req/metadata-xml/content/image-illumination-elevation-angle-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/content/image-illumination-azimuth-angle-value"
+    name: Value of MD_ImageDescription property "illuminationAzimuthAngle"
+    targets:
+    - "/req/metadata-xml/content/image-illumination-azimuth-angle-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/content/image-cloud-cover-percent-value"
+    name: Value of MD_ImageDescription property "cloudCoverPercent"
+    targets:
+    - "/req/metadata-xml/content/image-cloud-cover-percent-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/content/band-units-value"
+    name: Validate MD_Band property "units" value
+    targets:
+    - "/req/metadata-xml/content/band-units-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/content/feature-type-instance-count"
+    name: Validate MD_FeatureTypeInfo property "featureInstanceCount" value
+    targets:
+    - "/req/metadata-xml/content/feature-type-instance-count"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/portrayal-catalogue"
+  name: Validation of XML instance for portrayal catalogue information
+  target: "/req/metadata-xml/portrayal-catalogue"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/portrayal-catalogue/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/portrayal-catalogue/valid"
+- identifier: "/conf/metadata-xml/distribution"
+  name: Validation of XML instance for distribution information
+  target: "/req/metadata-xml/distribution"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/distribution/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/distribution/valid"
+  - identifier: "/conf/metadata-xml/distribution/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/distribution/density-units"
+  - identifier: "/conf/metadata-xml/distribution/transfer-option-size-value"
+    name: Validate transferSize value of MD_DigitalTransferOption
+    targets:
+    - "/req/metadata-xml/distribution/transfer-option-size-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/distribution/density-value"
+    name: Validate MD_Medium density value
+    targets:
+    - "/req/metadata-xml/distribution/density-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/distribution/volumes-value"
+    name: Valid MD_Medium volumes value
+    targets:
+    - "/req/metadata-xml/distribution/volumes-value"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/metadata-extension"
+  name: Validation of XML instance for metadata extension information
+  target: "/req/metadata-xml/metadata-extension"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/metadata-extension/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/metadata-extension/valid"
+  - identifier: "/conf/metadata-xml/metadata-extension/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/metadata-extension/cardinality"
+    - "/req/metadata-xml/metadata-extension/conditional-condition"
+    - "/req/metadata-xml/metadata-extension/code-mandatory"
+    - "/req/metadata-xml/metadata-extension/conceptname-mandatory"
+    - "/req/metadata-xml/metadata-extension/name-proscribed"
+- identifier: "/conf/metadata-xml/application-schema"
+  name: Validation of XML instance for application schema information
+  target: "/req/metadata-xml/application-schema"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/application-schema/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/application-schema/valid"
+- identifier: "/conf/metadata-xml/service-metadata"
+  name: Validation of XML instance for service metadata information
+  target: "/req/metadata-xml/service-metadata"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  - "/conf/metadata-xml/distribution"
+  tests:
+  - identifier: "/conf/metadata-xml/service-metadata/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/service-metadata/valid"
+  - identifier: "/conf/metadata-xml/service-metadata/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/service-metadata/service-keyword"
+    - "/req/metadata-xml/service-metadata/chain-or-operation"
+    - "/req/metadata-xml/service-metadata/coupled-resource-exists"
+    - "/req/metadata-xml/service-metadata/operated-or-operates-on"
+    - "/req/metadata-xml/service-metadata/coupled-resource-defined"
+    - "/req/metadata-xml/service-metadata/coupled-resource-linkage"
+    - "/req/metadata-xml/service-metadata/service-type"
+- identifier: "/conf/metadata-xml/extent"
+  name: Validation of XML instance for extent information
+  target: "/req/metadata-xml/extent"
+  dependencies:
+  - "/conf/metadata-xml/common"
+  - "/conf/gml-wrapper-xml"
+  tests:
+  - identifier: "/conf/metadata-xml/geospatial-extent/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/extent/valid"
+  - identifier: "/conf/metadata-xml/geospatial-extent/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/extent/value-required"
+    - "/req/metadata-xml/extent/vertical-crs"
+  - identifier: "/conf/metadata-xml/extent/geographic-bounding-box"
+    name: Validate values of EX_GeographicBoundingBox
+    targets:
+    - "/req/metadata-xml/extent/geographic-bounding-box"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/citation"
+  name: Validation of XML instance for citation, responsibility and party information
+  target: "/req/metadata-xml/citation"
+  dependencies:
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/citation/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/citation/valid"
+  - identifier: "/conf/metadata-xml/citation/schematron-rules"
+    name: Validate with Schematron
+    targets:
+    - "/req/metadata-xml/citation/individual-name"
+    - "/req/metadata-xml/citation/organisation-name"
+  - identifier: "/conf/metadata-xml/citation/online-resource"
+    name: Valid values of CI_OnlineResource
+    targets:
+    - "/req/metadata-xml/citation/online-resource"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/common"
+  name: Validation of XML instance for common classes
+  target: "/req/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/common/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/common/valid"
+- identifier: "/conf/metadata-xml/multilingual"
+  name: Validation of XML instance for multilingual support (language localization)
+  target: "/req/metadata-xml/multilingual"
+  tests:
+  - identifier: "/conf/metadata-xml/multilingual/schema-valid"
+    name: Validate with XSD
+    targets:
+    - "/req/metadata-xml/multilingual/valid"
+  - identifier: "/conf/metadata-xml/multilingual/language-code"
+    name: Language code from ISO 639-2
+    targets:
+    - "/req/metadata-xml/multilingual/language-code"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/multilingual/country-code"
+    name: Country code from ISO 3166-1
+    targets:
+    - "/req/metadata-xml/multilingual/country-code"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+  - identifier: "/conf/metadata-xml/multilingual/character-set-code"
+    name: Character set code from IANA charset register
+    targets:
+    - "/req/metadata-xml/multilingual/character-set-code"
+    guidance:
+    - Automated code can be constructed to implement this conformance test.
+- identifier: "/conf/metadata-xml/acquisition"
+  name: XML implementation of acquisition information
+  target: "/req/metadata-xml/acquisition"
+  dependencies:
+  - "/conf/metadata-xml/citation"
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/metadata-xml/acquisition/schema-valid"
+    name: Valid acquisition encoding
+    targets:
+    - "/req/metadata-xml/acquisition/valid"
+    dependencies:
+    - "/req/gml-wrapper-xml"
+- identifier: "/conf/valid-instance"
+  name: Validation of the XML instance.
+  target: "/req/valid-instance"
+  tests:
+  - identifier: "/conf/valid-instance/xsd"
+    name: Verify through XSD
+    targets:
+    - "/req/valid-instance/xsd"
+    type: Conformance
+  - identifier: "/conf/valid-instance/schematron"
+    name: Verify through Schematron
+    targets:
+    - "/req/valid-instance/schematron"
+    type: Conformance
+- identifier: "/conf/extended-types-xml"
+  name: XML package for Base Types Extended
+  target: "/req/extended-types-xml"
+  dependencies:
+  - "/conf/metadata-xml/common"
+  tests:
+  - identifier: "/conf/extended-types-xml/schema-valid"
+    name: Validate against gcx.xsd
+    targets:
+    - "/req/extended-types-xml/valid"
+- identifier: "/conf/gml-wrapper-xml"
+  name: XML package for GML Wrapper
+  target: "/req/gml-wrapper-xml"
+  dependencies:
+  - "/conf/metadata-xml/basic"
+  tests:
+  - identifier: "/conf/gml-wrapper-xml/schema-valid"
+    name: Validate against gmw.xsd
+    targets:
+    - "/req/gml-wrapper-xml/valid"
+- identifier: "/conf/extended-metadata-xml"
+  name: Validation of XML metadata instance with extended content model
+  target: "/req/extended-metadata-xml"
+  dependencies:
+  - "/conf/metadata-minimal-xml"
+  - "/conf/metadata-xml/metadata-extension"
+  tests:
+  - identifier: "/conf/extended-metadata-xml/schema-valid"
+    name: Validate using Schematron
+    targets:
+    - "/req/extended-metadata-xml/valid"
+    type: Validation
+  - identifier: "/conf/extended-metadata-xml/new-section"
+    name: Check extension elements namespaces
+    targets:
+    - "/req/extended-metadata-xml/new-section"
+    type: Validation
+  - identifier: "/conf/extended-metadata-xml/validation"
+    name: Check whether XML instance can be validated
+    targets:
+    - "/req/extended-metadata-xml/validation"
+    type: Validation
+  - identifier: "/conf/extended-metadata-xml/new-codelist"
+    name: Check codelists implementation
+    targets:
+    - "/req/extended-metadata-xml/new-codelist"
+    type: Validation
+  - identifier: "/conf/extended-metadata-xml/new-element"
+    name: Confirm new elements being subclasses
+    targets:
+    - "/req/extended-metadata-xml/new-element"
+    type: Validation
+  - identifier: "/conf/extended-metadata-xml/iso-type"
+    name: Check `isoType` attribute
+    targets:
+    - "/req/extended-metadata-xml/iso-type"
+    type: Validation
+  - identifier: "/conf/extended-metadata-xml/extension-by-restriction"
+    name: Verify validation process for profile restrictions
+    targets:
+    - "/req/extended-metadata-xml/extension-by-restriction"
+    type: Validation

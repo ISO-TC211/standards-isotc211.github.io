@@ -1,0 +1,11 @@
+title: "ISO 19115-3:2023 Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts"
+label: "ISO 19115-3:2023"
+subtitle: "Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts"
+edition: 2
+description: >
+  ISO 19115-3:2023 defines XML schema implementations of metadata elements
+  for geographic information, including requirements for XML encoding of
+  metadata concepts defined in ISO 19115-1 and ISO 19115-2.
+hide_fields: [statement, description, purpose, method]
+iso_standard_url: https://www.iso.org/standard/80874.html
+iso_preview_url: https://www.iso.org/obp/ui/en/#iso:std:iso:19115:-3:ed-2:v1:en

@@ -1,0 +1,318 @@
+---
+normative_statements_classes:
+- identifier: "/req/metadata-xml/application"
+  name: XML implementation of metadata application information
+  normative_statements:
+  - identifier: "/req/metadata-xml/application/valid"
+    name: Valid metadata application instance
+    dependencies:
+    - "/req/metadata-xml/metadata-extension"
+- identifier: "/req/metadata-xml/basic"
+  name: XML implementation of metadata basic information
+  normative_statements:
+  - identifier: "/req/metadata-xml/basic/valid"
+    name: Valid metadata basic instance
+    dependencies:
+    - "/req/metadata-xml/common"
+    - "/req/metadata-xml/multilingual"
+  - identifier: "/req/metadata-xml/basic/identification"
+    name: Identification of metadata base instance
+  - identifier: "/req/metadata-xml/basic/parent-metadata"
+    name: Identification of upper-level object if exists
+  - identifier: "/req/metadata-xml/basic/language"
+    name: Language of metadata base instance
+  - identifier: "/req/metadata-xml/basic/character-encoding"
+    name: Character encoding of metadata base instance
+  - identifier: "/req/metadata-xml/basic/metadata-scope-name"
+    name: Scope name of metadata base instance
+- identifier: "/req/metadata-xml/identification"
+  name: XML implementation of identification information
+  normative_statements:
+  - identifier: "/req/metadata-xml/identification/valid"
+    name: Valid identification instance
+    guidance:
+    - If the resource described by a metadata instance contains textual information,
+      then a value should be provided for `MD_DataIdentification.defaultLocale`.
+    dependencies:
+    - "/req/metadata-xml/common"
+    - "/req/metadata-xml/citation"
+    - "/req/gml-wrapper-xml"
+  - identifier: "/req/metadata-xml/identification/citation"
+    name: Title of resource identification instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+  - identifier: "/req/metadata-xml/identification/abstract"
+    name: Abstract of resource identification instance
+  - identifier: "/req/metadata-xml/identification/dataset-extent"
+    name: Provides geographic extent of dataset
+  - identifier: "/req/metadata-xml/identification/topic-category"
+    name: Topic category of resource identification instance
+  - identifier: "/req/metadata-xml/identification/associated-resource"
+    name: Associated resource of resource identification instance
+  - identifier: "/req/metadata-xml/identification/representative-fraction-denominator"
+    name: Value of MD_RepresentativeFraction property "denominator"
+- identifier: "/req/metadata-xml/constraints"
+  name: XML implementation of constraint information
+  normative_statements:
+  - identifier: "/req/metadata-xml/constraints/valid"
+    name: Valid constraint instance
+    dependencies:
+    - "/req/metadata-xml/common"
+    - "/req/metadata-xml/citation"
+  - identifier: "/req/metadata-xml/constraints/legal-constraints"
+    name: Legal constraints of constraints instance
+  - identifier: "/req/metadata-xml/constraints/other-restrictions"
+    name: Other restrictions of constraints instance
+  - identifier: "/req/metadata-xml/constraints/releasability"
+    name: Releasability of constraints instance
+- identifier: "/req/metadata-xml/lineage"
+  name: XML implementation of resource lineage information
+  normative_statements:
+  - identifier: "/req/metadata-xml/lineage/valid"
+    name: Valid application schema instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+    - "/req/gml-wrapper-xml"
+  - identifier: "/req/metadata-xml/lineage/lineage-content"
+    name: Lineage content of lineage instance
+  - identifier: "/req/metadata-xml/lineage/source"
+    name: Source of lineage instance
+- identifier: "/req/metadata-xml/maintenance"
+  name: XML implementation of maintenance information
+  normative_statements:
+  - identifier: "/req/metadata-xml/maintenance/valid"
+    name: Valid maintenance information instance
+  - identifier: "/req/metadata-xml/maintenance/frequency"
+    name: Frequency of maintenance information instance
+- identifier: "/req/metadata-xml/spatial-representation"
+  name: XML implementation of spatial representation information
+  normative_statements:
+  - identifier: "/req/metadata-xml/spatial-representation/valid"
+    name: Valid spatial representation instance
+    guidance:
+    - If the "checkPointAvailability" property has a value of "true" (1), then a value
+      should be provided for the 'checkPointDescription' property.
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+    - "/req/gml-wrapper-xml"
+  - identifier: "/req/metadata-xml/spatial-representation/georectified-check-point-description-value"
+    name: MD_Georectified with "checkPointAvailability" property provides description
+  - identifier: "/req/metadata-xml/spatial-representation/geometric-object-count-value"
+    name: Valid value for MD_GeometricObjects property "geometricObjectsCount"
+- identifier: "/req/metadata-xml/reference-system"
+  name: XML implementation of reference system information
+  normative_statements:
+  - identifier: "/req/metadata-xml/reference-system/valid"
+    name: Valid application schema instance
+    dependencies:
+    - "/req/metadata-xml/common"
+  - identifier: "/req/metadata-xml/reference-system/identifier"
+    name: Valid MD_ReferenceSystem with identification properties
+    guidance: The property of "crs" was introduced in <<ISO_19115-1_2014_Amd2,clause="6.5.8">>.
+  - identifier: "/req/metadata-xml/reference-system/coordinate-epoch"
+    name: Valid MD_ReferenceSystem with property "crs" and CRS is dynamic
+    guidance: The property of "coordinateEpoch" was introduced in <<ISO_19115-1_2014_Amd2,clause="6.5.8">>.
+- identifier: "/req/metadata-xml/content"
+  name: XML implementation of content information
+  normative_statements:
+  - identifier: "/req/metadata-xml/content/valid"
+    name: Valid content instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+    - "/req/metadata-xml/multilingual"
+    - "/req/gml-wrapper-xml"
+  - identifier: "/req/metadata-xml/content/feature-catalogue"
+    name: Feature catalogue of resource content instance
+  - identifier: "/req/metadata-xml/content/inline-feature-catalogue"
+    name: Inline feature catalogue of resource content instance
+  - identifier: "/req/metadata-xml/content/image-illumination-elevation-angle-value"
+    name: Value of MD_ImageDescription property "illuminationElevationAngle"
+  - identifier: "/req/metadata-xml/content/image-illumination-azimuth-angle-value"
+    name: Value of MD_ImageDescription property "illuminationAzimuthAngle"
+  - identifier: "/req/metadata-xml/content/image-cloud-cover-percent-value"
+    name: Value of MD_ImageDescription property "cloudCoverPercent"
+  - identifier: "/req/metadata-xml/content/dimension-units"
+    name: Value of MD_SampleDimension property "units"
+  - identifier: "/req/metadata-xml/content/band-units-value"
+    name: Value of MD_Band property "units"
+    guidance:
+    - UomLength is described in <<ISO_19103_2015>>.
+  - identifier: "/req/metadata-xml/content/feature-type-instance-count"
+    name: Value of MD_FeatureTypeInfo property "featureInstanceCount"
+- identifier: "/req/metadata-xml/portrayal-catalogue"
+  name: XML implementation of portrayal catalogue information
+  normative_statements:
+  - identifier: "/req/metadata-xml/portrayal-catalogue/valid"
+    name: Valid portrayal catalogue instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+- identifier: "/req/metadata-xml/distribution"
+  name: XML implementation of distribution information
+  normative_statements:
+  - identifier: "/req/metadata-xml/distribution/valid"
+    name: Valid distribution instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+    - "/req/metadata-xml/extent"
+    - "/req/gml-wrapper-xml"
+  - identifier: "/req/metadata-xml/distribution/density-units"
+    name: Existence of MD_Medium densityUnits if density property is present
+  - identifier: "/req/metadata-xml/distribution/transfer-option-size-value"
+    name: Valid transferSize value of MD_DigitalTransferOption
+  - identifier: "/req/metadata-xml/distribution/density-value"
+    name: Valid MD_Medium density value
+  - identifier: "/req/metadata-xml/distribution/volumes-value"
+    name: Valid MD_Medium volumes value
+- identifier: "/req/metadata-xml/metadata-extension"
+  name: XML implementation of metadata extension information
+  normative_statements:
+  - identifier: "/req/metadata-xml/metadata-extension/valid"
+    name: Valid application schema instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+  - identifier: "/req/metadata-xml/metadata-extension/cardinality"
+    name: Cardinality of metadata extension instance
+  - identifier: "/req/metadata-xml/metadata-extension/conditional-condition"
+    name: Conditional condition of metadata extension instance
+  - identifier: "/req/metadata-xml/metadata-extension/code-mandatory"
+    name: Mandatory code of metadata extension instance
+  - identifier: "/req/metadata-xml/metadata-extension/conceptname-mandatory"
+    name: Concept name of metadata extension instance
+  - identifier: "/req/metadata-xml/metadata-extension/name-proscribed"
+    name: Proscribed name of metadata extension instance
+- identifier: "/req/metadata-xml/application-schema"
+  name: XML implementation of application schema information
+  normative_statements:
+  - identifier: "/req/metadata-xml/application-schema/valid"
+    name: Valid application schema instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/common"
+- identifier: "/req/metadata-xml/service-metadata"
+  name: XML implementation of service metadata information
+  guidance:
+  - |
+    If the value of
+    `MD_Metadata.metadataScope.MD_MetadataScope.resourceScope.MD_ScopeCode`
+    property is equal to "service", then one instance of `MD_Keyword` should
+    have a "keyword" property value that is a term from the service taxonomy
+    defined in <<ISO19119>>.
+  normative_statements:
+  - identifier: "/req/metadata-xml/service-metadata/valid"
+    name: Valid service metadata instance
+    dependencies:
+    - "/req/metadata-xml/citation"
+    - "/req/metadata-xml/identification"
+    - "/req/metadata-xml/distribution"
+  - identifier: "/req/metadata-xml/service-metadata/chain-or-operation"
+    name: Chain or operation of service metadata instance
+  - identifier: "/req/metadata-xml/service-metadata/coupled-resource-exists"
+    name: Coupling type of service metadata instance
+  - identifier: "/req/metadata-xml/service-metadata/operated-or-operates-on"
+    name: Operation state of service metadata instance
+  - identifier: "/req/metadata-xml/service-metadata/coupled-resource-defined"
+    name: Coupled resource definition of service metadata instance
+  - identifier: "/req/metadata-xml/service-metadata/coupled-resource-linkage"
+    name: Coupled resource linkage of service metadata instance
+  - identifier: "/req/metadata-xml/service-metadata/service-type"
+    name: Provides service type
+- identifier: "/req/metadata-xml/extent"
+  name: XML implementation of extent information
+  normative_statements:
+  - identifier: "/req/metadata-xml/extent/valid"
+    name: Valid geospatial extent instance
+    dependencies:
+    - "/req/gml-wrapper-xml"
+  - identifier: "/req/metadata-xml/extent/value-required"
+    name: Value required of geospatial extent instance
+  - identifier: "/req/metadata-xml/extent/geographic-bounding-box"
+    name: Values of EX_GeographicBoundingBox are valid
+  - identifier: "/req/metadata-xml/extent/vertical-crs"
+    name: Vertical CRS presence in geospatial extent instance
+- identifier: "/req/metadata-xml/citation"
+  name: XML implementation of citation, responsibility and party information
+  dependencies:
+  - "/req/metadata-xml/common"
+  normative_statements:
+  - identifier: "/req/metadata-xml/citation/valid"
+    name: Valid citation encoding
+  - identifier: "/req/metadata-xml/citation/individual-name"
+    name: Valid values of CI_Individual
+  - identifier: "/req/metadata-xml/citation/organisation-name"
+    name: Valid values of CI_Organisation
+  - identifier: "/req/metadata-xml/citation/online-resource"
+    name: Valid values of CI_OnlineResource
+- identifier: "/req/metadata-xml/common"
+  name: XML implementation of common classes
+  guidance:
+  - |
+    There is a circular dependency between the citation and common classes
+    packages, but because of the policy that the implementation package should
+    match the base abstract schema (<<ISO_19115-1_2014>>) packaging, these are
+    implemented as separate namespaces.
+  normative_statements:
+  - identifier: "/req/metadata-xml/common/valid"
+    name: Valid common classes encoding
+- identifier: "/req/metadata-xml/multilingual"
+  name: XML implementation of multilingual support (language localization)
+  normative_statements:
+  - identifier: "/req/metadata-xml/multilingual/valid"
+    name: Valid multilingual encoding
+    dependencies:
+    - "/req/metadata-xml/citation"
+  - identifier: "/req/metadata-xml/multilingual/language-code"
+    name: Language code from ISO 639-2
+  - identifier: "/req/metadata-xml/multilingual/country-code"
+    name: Country code from ISO 3166-1
+  - identifier: "/req/metadata-xml/multilingual/character-set-code"
+    name: Character set code from IANA charset register
+- identifier: "/req/metadata-xml/acquisition"
+  name: XML implementation of acquisition information
+  normative_statements:
+  - identifier: "/req/metadata-xml/acquisition/valid"
+    name: Valid acquisition encoding
+    dependencies:
+    - "/req/gml-wrapper-xml"
+- identifier: "/req/valid-instance"
+  name: Validity of XML instance documents
+  normative_statements:
+  - identifier: "/req/valid-instance/xsd"
+    name: Validity of XML instance via XSD
+  - identifier: "/req/valid-instance/schematron"
+    name: Validity of XML instance via Schematron
+- identifier: "/req/extended-types-xml"
+  name: XML implementation of extended base types
+  normative_statements:
+  - identifier: "/req/extended-types-xml/valid"
+    name: Valid extended types encoding
+- identifier: "/req/gml-wrapper-xml"
+  name: XML implementation of GML wrapper
+  normative_statements:
+  - identifier: "/req/gml-wrapper-xml/valid"
+    name: Valid GML wrapper
+- identifier: "/req/extended-metadata-xml"
+  name: XML metadata instance with extended metadata content model
+  dependencies:
+  - "/req/metadata-minimal-xml"
+  - "/req/metadata-xml/metadata-extension"
+  normative_statements:
+  - identifier: "/req/extended-metadata-xml/valid"
+    name: Valid extended metadata encoding
+  - identifier: "/req/extended-metadata-xml/new-section"
+    name: Extension elements are namespaced
+  - identifier: "/req/extended-metadata-xml/validation"
+    name: Extension elements supports validation
+  - identifier: "/req/extended-metadata-xml/new-codelist"
+    name: Codelists are implemented according to ISO 19139-1
+  - identifier: "/req/extended-metadata-xml/new-element"
+    name: New elements are implemented as subclasses
+  - identifier: "/req/extended-metadata-xml/iso-type"
+    name: New elements include the `isoType` attribute
+  - identifier: "/req/extended-metadata-xml/extension-by-restriction"
+    name: Validation process exists for restrictions asserted in a profile

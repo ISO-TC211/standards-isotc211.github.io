@@ -1,0 +1,64 @@
+---
+conformance_classes:
+- identifier: "/conf/metadata-minimal-xml"
+  name: Validation of minimum valid XML metadata instance
+  target: "/req/metadata-minimal-xml"
+  subject: Metadata instance
+  tests:
+  - identifier: "/conf/metadata-minimal-xml/valid"
+    name: Valid minimum metadata XML instance
+    targets:
+    - "/req/metadata-minimal-xml/valid"
+    type: Validation
+  - identifier: "/conf/metadata-minimal-xml/namespaces"
+    name: Namespaces required by minimum metadata XML instance
+    targets:
+    - "/req/metadata-minimal-xml/namespaces"
+    type: Validation
+    dependencies:
+    - "/conf/metadata-xml/basic"
+    - "/conf/metadata-xml/citation"
+    - "/conf/metadata-xml/common"
+    - "/conf/metadata-xml/identification"
+    - "/conf/metadata-xml/multilingual"
+    - "/conf/metadata-xml/extent"
+    - "/conf/metadata-xml/service-metadata"
+  - identifier: "/conf/metadata-minimal-xml/root-element"
+    name: Valid root class of the metadata minimal instance
+    targets:
+    - "/req/metadata-minimal-xml/root-element"
+    type: Validation
+  - identifier: "/conf/metadata-minimal-xml/contact-information"
+    name: Valid contact information related to the metadata
+    targets:
+    - "/req/metadata-minimal-xml/contact-information"
+    type: Validation
+    dependencies:
+    - "/conf/metadata-xml/citation"
+  - identifier: "/conf/metadata-minimal-xml/creation-date"
+    name: Valid metadata creation date
+    targets:
+    - "/req/metadata-minimal-xml/creation-date"
+    type: Validation
+  - identifier: "/conf/metadata-minimal-xml/metadata-scope"
+    name: Valid metadata scope
+    targets:
+    - "/req/metadata-minimal-xml/metadata-scope"
+    type: Validation
+  - identifier: "/conf/metadata-minimal-xml/identification"
+    name: Contains identification information
+    targets:
+    - "/req/metadata-minimal-xml/identification"
+    type: Validation
+  - identifier: "/conf/metadata-minimal-xml/allowed-namespaces"
+    name: Only uses valid namespaces
+    targets:
+    - "/req/metadata-minimal-xml/allowed-namespaces"
+    type: Validation
+  - identifier: "/conf/metadata-minimal-xml/schematron-rules"
+    name: Verifiable by Schematron
+    targets:
+    - "/req/metadata-minimal-xml/defines-abstract-classes"
+    - "/req/metadata-xml/identification/dataset-extent"
+    - "/req/metadata-xml/identification/topic-category"
+    type: Validation
