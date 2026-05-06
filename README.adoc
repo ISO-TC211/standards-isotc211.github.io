@@ -52,6 +52,22 @@ Examples:
 * `/19112/-1/2/req/gaz/sch/` -- Gazetteer schema requirement
 * `/19135/-/2/req/identifiers/uniqueness/` -- Identifier uniqueness requirement
 
+== Standards Categories
+
+Every ISO/TC 211 standard on this site falls into one of three categories:
+
+[horizontal]
+**Provided**:: Standards with URI-identified requirements classes and conformance classes.
+Data is provided as YAML files under `source/_data/{Standard}/{Part}/{Edition}/`.
+These appear under "Supported Standards" on the homepage.
+
+**Without Formal Requirements**:: Standards that do *not* define URI-identified requirements or conformance classes in the ISO standard.
+Listed manually in `source/_data/tc211_standards_pending.yaml`.
+These appear under "Standards Without Formal Requirements".
+
+**Awaiting Data Upload**:: Standards where the ISO defines requirements/conformance classes but data has not yet been uploaded to this site.
+These appear automatically from the inventory and show under "Standards Awaiting Data Upload".
+
 == Adding a New Standard
 
 Adding a new standard requires **only YAML files** -- no HTML authoring, no config changes, no template edits.
@@ -181,11 +197,61 @@ Verify key URIs resolve in `_site/`. The following are generated automatically:
 * **404 page links** for navigation back to available standards
 * **Example URIs** in the homepage URI format section
 
+== Marking a Standard as "Without Formal Requirements"
+
+If an ISO/TC 211 standard does not define URI-identified requirements classes or conformance classes, add its reference to `source/_data/tc211_standards_pending.yaml`:
+
+[source,yaml]
+----
+# One reference per line. Must match the reference field in tc211_standards.yaml.
+# Prefix matching is used, so "ISO 6709" matches "ISO 6709:2022".
+---
+- ISO 6709:2022
+----
+
+The standard will then appear under "Standards Without Formal Requirements" instead of "Awaiting Data Upload".
+
+== Standards Inventory and Auto-Discovery
+
+=== Inventory file
+
+`source/_data/tc211_standards.yaml` contains a machine-generated inventory of all published ISO/TC 211 standards.
+Each entry includes the standard reference, title, number, part, edition, ISO catalog ID, and publication date.
+
+This file is **not edited manually** — it is maintained by the auto-discovery process.
+
+=== Discovery script
+
+`script/discover_standards.rb`:
+
+* Streams ISO public metadata (JSONL) for TC 211 deliverables
+* Filters to published, non-supplement, non-replaced standards
+* Keeps the latest edition per standard
+* Applies the pending list from `tc211_standards_pending.yaml`
+* Writes the complete inventory to `tc211_standards.yaml`
+* Reports newly discovered entries (used by GHA for PR creation)
+
+Run manually:
+
+[source,sh]
+----
+ruby script/discover_standards.rb
+----
+
+=== Automated workflow
+
+A GitHub Actions workflow (`.github/workflows/discover_standards.yml`) runs weekly on Sunday at 02:00 UTC (and on manual trigger).
+When new standards are found, it creates a PR updating `tc211_standards.yaml`.
+
+Any new standard not yet present under `source/_data/` with YAML data automatically appears under "Awaiting Data Upload".
+Once data files are added (see <<Adding a New Standard>>), it moves to "Supported Standards".
+
 == Architecture
 
 === Data flow
 
 ....
+Phase 1: Standards with YAML data
 _meta.yaml + *-rc.yaml + *-cc.yaml
   │
   ▼
@@ -199,6 +265,15 @@ CrossReferenceIndex (maps req↔conf identifiers)
   │
   ▼
 PageFactory (creates Jekyll pages + standards catalog)
+
+Phase 2: Placeholder standards from inventory
+tc211_standards.yaml + tc211_standards_pending.yaml
+  │
+  ▼
+PageFactory (creates placeholder pages for standards without data)
+  │
+  ▼
+Standards catalog (merged and sorted)
   │
   ▼
 Jekyll build (layouts + includes → _site/)
