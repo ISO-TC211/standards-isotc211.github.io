@@ -1062,4 +1062,9 @@
   .dark .provision-iso-link:hover {
     background: rgba(30, 58, 138, 0.5);
   }
+
+  .icon--sun { display: none; }
+  .icon--moon { display: block; }
+  html.dark .icon--sun { display: block; }
+  html.dark .icon--moon { display: none; }
 }
