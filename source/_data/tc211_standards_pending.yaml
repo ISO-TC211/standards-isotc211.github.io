@@ -1,5 +1,5 @@
-# Standards that do not define formal URI-identified requirements or conformance classes
-# in the ISO standard itself. Shown under "Standards Without Formal Requirements".
+# Standards that do not specify requirements that utilize the ISO/TC 211 Harmonized URI scheme.
+# Shown under "Standards Without Harmonized URI Requirements" on the homepage.
 # One standard reference per line (must match the reference field in tc211_standards.yaml).
 ---
 - ISO 6709:2022
