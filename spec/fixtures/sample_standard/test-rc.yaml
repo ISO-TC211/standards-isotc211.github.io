@@ -1,0 +1,19 @@
+---
+normative_statements_classes:
+- identifier: "/req/test-class"
+  name: Test requirements class
+  subject: testing
+  description: A requirements class for testing.
+  guidance:
+  - This is guidance.
+  dependencies:
+  - "/req/other-class"
+  normative_statements:
+  - identifier: "/req/test-class/fragment-a"
+    name: Fragment A requirement
+    statement: The system shall pass tests.
+    guidance:
+    - Additional guidance.
+  - identifier: "/req/test-class/fragment-b"
+    name: Fragment B requirement
+    statement: The system shall be correct.

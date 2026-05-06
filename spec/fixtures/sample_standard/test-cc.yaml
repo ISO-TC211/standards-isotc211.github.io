@@ -1,0 +1,25 @@
+---
+conformance_classes:
+- identifier: "/conf/test-class"
+  name: Test conformance class
+  target: "/req/test-class"
+  description: Conformance tests for the test class.
+  dependencies:
+  - "/req/other-class"
+  tests:
+  - identifier: "/conf/test-class/test-a"
+    name: Test A
+    targets:
+    - "/req/test-class/fragment-a"
+    purpose: Verify fragment A.
+    method: Check the system passes tests.
+    type: Validation
+    guidance:
+    - Guidance for test A.
+  - identifier: "/conf/test-class/test-b"
+    name: Test B
+    targets:
+    - "/req/test-class/fragment-b"
+    purpose: Verify fragment B.
+    method: Check the system is correct.
+    type: Conformance

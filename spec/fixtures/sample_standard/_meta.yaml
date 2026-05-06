@@ -1,0 +1,7 @@
+title: "ISO 99999:2025 Test Standard"
+label: "ISO 99999:2025"
+subtitle: "Test standard subtitle"
+edition: 1
+description: >
+  A test standard for specs.
+hide_fields: [statement, description]
