@@ -2,362 +2,165 @@
 conformance_classes:
 - identifier: "/conf/register-specification"
   name: Requirements of the register specification
-  description: This conformance class defines the requirements for register specification
-    implementation in a register.
   target: "/req/register-specification"
   tests:
   - identifier: "/conf/register-specification/reference-source"
     name: ISO 19135 normative reference test
     targets:
     - "/req/register-specification/reference-source"
-    purpose: Verify that the register specification cites this document as a normative
-      reference using a dated citation.
-    method: |
-      . Examine the register specification's references section
-      . Verify that ISO 19135 is cited as a normative reference
-      . Confirm that the citation uses a dated reference format
     type: Conformance
   - identifier: "/conf/register-specification/referencing-requirements"
     name: Requirements referencing test
     targets:
     - "/req/register-specification/referencing-requirements"
-    purpose: Verify that the register specification either references requirements
-      or requirements classes inherited from this document citing provision identifiers,
-      or incorporates the text of provisions provided by this document faithfully.
-    method: |
-      . Examine the register specification's requirements sections
-      . Verify that inherited requirements are properly referenced with provision identifiers
-      . If text is incorporated, confirm it is faithful to the original
     type: Conformance
   - identifier: "/conf/register-specification/extended-requirements"
     name: Extended requirements definition test
     targets:
     - "/req/register-specification/extended-requirements"
-    purpose: Verify that the register specification describes for every extended or
-      modified provision the exact changes compared with the corresponding provision
-      from this document.
-    method: |
-      . Identify any extended or modified provisions in the register specification
-      . Verify that exact changes are described for each modification
-      . Confirm that comparisons with original provisions are clear
     type: Conformance
   - identifier: "/conf/register-specification/specify-metadata"
     name: Register metadata specification test
     targets:
     - "/req/register-specification/specify-metadata"
-    purpose: Verify that the metadata of a register is specified in the register specification,
-      including its scope.
-    method: |
-      . Examine the register specification for metadata definitions
-      . Verify that register metadata is completely specified
-      . Confirm that the scope is included in the metadata specification
     type: Conformance
   - identifier: "/conf/register-specification/define-roles-responsibilities"
     name: Roles and responsibilities definition test
     targets:
     - "/req/register-specification/define-roles-responsibilities"
-    purpose: Verify that the register specification defines the roles and responsibilities
-      involved in the management of the register.
-    method: |
-      . Examine the register specification for role definitions
-      . Verify that all management roles are defined
-      . Confirm that responsibilities for each role are clearly specified
     type: Conformance
   - identifier: "/conf/register-specification/define-governance"
     name: Governance processes definition test
     targets:
     - "/req/register-specification/define-governance"
-    purpose: Verify that the register specification defines the management processes,
-      governance rules and procedures for the register.
-    method: |
-      . Examine the register specification for governance definitions
-      . Verify that management processes are defined
-      . Confirm that governance rules and procedures are specified
     type: Conformance
   - identifier: "/conf/register-specification/define-content-requirements"
     name: Content requirements definition test
     targets:
     - "/req/register-specification/define-content-requirements"
-    purpose: Verify that the register specification defines the types of concepts
-      that can be realised in the register and their concept definitions.
-    method: |
-      . Examine the register specification for content requirements
-      . Verify that concept types are defined
-      . Confirm that concept definitions are specified
     type: Conformance
   - identifier: "/conf/register-specification/document-addition-modification-rules"
     name: Addition and modification rules documentation test
     targets:
     - "/req/register-specification/document-addition-modification-rules"
-    purpose: Verify that the register specification documents rules and guidelines
-      on what constitutes an addition or modification of a concept or a concept version.
-    method: |
-      . Examine the register specification for addition/modification rules
-      . Verify that rules for concept additions are documented
-      . Confirm that rules for concept version modifications are documented
     type: Conformance
   - identifier: "/conf/register-specification/document-substantive-change"
     name: Substantive change documentation test
     targets:
     - "/req/register-specification/document-substantive-change"
-    purpose: Verify that the register specification defines what proposed changes
-      to register content are considered to be substantive and non-substantive.
-    method: |
-      . Examine the register specification for substantive change definitions
-      . Verify that substantive changes are clearly defined
-      . Confirm that non-substantive changes are also defined
     type: Conformance
   - identifier: "/conf/register-specification/define-basic-data-elements"
     name: Basic data elements definition test
     targets:
     - "/req/register-specification/define-basic-data-elements"
-    purpose: Verify that the register specification describes the format and granularity
-      of basic data elements that can be used in concept definitions in the register.
-    method: |
-      . Examine the register specification for basic data element definitions
-      . Verify that formats are specified for basic data elements
-      . Confirm that granularity requirements are defined
     type: Conformance
   - identifier: "/conf/register-specification/identifier-scheme"
     name: Identifier scheme definition test
     targets:
     - "/req/register-specification/identifier-scheme"
-    purpose: Verify that the register specification defines the identifier scheme
-      used in the register and their mapping to components in the register.
-    method: |
-      . Examine the register specification for identifier scheme definitions
-      . Verify that the identifier scheme is clearly defined
-      . Confirm that mappings to register components are specified
     type: Conformance
   - identifier: "/conf/register-specification/versioning-scheme"
     name: Versioning schemes definition test
     targets:
     - "/req/register-specification/versioning-scheme"
-    purpose: Verify that the register specification defines all versioning schemes,
-      including the version layer semantics, used in the register.
-    method: |
-      . Examine the register specification for versioning scheme definitions
-      . Verify that all versioning schemes are defined
-      . Confirm that version layer semantics are specified
     type: Conformance
   - identifier: "/conf/register-specification/versioning-assignment-criteria"
     name: Versioning assignment criteria definition test
     targets:
     - "/req/register-specification/versioning-assignment-criteria"
-    purpose: Verify that the register specification defines the versioning assignment
-      criteria, including the meaning for every version layer, which is taken into
-      account during the versioning process.
-    method: |
-      . Examine the register specification for versioning assignment criteria
-      . Verify that criteria for version assignment are defined
-      . Confirm that meaning for every version layer is specified
     type: Conformance
   - identifier: "/conf/register-specification/define-proposer-criteria"
     name: Proposer eligibility criteria definition test
     targets:
     - "/req/register-specification/define-proposer-criteria"
-    purpose: Verify that the register specification defines the eligibility criteria
-      for proposers of the register.
-    method: |
-      . Examine the register specification for proposer eligibility criteria
-      . Verify that eligibility criteria are clearly defined
-      . Confirm that criteria are complete and unambiguous
     type: Conformance
   - identifier: "/conf/register-specification/define-proposal-process"
     name: Proposal process definition test
     targets:
     - "/req/register-specification/define-proposal-process"
-    purpose: Verify that the register specification defines the steps of the proposal
-      process.
-    method: |
-      . Examine the register specification for proposal process definitions
-      . Verify that all process steps are defined
-      . Confirm that the process flow is clear and complete
     type: Conformance
   - identifier: "/conf/register-specification/define-proposal-submission-requirements"
     name: Proposal submission requirements definition test
     targets:
     - "/req/register-specification/define-proposal-submission-requirements"
-    purpose: Verify that the register specification defines the submission requirements
-      for submitting a proposal.
-    method: |
-      . Examine the register specification for submission requirements
-      . Verify that all submission requirements are defined
-      . Confirm that requirements are clear and actionable
     type: Conformance
   - identifier: "/conf/register-specification/define-proposal-information-requirements"
     name: Proposal information requirements definition test
     targets:
     - "/req/register-specification/define-proposal-information-requirements"
-    purpose: Verify that the register specification defines the information requirements
-      for submitting a proposal.
-    method: |
-      . Examine the register specification for proposal information requirements
-      . Verify that mandatory information is clearly specified
-      . Confirm that information requirements are complete
     type: Conformance
   - identifier: "/conf/register-specification/define-approval-time-limit"
     name: Approval time limit definition test
     targets:
     - "/req/register-specification/define-approval-time-limit"
-    purpose: Verify that the register specification defines the time limit of the
-      approval process.
-    method: |
-      . Examine the register specification for approval time limits
-      . Verify that time limits are clearly defined
-      . Confirm that time limits are reasonable and enforceable
     type: Conformance
   - identifier: "/conf/register-specification/specify-appeal-availability"
     name: Appeal availability specification test
     targets:
     - "/req/register-specification/specify-appeal-availability"
-    purpose: Verify that the register specification specifies whether an appeal process
-      is implemented.
-    method: |
-      . Examine the register specification for appeal process availability
-      . Verify that appeal availability is clearly specified
-      . Confirm that the specification is unambiguous
     type: Conformance
   - identifier: "/conf/register-specification/define-appeal-process"
     name: Appeal process definition test
     targets:
     - "/req/register-specification/define-appeal-process"
-    purpose: Verify that the register specification specifies the appeal process in
-      the register specification, if the appeal process is implemented.
-    method: |
-      . If appeal process is available, examine its definition
-      . Verify that the appeal process is completely specified
-      . Confirm that process steps and procedures are clear
     type: Conformance
   - identifier: "/conf/register-specification/define-appeal-time-limit"
     name: Appeal time limit definition test
     targets:
     - "/req/register-specification/define-appeal-time-limit"
-    purpose: Verify that the register specification specifies the time limit of the
-      appeal process in the register specification, if the appeal process is implemented.
-    method: |
-      . If appeal process is available, examine time limit definitions
-      . Verify that appeal time limits are clearly specified
-      . Confirm that time limits are reasonable and enforceable
     type: Conformance
   - identifier: "/conf/register-specification/define-appeal-information-requirements"
     name: Appeal information requirements definition test
     targets:
     - "/req/register-specification/define-appeal-information-requirements"
-    purpose: Verify that the register specification defines the required information
-      for initiating an appeal process, if an appeal process is implemented.
-    method: |
-      . If appeal process is available, examine information requirements
-      . Verify that required information for appeals is defined
-      . Confirm that information requirements are complete and clear
     type: Conformance
   - identifier: "/conf/register-specification/define-access-criteria"
     name: Access criteria definition test
     targets:
     - "/req/register-specification/define-access-criteria"
-    purpose: Verify that the register specification defines the access criteria for
-      the register.
-    method: |
-      . Examine the register specification for access criteria
-      . Verify that access criteria are clearly defined
-      . Confirm that criteria cover all relevant access scenarios
     type: Conformance
   - identifier: "/conf/register-specification/define-security-requirements"
     name: Security requirements definition test
     targets:
     - "/req/register-specification/define-security-requirements"
-    purpose: Verify that the register specification defines the security requirements
-      for the register.
-    method: |
-      . Examine the register specification for security requirements
-      . Verify that security requirements are comprehensively defined
-      . Confirm that requirements address relevant security concerns
     type: Conformance
   - identifier: "/conf/register-specification/define-relations"
     name: Relations definition test
     targets:
     - "/req/register-specification/define-relations"
-    purpose: Verify that the register specification defines relations supported by
-      the register.
-    method: |
-      . Examine the register specification for relation definitions
-      . Verify that all supported relations are defined
-      . Confirm that relation semantics are clearly specified
     type: Conformance
   - identifier: "/conf/register-specification/define-concept-version-statuses"
     name: Concept version statuses definition test
     targets:
     - "/req/register-specification/define-concept-version-statuses"
-    purpose: Verify that the register specification defines concept version statuses
-      supported by the register.
-    method: |
-      . Examine the register specification for status definitions
-      . Verify that all supported statuses are defined
-      . Confirm that status meanings and transitions are specified
     type: Conformance
   - identifier: "/conf/register-specification/define-concepts-content"
     name: Concepts and content definition test
     targets:
     - "/req/register-specification/define-concepts-content"
-    purpose: Verify that the register specification defines concepts and content and
-      their requirements allowed to be managed in the register.
-    method: |
-      . Examine the register specification for concept and content definitions
-      . Verify that allowed concepts and content are defined
-      . Confirm that requirements for each are specified
     type: Conformance
   - identifier: "/conf/register-specification/define-temporal-applicability-rules"
     name: Temporal applicability rules definition test
     targets:
     - "/req/register-specification/define-temporal-applicability-rules"
-    purpose: Verify that the register specification defines temporal applicability
-      rules for statuses and relations.
-    method: |
-      . Examine the register specification for temporal applicability rules
-      . Verify that rules for statuses are defined
-      . Confirm that rules for relations are specified
     type: Conformance
   - identifier: "/conf/register-specification/custom-relations"
     name: Custom relations definition test
     targets:
     - "/req/register-specification/custom-relations"
-    purpose: Verify that the register specification defines any additional relations
-      beyond those defined in this document.
-    method: |
-      . Examine the register specification for additional relations
-      . If additional relations exist, verify they are properly defined
-      . Confirm that custom relations are documented with their semantics
     type: Conformance
   - identifier: "/conf/register-specification/custom-statuses"
     name: Custom statuses definition test
     targets:
     - "/req/register-specification/custom-statuses"
-    purpose: Verify that the register specification defines any additional concept
-      version statuses beyond those defined in this document.
-    method: |
-      . Examine the register specification for additional statuses
-      . If additional statuses exist, verify they are properly defined
-      . Confirm that custom statuses are documented with their meanings
     type: Conformance
   - identifier: "/conf/register-specification/document-changes"
     name: Register specification changes retention test
     targets:
     - "/req/register-specification/document-changes"
-    purpose: Verify that changes to the register specification, and the justifications
-      of those changes, are retained.
-    method: |
-      . Examine the register's change management for specifications
-      . Verify that specification changes are retained
-      . Confirm that justifications for changes are documented and retained
     type: Conformance
   - identifier: "/conf/register-specification/availability-of-changes"
     name: Register specification changes availability test
     targets:
     - "/req/register-specification/availability-of-changes"
-    purpose: Verify that the register specification version adopted and in force is
-      made available to those with the need to know, as defined in the register specification.
-    method: |
-      . Verify that the current register specification version is available
-      . Confirm that availability matches the defined access criteria
-      . Validate that those with need to know can access the specification
     type: Conformance

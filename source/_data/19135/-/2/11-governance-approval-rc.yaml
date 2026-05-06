@@ -3,57 +3,27 @@ normative_statements_classes:
 - identifier: "/req/approval-process"
   name: Requirements of the approval process
   subject: approval process
-  description: |
-    The approval process is necessary for the determining the acceptability of
-    proposals varies between registers.
   normative_statements:
   - identifier: "/req/approval-process/comply-requirements"
     name: Adherence to register specification during approval
-    statement: The approval process shall fulfil the requirements stated in xref:/req/register-specification/define-governance[].
   - identifier: "/req/approval-process/complete-by-time-limit"
     name: Completion of the approval process within the defined time limit
-    statement: The approval process shall be completed within the time limit specified
-      by the register owner.
   - identifier: "/req/approval-process/consult-acceptability"
     name: Submission of proposal to consult acceptability
-    statement: The approval process shall specify how the register manager determines
-      the acceptability of proposals submitted by any proposer.
   - identifier: "/req/approval-process/forward-to-cb"
     name: Forwarding proposals to control body
-    statement: The approval process shall specify how the register manager forwards
-      eligible proposals to the control body for determination of acceptability.
   - identifier: "/req/approval-process/request-changes"
     name: Request of changes to the proposal as needed
-    statement: The approval process shall specify how the control body requests the
-      proposer to revise a proposal if changes to the proposal are required for its
-      acceptance.
   - identifier: "/req/approval-process/issue-decision"
     name: Issuance of decision on the proposal
-    statement: The approval process shall specify how the control body decides whether
-      to accept or reject the proposal in conformance with the register specification.
   - identifier: "/req/approval-process/decide-by-time-limit"
     name: Issuance of decision within the required time limit
-    statement: The approval process shall specify how the control body issues the
-      decision on the proposal within a time limit specified by the register owner.
   - identifier: "/req/approval-process/inform-decision"
     name: Informing the register manager of a decision on the proposal
-    statement: The approval process shall specify how the control body informs the
-      register manager of a decision on each proposal, with information including
-      at a minimum, the rationale for the decision.
   - identifier: "/req/approval-process/forward-decision"
     name: Forwarding the proposal decision to the proposer
-    statement: The approval process shall specify how the register manager forwards
-      the proposal decision by the control body, once the decision on a proposal is
-      issued, with supplementary information provided by the control body to the proposer.
   - identifier: "/req/approval-process/forward-by-time-limit"
     name: Forwarding the proposal decision to the proposer within the required time
       limit
-    statement: The approval process shall specify how the register manager forwards
-      the decision of the proposal to the proposer within the time limit specified
-      by the register owner, as documented in the register specification.
   - identifier: "/req/approval-process/incorporate-approved-proposal"
     name: Incorporation of approved proposal
-    statement: The approval process shall specify how the register manager incorporates
-      the proposal according to the approved proposal by the control body, if the
-      decision of the control body is positive, with any required changes determined
-      by the control body.

@@ -30,9 +30,6 @@ normative_statements_classes:
   normative_statements:
   - identifier: "/req/metadata-xml/identification/valid"
     name: Valid identification instance
-    guidance:
-    - If the resource described by a metadata instance contains textual information,
-      then a value should be provided for `MD_DataIdentification.defaultLocale`.
     dependencies:
     - "/req/metadata-xml/common"
     - "/req/metadata-xml/citation"
@@ -90,9 +87,6 @@ normative_statements_classes:
   normative_statements:
   - identifier: "/req/metadata-xml/spatial-representation/valid"
     name: Valid spatial representation instance
-    guidance:
-    - If the "checkPointAvailability" property has a value of "true" (1), then a value
-      should be provided for the 'checkPointDescription' property.
     dependencies:
     - "/req/metadata-xml/citation"
     - "/req/metadata-xml/common"
@@ -110,10 +104,8 @@ normative_statements_classes:
     - "/req/metadata-xml/common"
   - identifier: "/req/metadata-xml/reference-system/identifier"
     name: Valid MD_ReferenceSystem with identification properties
-    guidance: The property of "crs" was introduced in <<ISO_19115-1_2014_Amd2,clause="6.5.8">>.
   - identifier: "/req/metadata-xml/reference-system/coordinate-epoch"
     name: Valid MD_ReferenceSystem with property "crs" and CRS is dynamic
-    guidance: The property of "coordinateEpoch" was introduced in <<ISO_19115-1_2014_Amd2,clause="6.5.8">>.
 - identifier: "/req/metadata-xml/content"
   name: XML implementation of content information
   normative_statements:
@@ -138,8 +130,6 @@ normative_statements_classes:
     name: Value of MD_SampleDimension property "units"
   - identifier: "/req/metadata-xml/content/band-units-value"
     name: Value of MD_Band property "units"
-    guidance:
-    - UomLength is described in <<ISO_19103_2015>>.
   - identifier: "/req/metadata-xml/content/feature-type-instance-count"
     name: Value of MD_FeatureTypeInfo property "featureInstanceCount"
 - identifier: "/req/metadata-xml/portrayal-catalogue"
@@ -196,13 +186,6 @@ normative_statements_classes:
     - "/req/metadata-xml/common"
 - identifier: "/req/metadata-xml/service-metadata"
   name: XML implementation of service metadata information
-  guidance:
-  - |
-    If the value of
-    `MD_Metadata.metadataScope.MD_MetadataScope.resourceScope.MD_ScopeCode`
-    property is equal to "service", then one instance of `MD_Keyword` should
-    have a "keyword" property value that is a term from the service taxonomy
-    defined in <<ISO19119>>.
   normative_statements:
   - identifier: "/req/metadata-xml/service-metadata/valid"
     name: Valid service metadata instance
@@ -250,12 +233,6 @@ normative_statements_classes:
     name: Valid values of CI_OnlineResource
 - identifier: "/req/metadata-xml/common"
   name: XML implementation of common classes
-  guidance:
-  - |
-    There is a circular dependency between the citation and common classes
-    packages, but because of the policy that the implementation package should
-    match the base abstract schema (<<ISO_19115-1_2014>>) packaging, these are
-    implemented as separate namespaces.
   normative_statements:
   - identifier: "/req/metadata-xml/common/valid"
     name: Valid common classes encoding

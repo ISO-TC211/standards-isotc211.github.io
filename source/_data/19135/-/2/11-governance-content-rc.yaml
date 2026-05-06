@@ -3,27 +3,8 @@ normative_statements_classes:
 - identifier: "/req/content-management-process"
   name: Requirements of the content management process
   subject: content management process
-  description: |
-    The content management process implements approved changes from approved
-    proposals.
   normative_statements:
   - identifier: "/req/content-management-process/perform-action"
     name: Performing an approved action
-    statement: The register manager shall implement an approved proposal containing
-      an approved action to perform.
-    guidance:
-    - The approved action by the control body may differ from the originally proposed
-      action stated in the proposal.
   - identifier: "/req/content-management-process/implementation-of-proposal"
     name: Implementation of proposal
-    statement: |
-      The register manager shall implement the approved proposal
-      with proper consideration on the most appropriate course of action, including:
-
-      * the context of the register and the proposal;
-      * the most suitable action;
-      * any applicable concept version statuses;
-      * any applicable relations;
-      * identifier assignment considerations;
-      * versioning considerations; and
-      * the intended outcome of the action;

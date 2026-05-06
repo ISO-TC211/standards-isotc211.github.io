@@ -3,7 +3,6 @@ normative_statements_classes:
 - identifier: "/req/content-register"
   name: Content register requirements
   subject: register
-  description: Requirements of the content register
   dependencies:
   - "/req/conceptual-model"
   - "/req/identifiers"
@@ -18,7 +17,6 @@ normative_statements_classes:
 - identifier: "/req/concept-register"
   name: Concept register requirements
   subject: register
-  description: Requirements on register towards handling concepts.
   dependencies:
   - "/req/concept"
   - "/req/concept-version"
@@ -27,7 +25,6 @@ normative_statements_classes:
 - identifier: "/req/governance"
   name: Governance requirements
   subject: register
-  description: Requirements on governance of a register.
   dependencies:
   - "/req/roles/control-body"
   - "/req/roles/register-manager"
@@ -44,22 +41,18 @@ normative_statements_classes:
 - identifier: "/req/governed-content-register"
   name: Governed content register requirements
   subject: register
-  description: Requirements on a governed content register.
   dependencies:
   - "/req/content-register"
   - "/req/governance"
 - identifier: "/req/governed-concept-register"
   name: Governed concept register requirements
   subject: register
-  description: Requirements on a governed concept register.
   dependencies:
   - "/req/concept-register"
   - "/req/governance"
 - identifier: "/req/comprehensive-concept-register"
   name: Comprehensive concept register requirements
   subject: register
-  description: Requirements on register towards handling concepts with advanced concept
-    composition methods.
   dependencies:
   - "/req/concept-register"
   - "/req/governance"

@@ -2,37 +2,20 @@
 conformance_classes:
 - identifier: "/conf/concept-definition"
   name: Requirements of concept definition
-  description: This conformance class defines the requirements for concept definition
-    implementation in a register.
   target: "/req/concept-definition"
   tests:
   - identifier: "/conf/concept-definition/version"
     name: Concept definition creation verification
     targets:
     - "/req/concept-definition/version"
-    purpose: Verify that the register supports creation of concept definitions that
-      define information requirements of concepts in their concept versions.
-    method: Validate that concept definitions can be created and that they properly
-      define the information requirements for concept versions, ensuring the definitions
-      are structured as concepts themselves.
     type: Conformance
   - identifier: "/conf/concept-definition/requirement-definitions"
     name: Information requirements definition validation
     targets:
     - "/req/concept-definition/requirement definitions"
-    purpose: Verify that concept definitions properly define information requirements
-      including attributes, internal constraints, and cross-reference constraints.
-    method: Inspect concept definitions to ensure they specify common attributes of
-      register items, internal constraints that apply to register items, and cross-reference
-      constraints that apply to register items.
     type: Validation
   - identifier: "/conf/concept-definition/evolution"
     name: Concept definition evolution support
     targets:
     - "/req/concept-definition/evolution"
-    purpose: Verify that concept definitions support versioning to allow evolution
-      of information requirements over time.
-    method: Confirm that concept definitions can be versioned and that the register
-      maintains the ability to evolve information requirements while preserving historical
-      versions and their relationships.
     type: Conformance

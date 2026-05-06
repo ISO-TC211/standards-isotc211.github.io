@@ -2,54 +2,23 @@
 conformance_classes:
 - identifier: "/conf/identifiers"
   name: Identifier implementation and governance
-  description: Conformance tests for identifier implementation and governance requirements.
   target: "/req/identifiers"
   tests:
   - identifier: "/conf/identifiers/object-identifier-scheme"
     name: Object identifier scheme definition validation
     targets:
     - "/req/identifiers/object-identifier-scheme"
-    purpose: Verify that the object identifier scheme is defined in the register specification.
-    method: Inspect the register specification to ensure it documents the object identification
-      scheme, including methods and structures used to construct object identifiers.
     type: Validation
-    guidance:
-    - Check that the register specification contains a clear definition of the object
-      identifier scheme.
-    - Verify that the scheme documentation includes construction methods and structural
-      requirements.
-    - Ensure the scheme is consistently applied throughout the register implementation.
   - identifier: "/conf/identifiers/functional-identifier-scheme"
     name: Functional identifier scheme definition validation
     targets:
     - "/req/identifiers/functional-identifier-scheme"
-    purpose: Verify that the functional identifier scheme is defined in the register
-      specification.
-    method: Inspect the register specification to ensure it documents the functional
-      identification scheme, including methods and structures used to construct functional
-      identifiers.
     type: Validation
-    guidance:
-    - Check that the register specification contains a clear definition of the functional
-      identifier scheme.
-    - Verify that the scheme documentation includes construction methods and structural
-      requirements.
-    - Ensure the scheme supports the intended use cases for functional identification.
   - identifier: "/conf/identifiers/functional-identifier-hierarchy"
     name: Functional identifier hierarchy support verification
     targets:
     - "/req/identifiers/functional-identifier-hierarchy"
-    purpose: Verify that functional identifiers support hierarchical specification
-      as required.
-    method: Test functional identifiers to confirm they can represent hierarchical
-      components including item nature and version parameters through appropriate
-      delimiters or structural elements.
     type: Conformance
-    guidance:
-    - Verify that functional identifiers can represent multiple components hierarchically.
-    - Test that delimiters or structural elements properly separate identifier components.
-    - Confirm that hierarchical structure supports version specification and item
-      categorization.
     examples:
     - Verify URI-based and URN-based identifiers that demonstrate domain or namespace
       with hierarchical path structures.
@@ -57,40 +26,17 @@ conformance_classes:
     name: Functional identifier persistence verification
     targets:
     - "/req/identifiers/functional-identifier-persistence"
-    purpose: Verify that functional identifiers are meant to have persistent identifier
-      semantics throughout the register lifetime.
-    method: Check the register specification for a description of functional identifiers
-      to contain a commitment to persist identifier semantics throughout the register
-      lifetime.
     type: Conformance
-    guidance:
-    - Verify that functional identifier semantics are clearly defined and documented.
-    - Confirm that identifiers maintain their original intent through content updates
-      and modifications.
   - identifier: "/conf/identifiers/uniqueness"
     name: Identifier uniqueness verification
     targets:
     - "/req/identifiers/uniqueness"
-    purpose: Verify the identification scheme creates unique identifiers within the
-      register scope.
-    method: Test the register's identifier assignment process to ensure that both
-      object identifiers and functional identifiers are unique across all register
-      objects.
     type: Conformance
-    guidance:
-    - Test identifier assignment processes to prevent collisions.
-    - Verify uniqueness for both object identifiers and functional identifiers.
   - identifier: "/conf/identifiers/register-identifier"
     name: Register global identifier verification
     targets:
     - "/req/identifiers/register-identifier"
-    purpose: Verify that the register has been assigned a globally unique identifier.
-    method: Inspect and validate the register's globally unique identifier to ensure
-      it follows established global uniqueness mechanisms such as DNS-based URIs or
-      IANA-registered URNs.
     type: Validation
-    guidance:
-    - Verify that the register identifier is globally unique through appropriate mechanisms.
     examples:
     - Validate URI identifiers through DNS resolution and domain verification.
     - Confirm URN namespace registration through IANA records.
@@ -98,14 +44,4 @@ conformance_classes:
     name: Component identification capability verification
     targets:
     - "/req/identifiers/component-identification"
-    purpose: Verify that the identifier schemes can identify all required elements
-      on both concept and content planes.
-    method: Test that the object and functional identifier schemes successfully identify
-      individual concepts, concept versions, register item classes, register items,
-      change objects, and their internal elements as documented in the register specification.
     type: Conformance
-    guidance:
-    - Verify object and functional identifier scheme capability for the assignment
-      and resolution for all concept plane and content plane elements.
-    - Ensure that the association between identifier schemes and register elements
-      is properly documented.

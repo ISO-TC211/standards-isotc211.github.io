@@ -92,8 +92,6 @@ conformance_classes:
     name: Metadata profile
     targets:
     - "/req/metadata-extend/profile"
-    guidance:
-    - Re-used by reference in <<ISO_19115-2_2019>>.
 - identifier: "/conf/metadata-extensions"
   name: Extensions for acquisition and processing
   target: "/req/metadata-extensions"

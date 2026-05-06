@@ -34,7 +34,6 @@ def convert_rc_scope(scope)
     "identifier" => strip_prefix(scope["identifier"]),
     "name" => scope["name"],
     "subject" => scope["subject"],
-    "guidance" => scope["guidance"],
     "dependencies" => compact_deps(scope["dependencies"]),
     "normative_statements" => convert_list(scope["requirements"], method(:convert_req))
   )
@@ -45,7 +44,6 @@ def convert_req(req)
     "identifier" => strip_prefix(req["identifier"]),
     "name" => req["name"],
     "subject" => req["subject"],
-    "guidance" => req["guidance"],
     "dependencies" => compact_deps(req["dependencies"])
   )
 end
@@ -58,7 +56,6 @@ def convert_cc_scope(scope)
     "name" => scope["name"] || scope["title"],
     "target" => scope["target"] ? strip_prefix(scope["target"]) : nil,
     "subject" => scope["subject"],
-    "guidance" => scope["guidance"],
     "dependencies" => compact_deps(scope["dependencies"]),
     "tests" => convert_list(scope["tests"], method(:convert_test))
   )
@@ -70,7 +67,6 @@ def convert_test(test)
     "name" => test["name"],
     "targets" => test["targets"]&.map { |t| strip_prefix(t) }&.reject(&:empty?),
     "type" => test["type"],
-    "guidance" => test["guidance"],
     "dependencies" => compact_deps(test["dependencies"])
   )
 end

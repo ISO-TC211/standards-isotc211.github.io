@@ -70,8 +70,6 @@ normative_statements_classes:
   - identifier: "/req/metadata-extend/profile"
     name: Metadata profile
     subject: Metadata scheme
-    guidance:
-    - Re-used by reference in <<ISO_19115-2_2019>>.
 - identifier: "/req/metadata-extensions"
   name: Extensions for acquisition and processing
   subject: Metadata instance

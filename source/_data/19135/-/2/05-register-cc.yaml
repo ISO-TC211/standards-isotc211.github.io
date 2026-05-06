@@ -2,8 +2,6 @@
 conformance_classes:
 - identifier: "/conf/content-register"
   name: Content register requirements
-  description: This conformance class defines the requirements for content register
-    implementation in a register.
   dependencies:
   - "/conf/conceptual-model"
   - "/conf/identifiers"
@@ -18,8 +16,6 @@ conformance_classes:
   target: "/req/content-register"
 - identifier: "/conf/concept-register"
   name: Concept register requirements
-  description: This conformance class defines the requirements for concept register
-    implementation in a register.
   dependencies:
   - "/conf/concept"
   - "/conf/concept-version"
@@ -28,8 +24,6 @@ conformance_classes:
   target: "/req/concept-register"
 - identifier: "/conf/governance"
   name: Governance requirements
-  description: This conformance class defines the requirements for governance implementation
-    in a register.
   dependencies:
   - "/conf/roles/control-body"
   - "/conf/roles/register-manager"
@@ -46,24 +40,18 @@ conformance_classes:
   target: "/req/governance"
 - identifier: "/conf/governed-content-register"
   name: Governed content register requirements
-  description: This conformance class defines the requirements for governed content
-    register implementation in a register.
   dependencies:
   - "/conf/content-register"
   - "/conf/governance"
   target: "/req/governed-content-register"
 - identifier: "/conf/governed-concept-register"
   name: Governed concept register requirements
-  description: This conformance class defines the requirements for governed concept
-    register implementation in a register.
   dependencies:
   - "/conf/concept-register"
   - "/conf/governance"
   target: "/req/governed-concept-register"
 - identifier: "/conf/comprehensive-concept-register"
   name: Comprehensive concept register requirements
-  description: This conformance class defines the requirements for comprehensive concept
-    register implementation with advanced concept composition methods.
   dependencies:
   - "/conf/concept-register"
   - "/conf/governance"

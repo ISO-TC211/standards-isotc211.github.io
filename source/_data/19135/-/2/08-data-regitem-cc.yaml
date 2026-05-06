@@ -2,101 +2,45 @@
 conformance_classes:
 - identifier: "/conf/register-item"
   name: Requirements of register items
-  description: This conformance class defines the requirements for register item implementation
-    in a register.
   target: "/req/register-item"
   tests:
   - identifier: "/conf/register-item/creation"
     name: Register item creation test
     targets:
     - "/req/register-item/creation"
-    purpose: Verify that the register supports creation of register items as data.
-    method: |
-      . Attempt to create a new register item in the register
-      . Verify that the register accepts the creation request
-      . Confirm that the register item is successfully stored and accessible as data
     type: Conformance
   - identifier: "/conf/register-item/information-requirements"
     name: Information requirements description test
     targets:
     - "/req/register-item/information-requirements"
-    purpose: Verify that a register item describes the information requirements of
-      register items.
-    method: |
-      . Examine an existing register item
-      . Verify that it contains a description of information requirements
-      . Confirm that the requirements are clearly defined and accessible
     type: Conformance
   - identifier: "/conf/register-item/structural-requirements"
     name: Structural requirements definition test
     targets:
     - "/req/register-item/structural-requirements"
-    purpose: Verify that a register item defines the structural requirements of register
-      items.
-    method: |
-      . Examine a register item
-      . Verify that it defines structural requirements
-      . Confirm that the structural requirements are complete and enforceable
     type: Conformance
   - identifier: "/conf/register-item/referenced"
     name: Concept version reference test
     targets:
     - "/req/register-item/referenced"
-    purpose: Verify that a register item is referenced by one concept version of a
-      realised concept.
-    method: |
-      . Examine a register item
-      . Verify that it is referenced by exactly one concept version
-      . Confirm that the concept version belongs to a realised concept
-      . Validate the referential integrity between the register item and concept version
     type: Conformance
   - identifier: "/conf/register-item/metadata"
     name: Register item metadata test
     targets:
     - "/req/register-item/metadata"
-    purpose: Verify that a register item has associated metadata that supports the
-      management and status of the register item within the register.
-    method: |
-      . Examine a register item
-      . Verify that it has associated metadata
-      . Confirm that the metadata supports management and status tracking
-      . Validate that metadata includes relevant attributes for register management
     type: Conformance
   - identifier: "/conf/register-item/identifier"
     name: Functional identifier assignment test
     targets:
     - "/req/register-item/identifier"
-    purpose: Verify that a register item in the register is assigned a functional
-      identifier.
-    method: |
-      . Examine a register item
-      . Verify that it has been assigned at least one functional identifier
-      . Confirm that the functional identifier is unique within the register
-      . Validate that the identifier follows the expected format
-      . If multiple functional identifiers exist, verify they are all valid
     type: Conformance
   - identifier: "/conf/register-item/object-identifier"
     name: Object identifier assignment test
     targets:
     - "/req/register-item/object-identifier"
-    purpose: Verify that a register item in the register is assigned an object identifier
-      for permanent identification.
-    method: |
-      . Examine a register item
-      . Verify that it has been assigned an object identifier
-      . Confirm that the object identifier is permanent and non-redirectable
-      . Validate that the object identifier is unique and persistent
-      . Verify the object identifier can be externally referenced in combination with the register identifier
     type: Conformance
   - identifier: "/conf/register-item/retention"
     name: Register item retention test
     targets:
     - "/req/register-item/retention"
-    purpose: Verify that register items are retained in the register to support the
-      interpretation of data dependent on them.
-    method: |
-      . Examine register items that are invalid or superseded
-      . Verify that these items are still retained in the register
-      . Confirm that the items remain accessible for data interpretation purposes
-      . Validate that removal of register items is not permitted
     type: Conformance

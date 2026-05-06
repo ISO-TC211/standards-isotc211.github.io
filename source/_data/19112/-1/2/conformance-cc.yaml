@@ -2,7 +2,6 @@
 conformance_classes:
 - identifier: "/conf/gaz"
   name: Gazetteer conformance
-  description: Conformance tests for gazetteer structure and content.
   dependencies:
   - "/conf/srs"
   target: "/req/gaz"
@@ -11,25 +10,18 @@ conformance_classes:
     name: Gazetteer schema
     targets:
     - "/req/gaz/sch"
-    purpose: Verify conformance of gazetteer schema.
-    method: Inspect gazetteer schema definition.
     type: Validation
   - identifier: "/conf/gaz/mng"
     name: Gazetteer management
     targets:
     - "/req/gaz/mng"
-    purpose: Verify conformance of gazetteer management.
-    method: Inspect gazetteer management operations.
     type: Validation
 - identifier: "/conf/srs"
   name: Spatial Reference System conformance
-  description: Conformance tests for spatial reference system definitions.
   target: "/req/srs"
   tests:
   - identifier: "/conf/srs/srs"
     name: SRS implementation
     targets:
     - "/req/srs/srs"
-    purpose: Verify conformance of SRS implementation.
-    method: Inspect SRS implementation.
     type: Validation

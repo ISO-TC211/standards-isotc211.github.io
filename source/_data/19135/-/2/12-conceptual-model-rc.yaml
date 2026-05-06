@@ -3,9 +3,6 @@ normative_statements_classes:
 - identifier: "/req/conceptual-model"
   name: Adherence to conceptual model
   subject: register
-  description: Requirements on system implementation of conceptual model.
   normative_statements:
   - identifier: "/req/conceptual-model/implementation"
     name: Implementation of conceptual model
-    statement: The register system shall satisfy the conceptual model specified in
-      this document.

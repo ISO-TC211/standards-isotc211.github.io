@@ -32,20 +32,14 @@ conformance_classes:
     name: Verify identification information exists of upper-level object if exists
     targets:
     - "/req/metadata-xml/basic/parent-metadata"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/basic/language"
     name: Verify presence of language information
     targets:
     - "/req/metadata-xml/basic/language"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/basic/character-encoding"
     name: Verify presence of character encoding information
     targets:
     - "/req/metadata-xml/basic/character-encoding"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/basic/metadata-scope-name"
     name: Verify presence of metadata scope name
     targets:
@@ -72,20 +66,14 @@ conformance_classes:
     name: Check MD_Identification property "citation"
     targets:
     - "/req/metadata-xml/identification/citation"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/identification/abstract"
     name: Validate presence of MD_Identification property "abstract"
     targets:
     - "/req/metadata-xml/identification/abstract"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/identification/representative-fraction-denominator"
     name: Validate value of MD_RepresentativeFraction property "denominator"
     targets:
     - "/req/metadata-xml/identification/representative-fraction-denominator"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/constraints"
   name: Validation of XML instance for constraint information
   target: "/req/metadata-xml/constraints"
@@ -153,14 +141,10 @@ conformance_classes:
       provides description
     targets:
     - "/req/metadata-xml/spatial-representation/georectified-check-point-description-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/spatial-representation/geometric-object-count-value"
     name: Validate value of MD_GeometricObjects property "geometricObjectsCount"
     targets:
     - "/req/metadata-xml/spatial-representation/geometric-object-count-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/reference-system"
   name: Validation of XML instance for reference system information
   target: "/req/metadata-xml/reference-system"
@@ -175,14 +159,10 @@ conformance_classes:
     name: Valid MD_ReferenceSystem with identification properties
     targets:
     - "/req/metadata-xml/reference-system/identifier"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/reference-system/coordinate-epoch"
     name: Valid MD_ReferenceSystem with property "crs"
     targets:
     - "/req/metadata-xml/reference-system/coordinate-epoch"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/content"
   name: Validation of XML instance for content information
   target: "/req/metadata-xml/content"
@@ -202,45 +182,30 @@ conformance_classes:
     - "/req/metadata-xml/content/inline-feature-catalogue"
     - "/req/metadata-xml/content/dimension-units"
     - "/req/metadata-xml/content/feature-catalogue"
-    guidance: 'This automated conformance test satisfies multiple requirements.
-
-      '
   - identifier: "/conf/metadata-xml/content/feature-catalogue"
     name: Validate feature catalogue identification
     targets:
     - "/req/metadata-xml/content/feature-catalogue"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/content/image-illumination-elevation-angle-value"
     name: Value of MD_ImageDescription property "illuminationElevationAngle"
     targets:
     - "/req/metadata-xml/content/image-illumination-elevation-angle-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/content/image-illumination-azimuth-angle-value"
     name: Value of MD_ImageDescription property "illuminationAzimuthAngle"
     targets:
     - "/req/metadata-xml/content/image-illumination-azimuth-angle-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/content/image-cloud-cover-percent-value"
     name: Value of MD_ImageDescription property "cloudCoverPercent"
     targets:
     - "/req/metadata-xml/content/image-cloud-cover-percent-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/content/band-units-value"
     name: Validate MD_Band property "units" value
     targets:
     - "/req/metadata-xml/content/band-units-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/content/feature-type-instance-count"
     name: Validate MD_FeatureTypeInfo property "featureInstanceCount" value
     targets:
     - "/req/metadata-xml/content/feature-type-instance-count"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/portrayal-catalogue"
   name: Validation of XML instance for portrayal catalogue information
   target: "/req/metadata-xml/portrayal-catalogue"
@@ -271,20 +236,14 @@ conformance_classes:
     name: Validate transferSize value of MD_DigitalTransferOption
     targets:
     - "/req/metadata-xml/distribution/transfer-option-size-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/distribution/density-value"
     name: Validate MD_Medium density value
     targets:
     - "/req/metadata-xml/distribution/density-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/distribution/volumes-value"
     name: Valid MD_Medium volumes value
     targets:
     - "/req/metadata-xml/distribution/volumes-value"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/metadata-extension"
   name: Validation of XML instance for metadata extension information
   target: "/req/metadata-xml/metadata-extension"
@@ -357,8 +316,6 @@ conformance_classes:
     name: Validate values of EX_GeographicBoundingBox
     targets:
     - "/req/metadata-xml/extent/geographic-bounding-box"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/citation"
   name: Validation of XML instance for citation, responsibility and party information
   target: "/req/metadata-xml/citation"
@@ -378,8 +335,6 @@ conformance_classes:
     name: Valid values of CI_OnlineResource
     targets:
     - "/req/metadata-xml/citation/online-resource"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/common"
   name: Validation of XML instance for common classes
   target: "/req/metadata-xml/common"
@@ -400,20 +355,14 @@ conformance_classes:
     name: Language code from ISO 639-2
     targets:
     - "/req/metadata-xml/multilingual/language-code"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/multilingual/country-code"
     name: Country code from ISO 3166-1
     targets:
     - "/req/metadata-xml/multilingual/country-code"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
   - identifier: "/conf/metadata-xml/multilingual/character-set-code"
     name: Character set code from IANA charset register
     targets:
     - "/req/metadata-xml/multilingual/character-set-code"
-    guidance:
-    - Automated code can be constructed to implement this conformance test.
 - identifier: "/conf/metadata-xml/acquisition"
   name: XML implementation of acquisition information
   target: "/req/metadata-xml/acquisition"
