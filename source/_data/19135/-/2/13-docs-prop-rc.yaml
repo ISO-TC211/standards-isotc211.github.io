@@ -1,0 +1,16 @@
+---
+normative_statements_classes:
+- identifier: "/req/proposal-instructions"
+  name: Requirements of proposal instructions
+  subject: proposal instructions
+  description: 'Proposal instructions containing necessary information for proposers.
+
+    '
+  normative_statements:
+  - identifier: "/req/proposal-instructions/document-information"
+    name: Instructions to submit proposals are documented
+    statement: Information necessary to facilitate the proposal submission process
+      shall be documented as proposal instructions.
+  - identifier: "/req/proposal-instructions/provide-information"
+    name: Proposal instructions are made available to proposers
+    statement: Proposal instructions shall be made available to eligible proposers.

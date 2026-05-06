@@ -1,0 +1,110 @@
+---
+conformance_classes:
+- identifier: "/conf/approval-process"
+  name: Requirements of the approval process
+  description: This conformance class defines the requirements for approval process
+    implementation in a register.
+  target: "/req/approval-process"
+  tests:
+  - identifier: "/conf/approval-process/comply-requirements"
+    name: Register specification compliance
+    targets:
+    - "/req/approval-process/comply-requirements"
+    purpose: Verify that the approval process fulfils the requirements stated in the
+      register specification
+    method: Check that the approval process adheres to all requirements and procedures
+      as documented in the register specification
+    type: Validation
+  - identifier: "/conf/approval-process/complete-by-time-limit"
+    name: Approval process time limit compliance
+    targets:
+    - "/req/approval-process/complete-by-time-limit"
+    purpose: Verify that the approval process is completed within the defined time
+      limit
+    method: Check that the approval process is completed within the time limit specified
+      by the register owner
+    type: Conformance
+  - identifier: "/conf/approval-process/consult-acceptability"
+    name: Proposal acceptability consultation
+    targets:
+    - "/req/approval-process/consult-acceptability"
+    purpose: Verify that the approval process specifies how the register manager determines
+      the acceptability of proposals
+    method: Check that the approval process clearly defines the procedures for the
+      register manager to determine proposal acceptability
+    type: Validation
+  - identifier: "/conf/approval-process/forward-to-cb"
+    name: Proposal forwarding to control body
+    targets:
+    - "/req/approval-process/forward-to-cb"
+    purpose: Verify that the approval process specifies how the register manager forwards
+      eligible proposals to the control body
+    method: Check that the approval process defines clear procedures for forwarding
+      eligible proposals to the control body for determination of acceptability
+    type: Validation
+  - identifier: "/conf/approval-process/request-changes"
+    name: Proposal change requests
+    targets:
+    - "/req/approval-process/request-changes"
+    purpose: Verify that the approval process specifies how the control body requests
+      changes to proposals
+    method: Check that the approval process defines procedures for the control body
+      to request proposal revisions when changes are required for acceptance
+    type: Validation
+  - identifier: "/conf/approval-process/issue-decision"
+    name: Proposal decision issuance
+    targets:
+    - "/req/approval-process/issue-decision"
+    purpose: Verify that the approval process specifies how the control body decides
+      whether to accept or reject proposals
+    method: Check that the approval process defines procedures for the control body
+      to make decisions on proposals in conformance with the register specification
+    type: Validation
+  - identifier: "/conf/approval-process/decide-by-time-limit"
+    name: Decision time limit compliance
+    targets:
+    - "/req/approval-process/decide-by-time-limit"
+    purpose: Verify that the approval process specifies how the control body issues
+      decisions within the required time limit
+    method: Check that the approval process defines procedures for the control body
+      to issue decisions within the time limit specified by the register owner
+    type: Validation
+  - identifier: "/conf/approval-process/inform-decision"
+    name: Decision notification to manager
+    targets:
+    - "/req/approval-process/inform-decision"
+    purpose: Verify that the approval process specifies how the control body informs
+      the register manager of decisions
+    method: Check that the approval process defines procedures for the control body
+      to inform the register manager of decisions, including the rationale for each
+      decision
+    type: Validation
+  - identifier: "/conf/approval-process/forward-decision"
+    name: Decision forwarding to proposer
+    targets:
+    - "/req/approval-process/forward-decision"
+    purpose: Verify that the approval process specifies how the register manager forwards
+      proposal decisions to proposers
+    method: Check that the approval process defines procedures for the register manager
+      to forward control body decisions to proposers with supplementary information
+    type: Validation
+  - identifier: "/conf/approval-process/forward-by-time-limit"
+    name: Decision forwarding time limit compliance
+    targets:
+    - "/req/approval-process/forward-by-time-limit"
+    purpose: Verify that the approval process specifies how the register manager forwards
+      decisions within the required time limit
+    method: Check that the approval process defines procedures for the register manager
+      to forward decisions to proposers within the time limit specified by the register
+      owner
+    type: Validation
+  - identifier: "/conf/approval-process/incorporate-approved-proposal"
+    name: Approved proposal incorporation
+    targets:
+    - "/req/approval-process/incorporate-approved-proposal"
+    purpose: Verify that the approval process specifies how the register manager incorporates
+      approved proposals
+    method: Check that the approval process defines procedures for the register manager
+      to incorporate proposals according to control body approvals, including any
+      required changes
+    type: Validation

@@ -1,51 +1,68 @@
-title: Normative Statements and Conformance for ISO/TC 211 Geographic information/Geomatics standards
-title_html: "Normative Statements and Conformance"
+title: ISO/TC 211 Normative Statements & Conformance
+title_html: "ISO/TC 211 Normative Statements & Conformance"
+brand_sub: "Harmonized Resources Maintenance Agency"
+
+theme: jekyll-theme-isotc211
 
 author: "ISO/TC 211"
 email: open.source@ribose.com
 
 description: >-
-  The normative statements and conformance repository for
+  Normative statements and conformance repository for
   geographic information technology from ISO/TC 211
   Geographic information/Geomatics.
 
 tagline: >-
   Normative statements and conformance repository for geographic information technology
 
-# Build settings
-markdown: kramdown
-
-font_awesome_kit_url: https://kit.fontawesome.com/77a8a07e0a.js
+committee:
+  id: 211
+  name: Geographic information/Geomatics
+  home: https://committee.iso.org/home/tc211
 
 collections:
   pages:
     output: true
     permalink: /:path/
 
-resource_listings:
-  standards:
-    index_url: 'standards'
-    index_title: "Standards"
-    resource_root: 'standards'
-    resource_label: "standard"
+markdown: kramdown
 
-theme: jekyll-theme-isotc211
+plugins:
+  - jekyll/vite
+  - jekyll-feed
+  - jekyll-data
+  - jekyll-asciidoc
 
-committee:
-  id: 211
-  name: Geographic information/Geomatics
-  link: https://committee.iso.org/home/tc211
+defaults: []
 
-footer_nav:
-  - url: https://committee.iso.org/home/tc211
-    title: Committee Site
+nav:
+  - title: News
+    url: /news/
+  - title: About
+    url: /about/
+  - title: ISO/TC 211 Resources
+    url: https://www.isotc211.org
+
+footer_links:
+  - title: Main Site
+    url: https://www.isotc211.org
+  - title: Geodetic Registry
+    url: https://geodetic.isotc211.org/
+  - title: UML Models
+    url: http://iso.sparxcloud.com/index.php
+  - title: Schemas
+    url: https://schemas.isotc211.org
+  - title: Terminology
+    url: https://isotc211.geolexica.org/
+  - title: Ontologies
+    url: https://def.isotc211.org
+  - title: Registries
+    url: https://registry.isotc211.org/
 
 social:
   links:
     - url: https://twitter.com/ISOTC211
     - url: https://github.com/ISO-TC211
-    - url: https://www.facebook.com/groups/236669159734679/
-    - url: https://www.linkedin.com/groups/4222374
 
 powered_by:
   url: https://open.ribose.com
@@ -55,3 +72,18 @@ powered_by:
 source: build_source
 include:
   - build_source
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - package.json
+  - package-lock.json
+  - node_modules
+  - vendor
+  - .sass-cache
+  - vite.config.ts
+  - postcss.config.js
+  - bin
+  - _frontend
+  - config/vite.json

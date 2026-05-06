@@ -1,0 +1,49 @@
+---
+normative_statements_classes:
+- identifier: "/req/change"
+  name: Change object requirements
+  subject: register
+  description: Requirements on change object implementation and governance.
+  normative_statements:
+  - identifier: "/req/change/creation"
+    name: Creation of a change
+    statement: A register shall support creation of a change object that serves as
+      a record of an action that resulted in a change of register content, including
+      concepts, concept versions, register item classes and register items.
+  - identifier: "/req/change/information"
+    name: Information recorded in a change
+    statement: |
+      A register change object shall record at least the following information:
+
+      * the action performed;
+      * links to the object identifiers of the register objects that have been
+        modified by the action;
+      * actual changed information, whether it is new content, replaced content or
+        removed content;
+      * metadata of the change, such as the time of the change;
+      * metadata required by the register.
+    guidance:
+    - A rule of thumb to what is stored in a change object is to ensure that the change
+      can be fully replayed and the state of the register object can be reconstructed
+      at any point in time.
+  - identifier: "/req/change/metadata"
+    name: Change object metadata
+    statement: A register change object shall store associated metadata that supports
+      the management and status of the change object within the register.
+    guidance:
+    - The change object metadata may include information such as the change object
+      identifier, name, description, creation date, last modified date, version, and
+      other relevant attributes.
+  - identifier: "/req/change/object-identifier"
+    name: Change object identifier
+    statement: A register change object in the register shall be assigned an object
+      identifier.
+    guidance:
+    - A change object can have more than one object identifier if it belongs to an
+      existing identifying convention and a new identifier according to the register
+      specification.
+    - The object identifier allows for tracking and referencing specific changes in
+      the register.
+    examples:
+    - "/change/2358 is a kind of an object identifier assigned to a register change
+      object."

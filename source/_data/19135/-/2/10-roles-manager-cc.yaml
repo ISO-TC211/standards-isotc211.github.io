@@ -1,0 +1,34 @@
+---
+conformance_classes:
+- identifier: "/conf/roles/register-manager"
+  name: Responsibilities of the register manager
+  description: This conformance class defines the requirements for register manager
+    implementation in a register.
+  target: "/req/roles/register-manager"
+  tests:
+  - identifier: "/conf/roles/register-manager/manage-by-register-specification"
+    name: Register specification compliance
+    targets:
+    - "/req/roles/register-manager/manage-by-register-specification"
+    purpose: Verify that the register manager manages the register in accordance with
+      the register specification
+    method: Check that the register manager follows the processes and procedures defined
+      in the register specification for register management
+    type: Conformance
+  - identifier: "/conf/roles/register-manager/distribute-proposal-process-information"
+    name: Proposal process information dissemination
+    targets:
+    - "/req/roles/register-manager/distribute-proposal-process-information"
+    purpose: Verify that the register manager disseminates proposal process information
+      to eligible proposers
+    method: Check that the register manager provides necessary information for submitting
+      proposals to eligible proposers, including proposal instructions
+    type: Conformance
+  - identifier: "/conf/roles/register-manager/accept-proposals"
+    name: Proposal acceptance and processing
+    targets:
+    - "/req/roles/register-manager/accept-proposals"
+    purpose: Verify that the register manager processes proposals from proposers
+    method: Check that the register manager has processes in place to accept and process
+      proposals from proposers according to the defined proposal process
+    type: Conformance

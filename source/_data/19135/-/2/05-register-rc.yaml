@@ -1,0 +1,74 @@
+---
+normative_statements_classes:
+- identifier: "/req/content-register"
+  name: Content register requirements
+  subject: register
+  description: Requirements of the content register
+  dependencies:
+  - "/req/conceptual-model"
+  - "/req/identifiers"
+  - "/req/versioning"
+  - "/req/register-item-class"
+  - "/req/register-item"
+  - "/req/actions"
+  - "/req/relations/register-item-to-register-item-class"
+  - "/req/relations/register-item-class"
+  - "/req/register-specification"
+  - "/req/proposal-instructions"
+- identifier: "/req/concept-register"
+  name: Concept register requirements
+  subject: register
+  description: Requirements on register towards handling concepts.
+  dependencies:
+  - "/req/concept"
+  - "/req/concept-version"
+  - "/req/concept-version-status"
+  - "/req/relations"
+- identifier: "/req/governance"
+  name: Governance requirements
+  subject: register
+  description: Requirements on governance of a register.
+  dependencies:
+  - "/req/roles/control-body"
+  - "/req/roles/register-manager"
+  - "/req/roles/register-owner"
+  - "/req/roles/proposer"
+  - "/req/roles/register-system-manager"
+  - "/req/roles/register-user"
+  - "/req/content-management-process"
+  - "/req/proposal-process"
+  - "/req/approval-process"
+  - "/req/establishment-process"
+  - "/req/appeal-process"
+  - "/req/decommission-process"
+- identifier: "/req/governed-content-register"
+  name: Governed content register requirements
+  subject: register
+  description: Requirements on a governed content register.
+  dependencies:
+  - "/req/content-register"
+  - "/req/governance"
+- identifier: "/req/governed-concept-register"
+  name: Governed concept register requirements
+  subject: register
+  description: Requirements on a governed concept register.
+  dependencies:
+  - "/req/concept-register"
+  - "/req/governance"
+- identifier: "/req/comprehensive-concept-register"
+  name: Comprehensive concept register requirements
+  subject: register
+  description: Requirements on register towards handling concepts with advanced concept
+    composition methods.
+  dependencies:
+  - "/req/concept-register"
+  - "/req/governance"
+  - "/req/relations-concept/inherits"
+  - "/req/relations-concept/has-part"
+  - "/req/relations-register-item-class/has-part"
+  - "/req/actions/correctional-change"
+  - "/req/actions/migrate-concept-definition"
+  - "/req/actions/concept-domains"
+  - "/req/actions/concept-incorporation"
+  - "/req/actions/concept-composition"
+  - "/req/actions/concept-inheritance"

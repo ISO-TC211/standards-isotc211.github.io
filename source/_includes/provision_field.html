@@ -1,0 +1,11 @@
+{% comment %}
+  Reusable provision field component.
+  Usage: {% include provision_field.html label="Identifier" value="some text" %}
+  Optional: mono=true for monospace value, redacted=true for hidden content style
+{% endcomment %}
+<div class="provision-field">
+  <div class="provision-field__label">{{ include.label }}</div>
+  <div class="provision-field__value {% if include.mono %}provision-field__value--mono{% endif %} {% if include.redacted %}provision-statement--redacted{% endif %}">
+    {{ include.value }}
+  </div>
+</div>

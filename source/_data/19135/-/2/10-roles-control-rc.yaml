@@ -1,0 +1,19 @@
+---
+normative_statements_classes:
+- identifier: "/req/roles/control-body"
+  name: Responsibilities of the control body
+  subject: control body
+  description: |
+    A control body consists of a group of subject matter experts that renders
+    decisions regarding the content of a register.
+    A control body supports the register manager for the review, authentication,
+    and approval of the register content.
+  normative_statements:
+  - identifier: "/req/roles/control-body/conform-to-governance"
+    name: Conformance to governance processes by the control body
+    statement: The control body shall follow the rules and procedures defined in the
+      register specification (<<register-specification>>).
+  - identifier: "/req/roles/control-body/review-proposals-render-decisions"
+    name: Review of proposals and rendering of decisions
+    statement: The control body shall review proposals received from the register
+      manager and render a decision regarding the approval of each proposal.

@@ -5,25 +5,26 @@ all: _site
 bundle:
 	bundle
 
+bundle-modspec:
+	BUNDLE_GEMFILE=Gemfile.modspec BUNDLE_PATH=vendor/modspec bundle install
+
+npm:
+	npm install
+
 clean:
 	bundle exec jekyll clean
+	rm -rf build_source .build_source_stamp
+
+.build_source_stamp:
 	rm -rf build_source
+	mkdir -p build_source
+	cp -a source/* build_source/
+	@touch $@
 
-build_source:
-	mkdir -p $@; \
-	cp -a source/* build_source; \
-	cp -a standards/* build_source; \
-
-_site: bundle build_source
+_site: bundle bundle-modspec npm .build_source_stamp
 	bundle exec jekyll build
 
-serve: _site
+serve: bundle bundle-modspec npm .build_source_stamp
 	bundle exec jekyll serve
 
-update-init:
-	git submodule update --init
-
-update-modules:
-	git submodule foreach git pull origin master
-
-.PHONY: all clean serve update-init update-modules
+.PHONY: all clean serve bundle bundle-modspec npm

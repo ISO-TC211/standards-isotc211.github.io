@@ -1,0 +1,17 @@
+---
+normative_statements_classes:
+- identifier: "/req/roles/proposer"
+  name: Responsibilities of the proposer
+  subject: proposer
+  description: |
+    The proposer is an entity authorized by the register owner to propose changes to
+    the content of the register.
+  normative_statements:
+  - identifier: "/req/roles/proposer/meet-eligibility-criteria"
+    name: Conformance to eligibility criteria
+    statement: The proposer shall meet the eligibility criteria defined in the register
+      specification (<<register-specification>>).
+  - identifier: "/req/roles/proposer/conform-to-governance"
+    name: Conformance to governance processes by the proposer
+    statement: The proposer shall follow the rules and procedures defined in the register
+      specification (<<register-specification>>).

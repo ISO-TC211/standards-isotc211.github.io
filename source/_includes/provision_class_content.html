@@ -1,0 +1,110 @@
+{% comment %}Class-level page content (requirements class or conformance class).{% endcomment %}
+{% assign uri_base = include.uri_base %}
+{% assign data = include.data %}
+{% assign xrefs = include.xrefs %}
+{% assign page_type = include.page_type %}
+{% assign identifier = include.identifier %}
+
+<div class="provision-field">
+  <div class="provision-field__label">Identifier</div>
+  <div class="provision-field__value">
+    <code class="provision-uri">https://standards.isotc211.org/{{ uri_base }}{{ identifier }}</code>
+  </div>
+</div>
+
+{% if page_type == 'conformance_class' and xrefs.requirements_class %}
+<div class="provision-field">
+  <div class="provision-field__label">Requirements class</div>
+  <div class="provision-field__value">
+    <a href="/{{ uri_base }}{{ xrefs.requirements_class }}" class="provision-xref-link">
+      <span class="provision-xref-badge provision-xref-badge--req">req class</span>
+      {{ xrefs.requirements_class }}
+    </a>
+  </div>
+</div>
+{% endif %}
+
+{% if page_type == 'requirements_class' and xrefs.tested_by and xrefs.tested_by.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Tested by</div>
+  <div class="provision-field__value">
+    <ul class="provision-xref-list">
+      {% for conf_id in xrefs.tested_by %}
+      <li>
+        <a href="/{{ uri_base }}{{ conf_id }}" class="provision-xref-link">
+          <span class="provision-xref-badge provision-xref-badge--conf">conf class</span>
+          {{ conf_id }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+{% if data.subject %}
+<div class="provision-field">
+  <div class="provision-field__label">Subject</div>
+  <div class="provision-field__value">{{ data.subject }}</div>
+</div>
+{% endif %}
+
+{% if data.description %}
+<div class="provision-field">
+  <div class="provision-field__label">Description</div>
+  <div class="provision-field__value">{{ data.description }}</div>
+</div>
+{% endif %}
+
+{% if xrefs.dependencies and xrefs.dependencies.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Dependencies</div>
+  <div class="provision-field__value">
+    {% include provision_xref_list.html items=xrefs.dependencies uri_base=uri_base %}
+  </div>
+</div>
+{% endif %}
+
+{% if data.guidance and data.guidance.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Guidance</div>
+  <div class="provision-field__value">
+    <ul>
+      {% for g in data.guidance %}
+      <li>{{ g }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+{% assign children = data.requirements | default: data.tests %}
+<div class="provision-children provision-children--{{ page_type }}">
+  <h2 class="provision-children__title">
+    {% if page_type == 'requirements_class' %}Requirements{% else %}Conformance Tests{% endif %}
+  </h2>
+  {% if children and children.size > 0 %}
+  <div class="provision-children__list">
+    {% for child in children %}
+    {% assign child_id = child.identifier_fragment %}
+    <a href="/{{ uri_base }}{{ identifier }}/{{ child_id }}/" class="provision-child-card provision-child-card--{{ page_type }}">
+      <div class="provision-child-card__name">{{ child.name }}</div>
+      <div class="provision-child-card__id">
+        <code>{{ identifier }}/{{ child_id }}</code>
+      </div>
+      <svg class="provision-child-card__chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+      </svg>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="provision-children__empty">
+    {% if page_type == 'requirements_class' %}
+    This class has no individual requirements. It aggregates dependencies to other requirements classes.
+    {% else %}
+    This class has no individual conformance tests. It aggregates dependencies to other conformance classes.
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

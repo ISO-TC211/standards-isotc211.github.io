@@ -1,0 +1,28 @@
+---
+conformance_classes:
+- identifier: "/conf/content-management-process"
+  name: Requirements of the content management process
+  description: This conformance class defines the requirements for content management
+    process implementation in a register.
+  target: "/req/content-management-process"
+  tests:
+  - identifier: "/conf/content-management-process/perform-action"
+    name: Approved action performance
+    targets:
+    - "/req/content-management-process/perform-action"
+    purpose: Verify that the register manager implements approved proposals containing
+      approved actions
+    method: Check that the register manager properly implements approved proposals
+      by performing the approved actions as specified by the control body
+    type: Conformance
+  - identifier: "/conf/content-management-process/implementation-of-proposal"
+    name: Comprehensive proposal implementation
+    targets:
+    - "/req/content-management-process/implementation-of-proposal"
+    purpose: Verify that the register manager implements approved proposals with proper
+      consideration of all relevant factors
+    method: Check that the register manager implements approved proposals considering
+      the context of the register and proposal, the most suitable action, applicable
+      concept version statuses, applicable relations, identifier assignment considerations,
+      versioning considerations, and the intended outcome of the action
+    type: Conformance

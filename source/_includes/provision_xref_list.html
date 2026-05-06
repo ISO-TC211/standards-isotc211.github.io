@@ -1,0 +1,23 @@
+{% comment %}
+  Reusable cross-reference list component.
+  Usage: {% include provision_xref_list.html items=xrefs.targets uri_base=uri_base %}
+  Each item should have 'id' and 'kind' keys.
+{% endcomment %}
+<ul class="provision-xref-list">
+{% for item in include.items %}
+  <li>
+    <a href="/{{ include.uri_base }}{{ item.id }}" class="provision-xref-link">
+      {% if item.kind == 'req_class' or item.kind == 'requirement' %}
+      <span class="provision-xref-badge provision-xref-badge--req">
+        {% if item.kind == 'req_class' %}req class{% else %}req{% endif %}
+      </span>
+      {% elsif item.kind == 'conf_class' or item.kind == 'conf_test' %}
+      <span class="provision-xref-badge provision-xref-badge--conf">
+        {% if item.kind == 'conf_class' %}conf class{% else %}test{% endif %}
+      </span>
+      {% endif %}
+      {{ item.id }}
+    </a>
+  </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="content-page">
+  <header class="content-page__header">
+    <nav class="content-page__breadcrumb">
+      <a href="/">Home</a>
+      {% if page.standard_number %}
+      &rsaquo;
+      <a href="/{{ page.standard_number }}/">{{ page.standard_number }}</a>
+      {% endif %}
+    </nav>
+    <h1 class="content-page__title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <div class="content-page__meta">{{ page.subtitle }}</div>
+    {% endif %}
+  </header>
+
+  <div class="documentation">
+    {{ content }}
+  </div>
+</div>

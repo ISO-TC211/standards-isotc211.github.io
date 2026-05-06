@@ -1,0 +1,64 @@
+{% comment %}Individual requirement page content.{% endcomment %}
+{% assign uri_base = include.uri_base %}
+{% assign data = include.data %}
+{% assign xrefs = include.xrefs %}
+{% assign identifier = include.identifier %}
+{% assign standard_title = include.standard_title %}
+
+<div class="provision-field">
+  <div class="provision-field__label">Identifier</div>
+  <div class="provision-field__value">
+    <code class="provision-uri">https://standards.isotc211.org/{{ uri_base }}{{ identifier }}</code>
+  </div>
+</div>
+
+{% if xrefs.tested_by and xrefs.tested_by.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Tested by</div>
+  <div class="provision-field__value">
+    {% include provision_xref_list.html items=xrefs.tested_by uri_base=uri_base %}
+  </div>
+</div>
+{% endif %}
+
+{% if data.statement %}
+<div class="provision-field">
+  <div class="provision-field__label">Statement</div>
+  <div class="provision-field__value provision-statement">{{ data.statement }}</div>
+</div>
+{% else %}
+<div class="provision-field">
+  <div class="provision-field__label">Statement</div>
+  <div class="provision-field__value">
+    <div class="provision-statement--redacted">
+      Refer to {{ standard_title }} for the full requirement statement.
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.guidance and data.guidance.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Guidance</div>
+  <div class="provision-field__value">
+    <ul>
+      {% for g in data.guidance %}
+      <li>{{ g }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+{% if data.examples and data.examples.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Examples</div>
+  <div class="provision-field__value">
+    <ul>
+      {% for e in data.examples %}
+      <li>{{ e }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}

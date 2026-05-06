@@ -1,0 +1,11 @@
+title: "ISO 19112:2019 Geographic information — Spatial referencing by geographic identifiers"
+label: "ISO 19112:2019"
+subtitle: "Geographic information — Spatial referencing by geographic identifiers"
+edition: 2
+description: >
+  ISO 19112:2019 defines the conceptual schema for spatial referencing by geographic
+  identifiers. It establishes the requirements and conformance classes for gazetteers
+  and spatial reference systems using geographic identifiers.
+hide_fields: [statement, description]
+iso_standard_url: https://www.iso.org/standard/70742.html
+iso_preview_url: https://www.iso.org/obp/ui/en/#iso:std:iso:19112:ed-2:v1:en

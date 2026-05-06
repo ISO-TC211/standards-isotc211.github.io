@@ -1,0 +1,11 @@
+title: "ISO 19135:2026 Geographic information — Procedures for registration"
+label: "ISO 19135:2026"
+subtitle: "Geographic information — Procedures for registration"
+edition: 2
+description: >
+  ISO 19135:2026 specifies procedures to be followed in establishing, maintaining,
+  and publishing registers of unique, unambiguous and permanent identifiers and
+  meanings assigned to items in geographic information.
+hide_fields: [statement, description, purpose, method]
+iso_standard_url: https://www.iso.org/standard/87753.html
+iso_preview_url: https://www.iso.org/obp/ui/en/#iso:std:iso:19135:ed-2:v1:en

@@ -1,0 +1,58 @@
+---
+normative_statements_classes:
+- identifier: "/req/register-item-class"
+  name: Requirements of register item classes
+  subject: register item class
+  description: |
+    A register item class represents the definition of the common
+    characteristics between a set of register items.
+  guidance:
+  - A register item class can be thought of as a schema, of which all register items
+    of the class must satisfy.
+  normative_statements:
+  - identifier: "/req/register-item-class/creation"
+    name: Register item class creation
+    statement: The register shall support creation of register item classes to describe
+      information requirements of register items.
+  - identifier: "/req/register-item-class/information-requirements"
+    name: Information requirements description
+    statement: A register item class shall describe the information requirements of
+      register items.
+    examples:
+    - The register item class of "geographic coordinate reference system" could contain
+      a register item that is an instance of a geographic coordinate reference system,
+      such as "WGS 84 (G873)".
+  - identifier: "/req/register-item-class/structural-requirements"
+    name: Definition of structural requirements
+    statement: A register item class shall define the structural requirements of register
+      items.
+  - identifier: "/req/register-item-class/referenced"
+    name: Referenced by a concept version of a concept definition
+    statement: A register item class shall be referenced by one concept version that
+      belongs to a concept definition.
+    guidance:
+    - A concept definition represents the information requirements of a concept, and
+      its associated concept version is linked to a register item class that provides
+      the actual requirements of the register item.
+  - identifier: "/req/register-item-class/metadata"
+    name: Register item class metadata
+    statement: A register item class shall have associated metadata that supports
+      the management and status of the register item class within the register.
+    guidance:
+    - The register item class metadata may include information such as the register
+      item class identifier, name, description, creation date, last modified date,
+      version, and other relevant attributes.
+  - identifier: "/req/register-item-class/identifier"
+    name: Register item classes are assigned functional identifiers
+    statement: A register item class in the register shall be assigned a functional
+      identifier.
+    examples:
+    - "/ric/crs/wgs84/g873/v1 is a kind of a functional identifier assigned to a register
+      item class."
+  - identifier: "/req/register-item-class/object-identifier"
+    name: Register item classes are assigned object identifiers
+    statement: A register item class in the register shall be assigned an object identifier
+      for permanent identification.
+    guidance:
+    - Object identifiers are non-redirectable and permanently assigned to specific
+      objects.

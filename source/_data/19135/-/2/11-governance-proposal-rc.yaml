@@ -1,0 +1,48 @@
+---
+normative_statements_classes:
+- identifier: "/req/proposal-process"
+  name: Requirements of the proposal process
+  subject: proposal process
+  description: |
+    The proposal process is necessary for the insert or modify content in the
+    register.
+  guidance:
+  - The process for submitting proposals varies from register to register and can
+    stipulate additional steps and requirements.
+  normative_statements:
+  - identifier: "/req/proposal-process/satisfy-requirements"
+    name: Satisfaction of proposal requirements defined in the register specification
+    statement: The submitted proposal shall satisfy the requirements defined in the
+      register specification.
+    guidance: The proposer could coordinate proposals with other proposers, if needed.
+  - identifier: "/req/proposal-process/submit-proposal-role"
+    name: Submission of proposal to register manager
+    statement: The proposer shall submit the proposal to the register manager.
+  - identifier: "/req/proposal-process/verify-eligibility-role"
+    name: Clarification of proposals when requested
+    statement: The proposer shall clarify proposals to the control body, register
+      manager or register owner when requested.
+  - identifier: "/req/proposal-process/withdraw-proposal"
+    name: Withdrawal of proposal
+    statement: The proposer shall have the option to withdraw a proposal at any time
+      during the approval process.
+  - identifier: "/req/proposal-process/verify-eligibility"
+    name: Verification of proposer eligibility
+    statement: When a proposal is received, the register manager shall verify eligibility
+      of the proposer in accordance with defined eligibility criteria.
+    dependencies:
+    - "/req/register-specification/define-proposer-criteria"
+  - identifier: "/req/proposal-process/reject-failed-proposals"
+    name: Rejection of proposals that do not meet requirements
+    statement: The register manager shall reject proposals that do not meet the proposal
+      requirements as defined.
+    dependencies:
+    - "/req/register-specification/define-proposal-submission-requirements"
+  - identifier: "/req/proposal-process/forward-eligible-proposals"
+    name: Forwarding of eligible proposals to control body
+    statement: The register manager shall forward eligible proposals to the control
+      body (<<role-control-body>>) for deliberations on acceptability.
+  - identifier: "/req/proposal-process/retain-submission-decision"
+    name: Retainment of proposal submission and decision information
+    statement: The register manager shall retain documentation on the submission of
+      the proposal and the deliberations taken.

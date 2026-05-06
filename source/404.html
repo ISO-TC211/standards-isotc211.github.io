@@ -1,24 +1,67 @@
 ---
 layout: default
+title: "Page Not Found"
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div class="content-page">
+  <header class="content-page__header">
+    <nav class="content-page__breadcrumb">
+      <a href="/">Home</a>
+    </nav>
+    <h1 class="content-page__title">Page Not Found</h1>
+  </header>
 
-<div class="container">
-  <h1>404</h1>
+  <div class="documentation">
+    <div class="not-found-section">
+      <div class="not-found-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+      <h2>URI Not Resolved</h2>
+      <p>
+        This site is a <strong>URI dereferencing service</strong> for
+        ISO/TC 211 Geographic information/Geomatics standards. The URI you
+        followed does not match any registered provision.
+      </p>
+
+      <div class="standards-url-demo" style="text-align: left;">
+        <div class="standards-url-demo__label">Attempted path</div>
+        <code class="standards-url-demo__code" id="not-found-path"></code>
+      </div>
+
+      <h3>Expected URI format</h3>
+      <div class="standards-url-demo" style="text-align: left;">
+        <code class="standards-url-demo__code">https://standards.isotc211.org/{Standard}/-{Part}/{Edition}/{req|conf}/{ClassId}[/{ItemId}]</code>
+      </div>
+
+      <h3>What to do</h3>
+      <ul>
+        <li>Check the URI for typos</li>
+        <li>Verify the standard number, part, and edition are correct</li>
+        <li>Browse available standards below</li>
+      </ul>
+
+      <div class="not-found-actions">
+        <a href="/" class="hero-btn hero-btn--fill" style="display: inline-flex; text-decoration: none;">
+          Go to Homepage
+        </a>
+        {% for std in site.data.standards_catalog %}
+        <a href="{{ std.url }}" class="hero-btn hero-btn--ghost" style="display: inline-flex; text-decoration: none;">
+          {{ std.label }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  (function() {
+    var pathEl = document.getElementById('not-found-path');
+    if (pathEl) {
+      pathEl.textContent = window.location.pathname;
+    }
+  })();
+</script>
