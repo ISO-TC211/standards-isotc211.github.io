@@ -21,6 +21,7 @@ DELIVERABLES_URL = "https://isopublicstorageprod.blob.core.windows.net/opendata/
 
 DATA_DIR = File.expand_path("../source/_data", __dir__)
 YAML_PATH = File.join(DATA_DIR, "tc211_standards.yaml")
+PENDING_PATH = File.join(DATA_DIR, "tc211_standards_pending.yaml")
 
 REFERENCE_RE = %r{\A(?:ISO|ISO/TS|ISO/TR)\s+(\d+)(?:-(\d+))?:(\d{4})}
 SUPPLEMENT_RE = %r{/(Amd|Cor)\s}
@@ -68,7 +69,8 @@ def entry_from_deliverable(deliverable)
     "edition" => deliverable["edition"],
     "type" => deliverable["deliverableType"],
     "iso_id" => deliverable["id"],
-    "published" => deliverable["publicationDate"]
+    "published" => deliverable["publicationDate"],
+    "pending" => false
   }
 end
 
@@ -101,6 +103,14 @@ end
 inventory = latest.values
   .filter_map { |r| entry_from_deliverable(r) }
   .sort_by { |e| [e["number"].to_i, e["part"] || "\xff", e["edition"]] }
+
+# Apply pending list
+pending_refs = if File.exist?(PENDING_PATH)
+  Set.new((YAML.safe_load_file(PENDING_PATH) || []))
+else
+  Set.new
+end
+inventory.each { |e| e["pending"] = true if pending_refs.include?(e["reference"]) }
 
 # Identify new entries against existing inventory
 existing_refs = if File.exist?(YAML_PATH)
