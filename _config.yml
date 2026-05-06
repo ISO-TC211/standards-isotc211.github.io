@@ -69,9 +69,7 @@ powered_by:
   title: Ribose
   logo_path: /assets/logo-ribose.svg
 
-source: build_source
-include:
-  - build_source
+source: source
 
 exclude:
   - Gemfile

@@ -1,8 +1,6 @@
 .sass-cache
 _site
-build_source/*
 node_modules
 Gemfile.lock
 .jekyll-cache
-.build_source_stamp
 vendor/
