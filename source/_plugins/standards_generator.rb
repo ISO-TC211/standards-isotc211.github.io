@@ -57,7 +57,8 @@ module StandardsGenerator
         tc211_entries.each do |entry|
           next if known_labels.include?(entry["reference"])
 
-          pending = entry["pending"] || pending_refs.include?(entry["reference"])
+          ref = entry["reference"]
+          pending = entry["pending"] || pending_refs.any? { |p| ref == p || ref.start_with?("#{p}:") }
           factory.create_placeholder_page(entry, pending)
 
           std_key = entry["part"] ? "#{entry['number']}-#{entry['part']}" : entry["number"]
