@@ -18,8 +18,6 @@ Requires Ruby 3.1+ and Node.js 20+. Dependencies: `bundle install`, `npm install
 
 ## Architecture
 
-**Two Gemfiles** — `Gemfile` (Jekyll + theme) and `Gemfile.modspec` (modspec gem, installed to `vendor/modspec`). The modspec gem uses Liquid 5 which conflicts with Jekyll 4, so it's loaded separately via `$LOAD_PATH` manipulation in `standards_generator.rb`.
-
 **Build source indirection** — `source/` is the canonical directory but Jekyll reads from `build_source/`. The Makefile copies `source/*` → `build_source/` before each build (`.build_source_stamp` target). Generated files like `_data/standards_catalog.yaml` are written into `build_source/`.
 
 **Plugin pipeline** (`source/_plugins/standards_generator.rb` triggers on `:after_reset` hook):

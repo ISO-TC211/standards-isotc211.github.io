@@ -2,12 +2,6 @@
 
 require "rspec"
 
-# Load modspec gem from vendor/
-project_root = File.expand_path("..", __dir__)
-%W[#{project_root}/vendor/modspec #{project_root}/vendor/bundle].each do |dir|
-  Dir.glob("#{dir}/ruby/*/gems/*/lib").each { |p| $LOAD_PATH.unshift(p) unless $LOAD_PATH.include?(p) }
-end
-
 require "modspec"
 require "jekyll"
 

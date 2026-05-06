@@ -31,9 +31,6 @@ jobs:
           bundler-cache: true
           cache-version: 0
 
-      - name: Install modspec gems
-        run: BUNDLE_GEMFILE=Gemfile.modspec BUNDLE_PATH=vendor/modspec bundle install
-
       - name: Setup node
         uses: actions/setup-node@v4
         with:
