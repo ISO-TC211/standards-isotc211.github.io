@@ -4,6 +4,9 @@ brand_sub: "Harmonized Resources Maintenance Agency"
 
 theme: jekyll-theme-isotc211
 
+favicon_svg: /assets/favicon.svg
+favicon_ico: /assets/favicon.ico
+
 author: "ISO/TC 211"
 email: open.source@ribose.com
 
