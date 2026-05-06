@@ -42,14 +42,23 @@ Each standard page links directly to its
 https://www.iso.org[ISO.org] listing and full-text preview,
 making it easy to access the complete published document.
 
-* **Supported standards** --
-The site currently provides URI dereferencing for:
+* **Complete standards catalog** --
+The site now lists all published ISO/TC 211 standards, auto-discovered from
+ISO public metadata.
+Standards are organized into three categories:
 
-  * https://www.iso.org/standard/80874.html[ISO 19115-3:2023] — Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts
-  * https://www.iso.org/standard/87753.html[ISO 19135:2026] — Procedures for registration
-  * https://www.iso.org/standard/70742.html[ISO 19112:2019] — Spatial referencing by geographic identifiers
+  * **Supported standards** — those with URI-identified requirements and
+    conformance classes (data provided as YAML):
+      ** https://www.iso.org/standard/80874.html[ISO 19115-3:2023] — Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts
+      ** https://www.iso.org/standard/87753.html[ISO 19135:2026] — Procedures for registration
+      ** https://www.iso.org/standard/70742.html[ISO 19112:2019] — Spatial referencing by geographic identifiers
+  * **Standards without harmonized URI requirements** — standards that do not
+    specify requirements utilizing the ISO/TC 211 Harmonized URI scheme
+  * **Standards awaiting data upload** — identified standards where data
+    has not yet been provided
 
-Additional standards will be added as data becomes available.
+New standards are discovered automatically via a weekly workflow that
+creates pull requests when new publications are detected.
 
 This action is performed by
 https://www.ribose.com[Ribose].
