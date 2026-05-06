@@ -4,8 +4,18 @@ title:  Site redesigned with modern URI dereferencing and data-driven architectu
 date:   2026-05-05 12:00:00 +0800
 categories: site update
 ---
-The "`ISO/TC 211 Normative Statements and Conformance site`" has been redesigned
-with a modern interface and fully data-driven architecture.
+The https://standards.isotc211.org[ISO/TC 211 Standards site] has been redesigned
+to serve as a dedicated URI dereferencing service for ISO geographic information standards.
+
+== Purpose
+
+ISO/TC 211 standards define requirements classes, conformance classes, and
+conformance tests, each identified by a permanent URI (e.g.
+`/19115/-3/2/req/metadata-core/basic`).
+This site ensures every such URI resolves to a page with structured metadata,
+cross-references between related provisions, and direct links to ISO.org.
+
+In the future, the site may also host implementation guidance for each provision.
 
 == What's new
 
@@ -15,7 +25,7 @@ conformance classes, and conformance tests now resolves to a dedicated page
 with structured metadata, cross-references, and direct links to ISO.org.
 
 * **Data-driven standards** --
-Standards are now defined entirely through YAML data files.
+Standards are defined entirely through YAML data files.
 Adding a new standard requires only dropping `*-rc.yaml` and `*-cc.yaml`
 files into the data directory—no HTML authoring or configuration changes needed.
 The generator automatically creates index pages, provision pages, homepage listings,
