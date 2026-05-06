@@ -22,7 +22,7 @@ module StandardsGenerator
       @site.pages << page
     end
 
-    def create_placeholder_page(entry)
+    def create_placeholder_page(entry, pending = false)
       std_key = entry["part"] ? "#{entry['number']}-#{entry['part']}" : entry["number"]
 
       data = {
@@ -30,11 +30,12 @@ module StandardsGenerator
         "title" => entry["title"],
         "standard_number" => std_key,
         "page_path" => std_key,
-        "description" => "This standard does not yet have machine-readable requirements " \
-                         "or conformance data on this site.",
+        "description" => pending ? "This standard does not define formal requirements or conformance classes." :
+          "This standard does not yet have machine-readable requirements or conformance data on this site.",
         "uri_base" => "#{entry['number']}/-#{entry['part'] || ''}/#{entry['edition']}/",
         "req_classes" => [],
         "conf_classes" => [],
+        "pending" => pending,
         "iso_standard_url" => "https://www.iso.org/standard/#{entry['iso_id']}.html"
       }
 

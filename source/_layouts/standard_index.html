@@ -101,16 +101,24 @@ layout: default
   {% else %}
   <div class="documentation">
     <div class="standard-notice">
-      <h2>Awaiting Machine-Readable Data</h2>
+      {% if page.pending %}
+      <h2>Pending Data Upload</h2>
+      <p>
+        This standard does not define formal requirements or conformance classes
+        in the ISO standard itself.
+      </p>
+      {% else %}
+      <h2>Awaiting Data Upload</h2>
       <p>
         This ISO/TC 211 standard does not yet have machine-readable requirements
-        or conformance classes available on this site.
+        or conformance data on this site.
       </p>
       <p>
         Standards authors are invited to contribute requirements and conformance
         data in the YAML format described in
         <a href="https://github.com/ISO-TC211/standards.isotc211.org/blob/main/README.adoc">README.adoc</a>.
       </p>
+      {% endif %}
     </div>
   </div>
   {% endif %}

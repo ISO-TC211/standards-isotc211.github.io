@@ -53,7 +53,8 @@ title: Home
 
 <!-- Standards Listing -->
 {% assign populated = site.data.standards_catalog | where_exp: "std", "std.populated == true" %}
-{% assign awaiting = site.data.standards_catalog | where_exp: "std", "std.populated != true" %}
+{% assign pending = site.data.standards_catalog | where_exp: "std", "std.populated != true and std.pending == true" %}
+{% assign awaiting = site.data.standards_catalog | where_exp: "std", "std.populated != true and std.pending != true" %}
 <section id="standards" class="section section--white">
   <div style="max-width: 80rem; margin: 0 auto;">
 
@@ -91,13 +92,47 @@ title: Home
     </div>
     {% endif %}
 
+    {% if pending.size > 0 %}
+    <div class="section__header" style="margin-top: 3rem;">
+      <span class="section__kicker">Pending</span>
+      <h2 class="section__title">Standards Without Formal Requirements</h2>
+      <p class="section__desc">
+        These ISO/TC 211 standards do not provide URI-identified requirements
+        or conformance classes in the ISO standard.
+      </p>
+    </div>
+
+    <div class="standards-catalog">
+      {% for std in pending %}
+      <a href="{{ std.url }}" class="standards-card">
+        <div class="standards-card__icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+          </svg>
+        </div>
+        <div class="standards-card__body">
+          <h3 class="standards-card__title">{{ std.label }}</h3>
+          <p class="standards-card__desc">{{ std.subtitle }}</p>
+          <div class="standards-card__meta">
+            <span class="standards-card__badge">Edition {{ std.edition }}</span>
+            <span class="standards-card__count">No requirements defined</span>
+          </div>
+        </div>
+        <svg class="standards-card__chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+        </svg>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
     {% if awaiting.size > 0 %}
     <div class="section__header" style="margin-top: 3rem;">
       <span class="section__kicker">Awaiting Data</span>
-      <h2 class="section__title">Standards Awaiting Data</h2>
+      <h2 class="section__title">Standards Awaiting Data Upload</h2>
       <p class="section__desc">
         These ISO/TC 211 standards have been identified but do not yet have
-        machine-readable requirements or conformance classes.
+        machine-readable requirements or conformance data uploaded to this site.
       </p>
     </div>
 

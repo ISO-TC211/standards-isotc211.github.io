@@ -43,6 +43,13 @@ module StandardsGenerator
 
       # Phase 2: placeholder standards from tc211_standards.yaml inventory
       tc211_path = File.join(site.source, "_data", "tc211_standards.yaml")
+      pending_path = File.join(site.source, "_data", "tc211_standards_pending.yaml")
+      pending_refs = if File.exist?(pending_path)
+        Set.new((YAML.safe_load_file(pending_path, permitted_classes: [Symbol]) || []))
+      else
+        Set.new
+      end
+
       if File.exist?(tc211_path)
         tc211_entries = YAML.safe_load_file(tc211_path, permitted_classes: [Symbol]) || []
         known_labels = catalog.map { |e| e["label"] }.to_set
@@ -50,7 +57,8 @@ module StandardsGenerator
         tc211_entries.each do |entry|
           next if known_labels.include?(entry["reference"])
 
-          factory.create_placeholder_page(entry)
+          pending = entry["pending"] || pending_refs.include?(entry["reference"])
+          factory.create_placeholder_page(entry, pending)
 
           std_key = entry["part"] ? "#{entry['number']}-#{entry['part']}" : entry["number"]
           catalog << {
@@ -62,6 +70,7 @@ module StandardsGenerator
             "req_count" => 0,
             "conf_count" => 0,
             "populated" => false,
+            "pending" => pending,
             "iso_standard_url" => "https://www.iso.org/standard/#{entry['iso_id']}.html"
           }
         end
