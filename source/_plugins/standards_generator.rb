@@ -41,9 +41,7 @@ module StandardsGenerator
         end
       end
 
-      catalog_path = File.join(site.source, '_data', 'standards_catalog.yaml')
-      FileUtils.mkdir_p(File.dirname(catalog_path))
-      File.write(catalog_path, YAML.dump(catalog.sort_by { |e| e['number'] }))
+      site.data['standards_catalog'] = catalog.sort_by { |e| e['number'] }
     end
 
     private
@@ -85,6 +83,6 @@ module StandardsGenerator
   end
 end
 
-Jekyll::Hooks.register :site, :after_reset do |site|
+Jekyll::Hooks.register :site, :post_read do |site|
   StandardsGenerator.generate(site)
 end

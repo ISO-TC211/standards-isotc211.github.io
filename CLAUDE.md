@@ -11,21 +11,19 @@ ISO/TC 211 URI dereferencing service (https://standards.isotc211.org). Every URI
 ```sh
 make all          # Full build (install deps + jekyll build → _site/)
 make serve        # Dev server with live reload
-make clean        # Clean _site/ and build_source/
+make clean        # Clean _site/
 ```
 
 Requires Ruby 3.1+ and Node.js 20+. Dependencies: `bundle install`, `npm install`.
 
 ## Architecture
 
-**Build source indirection** — `source/` is the canonical directory but Jekyll reads from `build_source/`. The Makefile copies `source/*` → `build_source/` before each build (`.build_source_stamp` target). Generated files like `_data/standards_catalog.yaml` are written into `build_source/`.
-
-**Plugin pipeline** (`source/_plugins/standards_generator.rb` triggers on `:after_reset` hook):
+**Plugin pipeline** (`source/_plugins/standards_generator.rb` triggers on `:post_read` hook):
 1. `SiteScanner` — discovers directories under `_data/{StandardNumber}/{Part}/{Edition}/`
 2. `Standard` — loads `_meta.yaml` and `*-rc.yaml`/`*-cc.yaml` files via modspec-ruby models
 3. `CrossReferenceIndex` — maps req↔conf identifier relationships for cross-linking
 4. `ModelSerializer` — converts modspec-ruby models to renderable hashes (single point of serialization)
-5. `PageFactory` — creates Jekyll pages using ModelSerializer and writes `standards_catalog.yaml`
+5. `PageFactory` — creates Jekyll pages using ModelSerializer; injects `standards_catalog` into `site.data`
 6. `FieldPolicy` — strips copyright-restricted fields per `_meta.yaml` `hide_fields`
 
 **Layouts**: `standard_index` (standard landing page), `provision_class` (req/conf class and individual provision pages). Both wrap the theme's `default` layout.
