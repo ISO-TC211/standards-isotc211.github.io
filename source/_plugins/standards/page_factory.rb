@@ -30,7 +30,7 @@ module StandardsGenerator
         "title" => entry["title"],
         "standard_number" => std_key,
         "page_path" => std_key,
-        "description" => pending ? "This standard does not define formal requirements or conformance classes." :
+        "description" => pending ? "This standard does not specify requirements that utilize the ISO/TC 211 Harmonized URI scheme." :
           "This standard does not yet have machine-readable requirements or conformance data on this site.",
         "uri_base" => "#{entry['number']}/-#{entry['part'] || ''}/#{entry['edition']}/",
         "req_classes" => [],

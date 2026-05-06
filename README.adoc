@@ -61,9 +61,9 @@ Every ISO/TC 211 standard on this site falls into one of three categories:
 Data is provided as YAML files under `source/_data/{Standard}/{Part}/{Edition}/`.
 These appear under "Supported Standards" on the homepage.
 
-**Without Formal Requirements**:: Standards that do *not* define URI-identified requirements or conformance classes in the ISO standard.
+**Without Harmonized URI Requirements**:: Standards that do *not* specify requirements that utilize the ISO/TC 211 Harmonized URI scheme.
 Listed manually in `source/_data/tc211_standards_pending.yaml`.
-These appear under "Standards Without Formal Requirements".
+These appear under "Standards Without Harmonized URI Requirements".
 
 **Awaiting Data Upload**:: Standards where the ISO defines requirements/conformance classes but data has not yet been uploaded to this site.
 These appear automatically from the inventory and show under "Standards Awaiting Data Upload".
@@ -197,9 +197,9 @@ Verify key URIs resolve in `_site/`. The following are generated automatically:
 * **404 page links** for navigation back to available standards
 * **Example URIs** in the homepage URI format section
 
-== Marking a Standard as "Without Formal Requirements"
+== Marking a Standard as "Without Harmonized URI Requirements"
 
-If an ISO/TC 211 standard does not define URI-identified requirements classes or conformance classes, add its reference to `source/_data/tc211_standards_pending.yaml`:
+If an ISO/TC 211 standard does not specify requirements that utilize the ISO/TC 211 Harmonized URI scheme, add its reference to `source/_data/tc211_standards_pending.yaml`:
 
 [source,yaml]
 ----
@@ -209,7 +209,7 @@ If an ISO/TC 211 standard does not define URI-identified requirements classes or
 - ISO 6709:2022
 ----
 
-The standard will then appear under "Standards Without Formal Requirements" instead of "Awaiting Data Upload".
+The standard will then appear under "Standards Without Harmonized URI Requirements" instead of "Awaiting Data Upload".
 
 == Standards Inventory and Auto-Discovery
 
