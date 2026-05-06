@@ -1,0 +1,70 @@
+---
+conformance_classes:
+- identifier: "/conf/commitments"
+  name: Register commitments
+  description: This conformance class defines the requirements for commitments in
+    a register specification.
+  target: "/req/commitments"
+  tests:
+  - identifier: "/conf/commitments/definition"
+    name: Commitment definition
+    targets:
+    - "/req/commitments/definition"
+    purpose: Verify that register specification defines commitments if any commitments
+      are declared.
+    method: Ensure the register specification defines commitments with appropriate
+      scope and detail.
+    type: Validation
+  - identifier: "/conf/commitments/access"
+    name: Access commitment validation
+    targets:
+    - "/req/commitments/access"
+    - "/req/commitments/metadata-access"
+    - "/req/commitments/content-access"
+    - "/req/commitments/historic-access"
+    purpose: Verify that stated access commitments are properly defined and implemented.
+    method: Conformance testing of identifier resolution and content accessibility
+      according to the stated access commitment level.
+    type: Conformance
+  - identifier: "/conf/commitments/persistence"
+    name: Persistence commitment validation
+    targets:
+    - "/req/commitments/persistence"
+    - "/req/commitments/identifier-persistence"
+    - "/req/commitments/metadata-persistence"
+    - "/req/commitments/content-persistence"
+    - "/req/commitments/historic-persistence"
+    purpose: Verify that stated persistence commitments are properly defined and implemented.
+    method: Conformance testing of data retention and change tracking according to
+      the stated persistence commitment level.
+    type: Conformance
+  - identifier: "/conf/commitments/transparency"
+    name: Transparency commitment validation
+    targets:
+    - "/req/commitments/transparency"
+    - "/req/commitments/metadata-transparency"
+    - "/req/commitments/content-transparency"
+    - "/req/commitments/historic-transparency"
+    purpose: Verify that stated transparency commitments are properly defined and
+      implemented.
+    method: Conformance testing of change visibility and audit capabilities according
+      to the stated transparency commitment level.
+    type: Conformance
+  - identifier: "/conf/commitments/implementation"
+    name: Implementation verification
+    targets:
+    - "/req/commitments/implementation"
+    purpose: Verify that stated commitments are backed by an implementation with verifiable
+      evidence.
+    method: Verify that implementation details are documented and accessible for assessment,
+      and with verifiable evidence that the implementation is effective.
+    type: Validation
+  - identifier: "/conf/commitments/documentation"
+    name: Implementation documentation verification
+    targets:
+    - "/req/commitments/documentation"
+    purpose: Verify that the implementation to satisfy commitments is clearly documented
+      in the register specification.
+    method: Document inspection of register specification to verify completeness and
+      clarity of the implementation documentation.
+    type: Validation

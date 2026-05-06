@@ -1,0 +1,18 @@
+---
+conformance_classes:
+- identifier: "/conf/roles/register-system-manager"
+  name: Responsibilities of the register system manager
+  description: This conformance class defines the requirements for register system
+    manager implementation in a register.
+  target: "/req/roles/register-system-manager"
+  tests:
+  - identifier: "/conf/roles/register-system-manager/conform-to-governance"
+    name: Governance process conformance
+    targets:
+    - "/req/roles/register-system-manager/conform-to-governance"
+    purpose: Verify that the register system manager follows the rules and procedures
+      defined in the register specification
+    method: Check that the register system manager adheres to all rules and procedures
+      as documented in the register specification when implementing, operating, managing,
+      and providing access to the register system
+    type: Conformance

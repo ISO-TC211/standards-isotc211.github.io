@@ -1,0 +1,44 @@
+---
+layout: post
+title:  Site redesigned with modern URI dereferencing and data-driven architecture
+date:   2026-05-05 12:00:00 +0800
+categories: site update
+---
+The "`ISO/TC 211 Normative Statements and Conformance site`" has been redesigned
+with a modern interface and fully data-driven architecture.
+
+== What's new
+
+* **URI dereferencing service** --
+Every URI used in a published ISO/TC 211 standard for requirements classes,
+conformance classes, and conformance tests now resolves to a dedicated page
+with structured metadata, cross-references, and direct links to ISO.org.
+
+* **Data-driven standards** --
+Standards are now defined entirely through YAML data files.
+Adding a new standard requires only dropping `*-rc.yaml` and `*-cc.yaml`
+files into the data directory—no HTML authoring or configuration changes needed.
+The generator automatically creates index pages, provision pages, homepage listings,
+and example URIs from the data.
+
+* **Model-driven architecture** --
+Provision data is loaded through the
+https://github.com/lutaml/modspec-ruby[modspec-ruby] library,
+providing OGC ModSpec-compliant models for requirements classes,
+conformance classes, normative statements, and conformance tests.
+
+* **ISO.org integration** --
+Each standard page links directly to its
+https://www.iso.org[ISO.org] listing and full-text preview,
+making it easy to access the complete published document.
+
+* **Supported standards** --
+The site currently provides URI dereferencing for:
+
+  * https://www.iso.org/standard/87753.html[ISO 19135:2026] — Procedures for registration
+  * https://www.iso.org/standard/70742.html[ISO 19112:2019] — Spatial referencing by geographic identifiers
+
+Additional standards will be added as data becomes available.
+
+This action is performed by
+https://www.ribose.com[Ribose].

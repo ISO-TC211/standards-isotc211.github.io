@@ -1,0 +1,26 @@
+---
+conformance_classes:
+- identifier: "/conf/roles/control-body"
+  name: Responsibilities of the control body
+  description: This conformance class defines the requirements for control body implementation
+    in a register.
+  target: "/req/roles/control-body"
+  tests:
+  - identifier: "/conf/roles/control-body/conform-to-governance"
+    name: Governance process conformance
+    targets:
+    - "/req/roles/control-body/conform-to-governance"
+    purpose: Verify that the control body follows the rules and procedures defined
+      in the register specification
+    method: Check that the control body operates according to the governance processes
+      and procedures specified in the register specification
+    type: Conformance
+  - identifier: "/conf/roles/control-body/review-proposals-render-decisions"
+    name: Proposal review and decision rendering
+    targets:
+    - "/req/roles/control-body/review-proposals-render-decisions"
+    purpose: Verify that the control body reviews proposals and renders decisions
+    method: Check that the control body has processes in place to review proposals
+      received from the register manager and render decisions regarding approval of
+      each proposal
+    type: Conformance

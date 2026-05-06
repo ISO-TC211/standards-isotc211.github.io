@@ -1,0 +1,52 @@
+---
+normative_statements_classes:
+- identifier: "/req/appeal-process"
+  name: Requirements of the appeal process
+  subject: appeal process
+  description: 'An appeal process may be optionally implemented by a register.
+
+    '
+  normative_statements:
+  - identifier: "/req/appeal-process/inform-appeal-eligibility"
+    name: Notification of appeal eligibility of the rejected proposal
+    statement: If the proposal was rejected and an appeal process is implemented,
+      the register manager shall inform the proposer of the eligibility and deadline
+      for any appeal.
+  - identifier: "/req/appeal-process/submit-appeal"
+    name: Submission of appeal following the register specification
+    statement: If the proposal was rejected and an appeal process is implemented,
+      the proposer shall follow the rules for appeal as defined in the register specification
+      when submitting their appeal.
+  - identifier: "/req/appeal-process/withdraw-appeal"
+    name: Withdrawal of appeal
+    statement: The proposer shall have the option to withdraw an appeal at any time
+      during the appeal process.
+  - identifier: "/req/appeal-process/forward-to-owner"
+    name: Forwarding of appeals to register owner
+    statement: On receiving an appeal from the proposer, the register manager shall
+      forward the appeal to the register owner.
+  - identifier: "/req/appeal-process/issue-decision"
+    name: Issuance of decision on appeal
+    statement: On receiving an appeal from the register manager, the register owner
+      shall decide whether to accept or reject the appeal, in conformance with the
+      register specification.
+  - identifier: "/req/appeal-process/decide-by-time-limit"
+    name: Issuance of an appeal decision within the required time limit
+    statement: The register owner shall issue the decision on the proposal within
+      the time limit specified in the register specification.
+  - identifier: "/req/appeal-process/inform-decision"
+    name: Notification of the appeal decision to the register manager
+    statement: The register owner shall inform the register manager of the appeal
+      decision.
+  - identifier: "/req/appeal-process/forward-by-time-limit"
+    name: Forwarding of appeal decision to the proposer within the required time limit
+    statement: The register manager shall forward the appeal decision by the register
+      owner to the proposer within the time limit specified by the register owner.
+  - identifier: "/req/appeal-process/incorporate-approved-appeal"
+    name: Incorporation of approved appeal
+    statement: The register manager shall incorporate the appealed proposal if the
+      register owner has approved the appeal.
+  - identifier: "/req/appeal-process/retain-submission-decision"
+    name: Retainment of appeal submission and decision information
+    statement: The register manager shall retain documentation on the submission of
+      the appeal and the deliberations taken.

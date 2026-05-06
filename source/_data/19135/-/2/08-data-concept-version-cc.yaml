@@ -1,0 +1,86 @@
+---
+conformance_classes:
+- identifier: "/conf/concept-version"
+  name: Requirements of concept version
+  description: This conformance class defines the requirements for concept version
+    implementation and management in a register.
+  target: "/req/concept-version"
+  tests:
+  - identifier: "/conf/concept-version/version"
+    name: Concept version assignment validation
+    targets:
+    - "/req/concept-version/version"
+    purpose: Verify that concept versions are assigned versions from a register-defined
+      versioning scheme.
+    method: Validate that each concept version has a version assigned according to
+      the register's versioning scheme and that version assignments follow the defined
+      rules and patterns.
+    type: Validation
+  - identifier: "/conf/concept-version/creation"
+    name: Concept version creation support verification
+    targets:
+    - "/req/concept-version/creation"
+    purpose: Verify that the register supports creation of concept versions as version
+      indirections or as realisation instances.
+    method: Confirm that the register can create concept versions for both indirection
+      purposes (referencing subordinate versions) and realisation purposes (implementing
+      concept definitions).
+    type: Conformance
+  - identifier: "/conf/concept-version/indirection"
+    name: Concept version indirection verification
+    targets:
+    - "/req/concept-version/indirection"
+    purpose: Verify that the register supports creation of concept versions that serve
+      as indirection points to subordinate concept versions.
+    method: Validate that indirection concept versions can be created and that they
+      properly reference subordinate concept versions via "has version" and "current
+      version" relations.
+    type: Conformance
+  - identifier: "/conf/concept-version/realisation"
+    name: Concept version realisation verification
+    targets:
+    - "/req/concept-version/realisation"
+    purpose: Verify that the register supports creation of concept versions that represent
+      realised concepts with associated register items.
+    method: Confirm that realisation concept versions can be created with proper implementation
+      of concept definitions and references to register items containing defining
+      information.
+    type: Conformance
+  - identifier: "/conf/concept-version/link-versions"
+    name: Subordinate concept version linking validation
+    targets:
+    - "/req/concept-version/link-versions"
+    purpose: Verify that concept versions properly link to all subordinate concept
+      versions using "has version" relations.
+    method: Inspect concept-version-to-concept-version relationships to ensure all
+      subordinate concept versions are properly linked through "has version" relations.
+    type: Validation
+  - identifier: "/conf/concept-version/link-current-version"
+    name: Current concept version linking validation
+    targets:
+    - "/req/concept-version/link-current-version"
+    purpose: Verify that concepts properly link to one concept version as the current
+      version.
+    method: Validate that each concept designates exactly one concept version as current
+      and that this designation follows the register specification's rules for determining
+      currency and validity.
+    type: Validation
+  - identifier: "/conf/concept-version/identifier"
+    name: Concept version functional identifier assignment
+    targets:
+    - "/req/concept-version/identifier"
+    purpose: Verify that concept versions are assigned functional identifiers.
+    method: Confirm that each concept version in the register has a functional identifier
+      assigned according to the register's identifier scheme and that these identifiers
+      function properly for concept version resolution.
+    type: Conformance
+  - identifier: "/conf/concept-version/object-identifier"
+    name: Concept version object identifier assignment
+    targets:
+    - "/req/concept-version/object-identifier"
+    purpose: Verify that concept versions are assigned object identifiers for permanent
+      identification.
+    method: Validate that each concept version has an object identifier that is non-redirectable
+      and permanently assigned for stable referencing of the specific concept version
+      object.
+    type: Conformance

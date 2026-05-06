@@ -1,0 +1,13 @@
+---
+normative_statements_classes:
+- identifier: "/req/roles/register-user"
+  name: Responsibilities of the register user
+  subject: register user
+  description: 'The register user accesses register content through the register system.
+
+    '
+  normative_statements:
+  - identifier: "/req/roles/register-user/conform-to-governance"
+    name: Conformance to governance processes by the register user
+    statement: The register user shall follow the rules and procedures defined in
+      the register specification (<<register-specification>>).

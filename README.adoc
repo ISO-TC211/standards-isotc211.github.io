@@ -1,4 +1,6 @@
-= ISO/TC 211 Normative Statements and Conformance site: standards.isotc211.org
+= ISO/TC 211 Standards URI Dereferencing Service
+:toc: macro
+:toclevels: 3
 
 image:https://github.com/ISO-TC211/standards.isotc211.org/workflows/build/badge.svg["Build Status", link="https://github.com/ISO-TC211/standards.isotc211.org/actions?workflow=build"]
 
@@ -6,24 +8,270 @@ image:https://github.com/ISO-TC211/standards.isotc211.org/workflows/deploy-maste
 
 image:https://github.com/ISO-TC211/standards.isotc211.org/workflows/deploy-staging/badge.svg["Build Status", link="https://github.com/ISO-TC211/standards.isotc211.org/actions?workflow=deploy-staging"]
 
-== Introduction
+This site provides URI dereferencing for ISO/TC 211 Geographic information/Geomatics standards.
+Every URI used in a published standard for requirements, recommendations, permissions, and conformance tests resolves to a page here.
 
-The "`ISO/TC 211 Normative Statements and Conformance site`" is used to publish
-normative statements and conformance tests published by ISO/TC 211 standards.
+This repository is used to build and deploy the https://standards.isotc211.org site.
+Jointly managed by ISO/TC 211 and Ribose.
 
-This repository is used to build and deploy the
-https://standards.isotc211.org site.
+toc::[]
 
-This repository is jointly managed by ISO/TC 211 and Ribose.
-
-
-== Building the site
+== Quick Start
 
 [source,sh]
 ----
-# removes site artifacts
-make clean
+# Install dependencies
+bundle install
+npm install
 
-# makes _site
+# Build site (output to _site/)
 make all
+
+# Local dev server with live reload
+make serve
+
+# Clean build artifacts
+make clean
 ----
+
+Requires Ruby 3.1+ and Node.js 20+.
+
+== URI Template
+
+The canonical URI pattern for ISO/TC 211 provision statements:
+
+----
+https://standards.isotc211.org/{Standard}/-{Part}/{Edition}/{Type}/{ClassId}[/{ItemId}]
+----
+
+`Type`:: One of `req` (requirements), `rec` (recommendations), `per` (permissions), or `conf` (conformance).
+
+Examples:
+
+* `/19112/-1/2/conf/gaz/` -- Gazetteer conformance class
+* `/19112/-1/2/req/gaz/sch/` -- Gazetteer schema requirement
+* `/19135/-/2/req/identifiers/uniqueness/` -- Identifier uniqueness requirement
+
+== Adding a New Standard
+
+Adding a new standard requires **only YAML files** -- no HTML authoring, no config changes, no template edits.
+The generator discovers the data, creates the index page, provision pages, homepage listing, 404 links, and example URIs automatically.
+
+=== Step 1: Create the data directory
+
+----
+source/_data/{StandardNumber}/{Part}/{Edition}/
+----
+
+For a standard without parts, use `-` as the part:
+
+----
+source/_data/19135/-/2/        # ISO 19135:2026, Edition 2
+source/_data/19115/-3/2/       # ISO 19115-3, Edition 2
+source/_data/19112/-1/2/       # ISO 19112:2019, Edition 2
+----
+
+=== Step 2: Add `_meta.yaml`
+
+This file controls all metadata for the standard.
+
+[source,yaml]
+----
+title: "ISO 19135:2026 Geographic information — Procedures for registration"
+label: "ISO 19135:2026"            # Short label for cards and breadcrumbs
+subtitle: "Geographic information — Procedures for registration"
+edition: 2
+description: >
+  ISO 19135:2026 specifies procedures to be followed in establishing,
+  maintaining, and publishing registers of unique, unambiguous and
+  permanent identifiers and meanings assigned to items in geographic
+  information.
+hide_fields: [statement, description, purpose, method]
+iso_standard_url: https://www.iso.org/standard/87753.html
+iso_preview_url: https://www.iso.org/obp/ui/en/#iso:std:iso:19135:ed-2:v1:en
+----
+
+[horizontal]
+`title`:: Full standard title (used in page `<title>`)
+`label`:: Short label with year (e.g. "ISO 19135:2026") -- shown on cards, breadcrumbs, nav
+`subtitle`:: Subtitle shown below the label on the standard index page
+`edition`:: Edition number (shown as badge)
+`description`:: Paragraph describing the standard (shown on its index page)
+`hide_fields`:: Fields to strip from generated pages (ISO copyright control). Use `[statement, description, purpose, method]` when full text cannot be published. Use `[]` when approved for publication.
+`iso_standard_url`:: Link to the standard page on ISO.org
+`iso_preview_url`:: Link to the preview on ISO OBP
+
+=== Step 3: Add YAML data files
+
+==== File naming convention
+
+`*-rc.yaml`:: Requirements classes (generates `/req/` pages)
+`*-cc.yaml`:: Conformance classes (generates `/conf/` pages)
+
+The prefix is organizational and typically matches the standard's clause numbering:
+
+----
+07-identifier-rc.yaml     # Requirements classes for clause 7
+07-identifier-cc.yaml     # Conformance classes for clause 7
+----
+
+==== Requirements class format (`*-rc.yaml`)
+
+Uses the OGC ModSpec canonical format with `normative_statements_classes` at the top level:
+
+[source,yaml]
+----
+---
+normative_statements_classes:
+  - identifier: /req/class-id
+    name: "Full class name"
+    subject: subject-area
+    dependencies:
+      - /req/other-class
+    normative_statements:
+      - identifier: /req/class-id/fragment
+        name: "Requirement name"
+        statement: "The normative statement text"
+        guidance:
+          - "Implementation guidance"
+----
+
+Each class generates a page at `/{Standard}/-{Part}/{Edition}/req/{classId}/`.
+Each statement generates a page at `/{Standard}/-{Part}/{Edition}/req/{classId}/{fragment}/`.
+
+==== Conformance class format (`*-cc.yaml`)
+
+[source,yaml]
+----
+---
+conformance_classes:
+  - identifier: /conf/class-id
+    name: "Full class name"
+    target: /req/class-id
+    dependencies:
+      - /conf/other-class
+    tests:
+      - identifier: /conf/class-id/fragment
+        name: "Test name"
+        targets:
+          - /req/class-id/fragment
+        purpose: "Why this test exists"
+        method: "How to perform the test"
+        type: Validation
+        guidance:
+          - "Optional guidance"
+----
+
+Each class generates a page at `/{Standard}/-{Part}/{Edition}/conf/{classId}/`.
+Each test generates a page at `/{Standard}/-{Part}/{Edition}/conf/{classId}/{fragment}/`.
+
+=== Step 4: Build and verify
+
+[source,sh]
+----
+make clean && make all
+----
+
+Verify key URIs resolve in `_site/`. The following are generated automatically:
+
+* **Standard index page** at `/{StandardNumber}/` -- lists all req/conf classes
+* **Class pages** at `/{Standard}/-{Part}/{Edition}/req/{classId}/` and `.../conf/{classId}/`
+* **Item pages** for individual requirements and tests
+* **Homepage card** in the standards catalog
+* **404 page links** for navigation back to available standards
+* **Example URIs** in the homepage URI format section
+
+== Architecture
+
+=== Data flow
+
+....
+_meta.yaml + *-rc.yaml + *-cc.yaml
+  │
+  ▼
+SiteScanner (discovers _data/{standard}/{part}/{edition}/)
+  │
+  ▼
+Standard (loads YAML via modspec-ruby models)
+  │
+  ▼
+CrossReferenceIndex (maps req↔conf identifiers)
+  │
+  ▼
+PageFactory (creates Jekyll pages + standards catalog)
+  │
+  ▼
+Jekyll build (layouts + includes → _site/)
+....
+
+=== Generator pipeline
+
+|===
+| Component | File | Purpose
+
+| SiteScanner
+| `source/_plugins/standards/site_scanner.rb`
+| Discovers standard directories under `_data/`
+
+| Standard
+| `source/_plugins/standards/standard.rb`
+| Loads `_meta.yaml` and YAML data via modspec-ruby
+
+| CrossReferenceIndex
+| `source/_plugins/standards/cross_reference_index.rb`
+| Maps identifiers for req↔conf cross-links
+
+| PageFactory
+| `source/_plugins/standards/page_factory.rb`
+| Creates all Jekyll pages and the standards catalog
+
+| FieldPolicy
+| `source/_plugins/standards/field_policy.rb`
+| Strips copyright-restricted fields per `_meta.yaml`
+|===
+
+=== Layouts
+
+|===
+| Layout | Purpose
+
+| `standard_index`
+| Standard index page (auto-generated from `_meta.yaml`)
+
+| `provision_class`
+| Requirements/conformance class pages and individual provision pages
+|===
+
+== Data Fields Reference
+
+=== Class-level fields (`normative_statements_classes` / `conformance_classes`)
+
+[horizontal]
+`identifier`:: Full URI path (e.g. `/req/gaz`)
+`name`:: Full class name
+`subject`:: Subject area
+`target`:: (conf only) Link to corresponding requirements class
+`dependencies`:: List of dependency URI paths
+`description`:: Class description (may be hidden via `hide_fields`)
+`guidance`:: Implementation guidance (list of strings)
+`normative_statements`:: (req only) List of child requirements
+`tests`:: (conf only) List of child conformance tests
+
+=== Item fields (requirements and tests)
+
+[horizontal]
+`identifier`:: Full URI path (e.g. `/req/gaz/sch`)
+`name`:: Display name
+`statement`:: (req) The normative statement text (may be hidden)
+`guidance`:: Implementation guidance (list of strings)
+`targets`:: (tests) List of requirement URIs this test validates
+`purpose`:: (tests) Why the test exists (may be hidden)
+`method`:: (tests) How to perform the test (may be hidden)
+`type`:: (tests) Test type (e.g. Validation)
+`examples`:: Usage examples
+
+== Copyright
+
+Standards data is copyright ISO.
+Fields restricted by copyright are controlled per-standard via `_meta.yaml` `hide_fields`.
+When full publication rights are obtained, set `hide_fields: []` to display all content.

@@ -1,0 +1,67 @@
+---
+normative_statements_classes:
+- identifier: "/req/register-item"
+  name: Requirements of register items
+  subject: register item
+  description: 'A register item represents managed content within a register.
+
+    '
+  guidance:
+  - A register item can be considered the container that contains managed content.
+  normative_statements:
+  - identifier: "/req/register-item/creation"
+    name: Register item creation
+    statement: The register shall support creation of register items as data.
+  - identifier: "/req/register-item/information-requirements"
+    name: Information requirements description
+    statement: A register item shall describe the information requirements of register
+      items.
+  - identifier: "/req/register-item/structural-requirements"
+    name: Definition of structural requirements
+    statement: A register item shall define the structural requirements of register
+      items.
+  - identifier: "/req/register-item/referenced"
+    name: Referenced by a concept version of a concept definition
+    statement: A register item shall be referenced by one concept version of a realised
+      concept.
+    guidance:
+    - A realised concept represents the concrete information that constitute the realised
+      concept itself.
+  - identifier: "/req/register-item/metadata"
+    name: Register item metadata
+    statement: A register item shall have associated metadata that supports the management
+      and status of the register item within the register.
+    guidance:
+    - The register item metadata may include information such as the register item
+      identifier, name, description, creation date, last modified date, version, and
+      other relevant attributes.
+  - identifier: "/req/register-item/identifier"
+    name: Register items are assigned functional identifiers
+    statement: A register item in the register shall be assigned a functional identifier.
+    guidance:
+    - A register item can have more than one functional identifier if it belongs to
+      an existing identifying convention and a new identifier according to the register
+      specification.
+    examples:
+    - "/item/crs/wgs84/g873/v1 is a kind of a functional identifier assigned to a
+      register item."
+  - identifier: "/req/register-item/object-identifier"
+    name: Register items are assigned object identifiers
+    statement: A register item in the register shall be assigned an object identifier
+      for permanent identification.
+    guidance:
+    - Object identifiers are non-redirectable and permanently assigned to specific
+      objects.
+    examples:
+    - |
+      The register item identifier 'register/geodetic/items/204' is unique within the ISO Geodetic Register.
+      Externally it can be identified in combination with the register identifier as:
+      identifier:[https://geodetic.isotc211.org/register/geodetic/items/204].
+  - identifier: "/req/register-item/retention"
+    name: Retention of register items
+    statement: Register items shall be retained in the register to support the interpretation
+      of data dependent on them.
+    guidance:
+    - In the previous edition (<<iso19135-1-2015>>), removal of register items that
+      are invalid or superseded was allowed. This document invalidates that practice
+      to support the interpretation of data dependent on them.

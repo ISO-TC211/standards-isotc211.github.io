@@ -1,0 +1,406 @@
+---
+conformance_classes:
+- identifier: "/conf/relations"
+  name: Requirements of relations
+  description: This conformance class defines the requirements for relation implementation
+    in a register.
+  dependencies:
+  - "/conf/relations/core"
+  - "/conf/relations/concept"
+  - "/conf/relations/concept-version"
+  - "/conf/relations/concept-to-concept-version"
+  - "/conf/relations/register-item-class"
+  - "/conf/relations/register-item-to-register-item-class"
+  - "/conf/concept"
+  - "/conf/concept-version"
+  - "/conf/register-item-class"
+  target: "/req/relations"
+- identifier: "/conf/relations/core"
+  name: Core requirements of relations
+  description: This conformance class defines the requirements for basic functionality
+    of relations.
+  target: "/req/relations/core"
+  tests:
+  - identifier: "/conf/relations/core/definition"
+    name: Relations definition test
+    targets:
+    - "/req/relations/core/definition"
+    purpose: Verify that relations supported by the register are defined with their
+      meaning documented and are applied as appropriate.
+    method: |
+      . Examine the register's relation definitions
+      . Verify that each relation has documented meaning
+      . Confirm that relations are applied appropriately throughout the register
+    type: Conformance
+  - identifier: "/conf/relations/core/assignment"
+    name: Relations assignment test
+    targets:
+    - "/req/relations/core/assignment"
+    purpose: Verify that a relation is assigned to objects in a register as required.
+    method: |
+      . Examine objects in the register that require relations
+      . Verify that appropriate relations are assigned
+      . Confirm that relation assignments are complete and correct
+    type: Conformance
+  - identifier: "/conf/relations/core/temporal-applicability"
+    name: Temporal applicability test
+    targets:
+    - "/req/relations/core/temporal-applicability"
+    purpose: Verify that a relation supports the specification of one or more temporal
+      constraints in which the relation is applicable.
+    method: |
+      . Examine relations in the register
+      . Verify that temporal constraints can be specified
+      . Confirm that temporal applicability is properly implemented
+    type: Conformance
+  - identifier: "/conf/relations/core/retention"
+    name: Relation changes retention test
+    targets:
+    - "/req/relations/core/retention"
+    purpose: Verify that changes to relations are covered by the register's change
+      retention commitments.
+    method: |
+      . Examine the register's change retention policies
+      . Verify that relation changes are included in retention commitments
+      . Confirm that historical relation changes are preserved
+    type: Conformance
+  - identifier: "/conf/relations/core/extensibility"
+    name: Relations extensibility test
+    targets:
+    - "/req/relations/core/extensibility"
+    purpose: Verify that additional relations suitable and applicable for use of the
+      register may be defined for use within a register.
+    method: |
+      . Verify that the register supports defining additional relations
+      . Confirm that new relations can be documented and implemented
+      . Validate that extensibility mechanisms are available
+    type: Conformance
+  - identifier: "/conf/relations/core/versioned"
+    name: Relations versioning test
+    targets:
+    - "/req/relations/core/versioned"
+    purpose: Verify that the register may support versioning of relations to support
+      necessary changes to those relations.
+    method: |
+      . Examine if the register supports relation versioning
+      . If supported, verify that relation versions are properly managed
+      . Confirm that version changes are tracked appropriately
+    type: Conformance
+- identifier: "/conf/relations/concept"
+  name: Requirements on concept-to-concept relations
+  description: This conformance class defines the requirements for concept-to-concept
+    relations.
+  dependencies:
+  - "/conf/relations-concept/has-concept"
+  - "/conf/relations-concept/instance-of"
+  - "/conf/relations-concept/has-definition"
+  - "/conf/relations-concept/supersedes"
+  - "/conf/relations-concept/inherits"
+  - "/conf/relations-concept/has-part"
+  target: "/req/relations/concept"
+- identifier: "/conf/relations-concept/has-concept"
+  name: Requirements of the has concept relation
+  description: This conformance class defines the requirements for the has concept
+    relation between concepts.
+  target: "/req/relations-concept/has-concept"
+  tests:
+  - identifier: "/conf/relations-concept/has-concept/set"
+    name: Has concept relation test
+    targets:
+    - "/req/relations-concept/has-concept/set"
+    purpose: Verify that the has concept relation is set between concepts that are
+      meant to indicate a specialisation relationship.
+    method: |
+      . Examine concept-to-concept relations in the register
+      . Verify that "has concept" relations indicate specialisation
+      . Confirm that the relation semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations-concept/instance-of"
+  name: Requirements of the instance of relation
+  description: This conformance class defines the requirements for the instance of
+    relation between concepts.
+  target: "/req/relations-concept/instance-of"
+  tests:
+  - identifier: "/conf/relations-concept/instance-of/set"
+    name: Instance of relation test
+    targets:
+    - "/req/relations-concept/instance-of/set"
+    purpose: Verify that the instance of relation is set between concepts that are
+      meant to indicate an instance relationship.
+    method: |
+      . Examine concept-to-concept relations in the register
+      . Verify that "instance of" relations indicate instance relationships
+      . Confirm that the relation semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations-concept/has-definition"
+  name: Requirements of the has definition relation
+  description: This conformance class defines the requirements for the has definition
+    relation between concepts.
+  target: "/req/relations-concept/has-definition"
+  tests:
+  - identifier: "/conf/relations-concept/has-definition/set"
+    name: Has definition relation test
+    targets:
+    - "/req/relations-concept/has-definition/set"
+    purpose: Verify that the has definition relation is set from a concept to its
+      concept definition which is also a concept.
+    method: |
+      . Examine concept-to-concept relations in the register
+      . Verify that "has definition" relations link concepts to their definitions
+      . Confirm that the target is also a concept
+    type: Conformance
+- identifier: "/conf/relations-concept/supersedes"
+  name: Requirements of the supersedes relation
+  description: This conformance class defines the requirements for the supersedes
+    relation between concepts.
+  target: "/req/relations-concept/supersedes"
+  tests:
+  - identifier: "/conf/relations-concept/supersedes/set"
+    name: Supersedes relation test
+    targets:
+    - "/req/relations-concept/supersedes/set"
+    purpose: Verify that the supersedes relation is set from a concept to its superseding
+      concept which is also a concept.
+    method: |
+      . Examine concept-to-concept relations in the register
+      . Verify that "supersedes" relations indicate replacement relationships
+      . Confirm that supersession is properly implemented as many-to-many
+    type: Conformance
+- identifier: "/conf/relations-concept/inherits"
+  name: Requirements of the inherits relation
+  description: This conformance class defines the requirements for the inherits relation
+    between concepts.
+  target: "/req/relations-concept/inherits"
+  tests:
+  - identifier: "/conf/relations-concept/inherits/set"
+    name: Inherits relation test
+    targets:
+    - "/req/relations-concept/inherits/set"
+    purpose: Verify that the inherits relation is set from a concept to its inherited
+      concept which is also a concept.
+    method: |
+      . Examine concept-to-concept relations in the register
+      . Verify that "inherits" relations indicate inheritance relationships
+      . Confirm that inheritance semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations-concept/has-part"
+  name: Requirements of the has part relation
+  description: This conformance class defines the requirements for the has part relation
+    between concepts.
+  target: "/req/relations-concept/has-part"
+  tests:
+  - identifier: "/conf/relations-concept/has-part/set"
+    name: Has part relation test
+    targets:
+    - "/req/relations-concept/has-part/set"
+    purpose: Verify that the has part relation is set from a concept to its composing
+      concept which is also a concept.
+    method: |
+      . Examine concept-to-concept relations in the register
+      . Verify that "has part" relations indicate composition relationships
+      . Confirm that part-whole semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations/concept-to-concept-version"
+  name: Requirements on concept-to-concept-version relations
+  description: This conformance class defines the requirements for concept-to-concept-version
+    relations.
+  dependencies:
+  - "/conf/relations-concept-concept-version/has-version"
+  - "/conf/relations-concept-concept-version/current-version"
+  target: "/req/relations/concept-to-concept-version"
+- identifier: "/conf/relations-concept-concept-version/has-version"
+  name: Requirements of the has version relation
+  description: This conformance class defines the requirements for the has version
+    relation between concepts and concept versions.
+  target: "/req/relations-concept-concept-version/has-version"
+  tests:
+  - identifier: "/conf/relations-concept-concept-version/has-version/set"
+    name: Concept has version relation test
+    targets:
+    - "/req/relations-concept-concept-version/has-version/set"
+    purpose: Verify that the has version relation is set between a concept and its
+      concept versions.
+    method: |
+      . Examine concept-to-concept-version relations in the register
+      . Verify that "has version" relations link concepts to their versions
+      . Confirm that version relationships are properly established
+    type: Conformance
+- identifier: "/conf/relations-concept-concept-version/current-version"
+  name: Requirements of the current version relation
+  description: This conformance class defines the requirements for the current version
+    relation between concepts and concept versions.
+  target: "/req/relations-concept-concept-version/current-version"
+  tests:
+  - identifier: "/conf/relations-concept-concept-version/current-version/set"
+    name: Concept current version relation test
+    targets:
+    - "/req/relations-concept-concept-version/current-version/set"
+    purpose: Verify that the current version relation is set between a concept and
+      its current concept version.
+    method: |
+      . Examine concept-to-concept-version relations in the register
+      . Verify that "current version" relations identify the current version
+      . Confirm that only one current version exists per concept
+    type: Conformance
+- identifier: "/conf/relations/concept-version"
+  name: Requirements on concept-version-to-concept-version relations
+  description: This conformance class defines the requirements for concept version
+    to concept version relations.
+  dependencies:
+  - "/conf/relations-concept-version/has-version"
+  - "/conf/relations-concept-version/current-version"
+  - "/conf/relations-concept-version/instance-of"
+  - "/conf/relations-concept-version/supersedes"
+  - "/conf/relations-concept-version/has-part"
+  target: "/req/relations/concept-version"
+- identifier: "/conf/relations-concept-version/has-version"
+  name: Requirements of the has version relation
+  description: This conformance class defines the requirements for the has version
+    relation between concept versions.
+  target: "/req/relations-concept-version/has-version"
+  tests:
+  - identifier: "/conf/relations-concept-version/has-version/set"
+    name: Concept version has version relation test
+    targets:
+    - "/req/relations-concept-version/has-version/set"
+    purpose: Verify that the has version relation is set between a concept version
+      and its concept versions.
+    method: |
+      . Examine concept-version-to-concept-version relations
+      . Verify that "has version" relations indicate granular versioning
+      . Confirm that version hierarchies are properly implemented
+    type: Conformance
+- identifier: "/conf/relations-concept-version/current-version"
+  name: Requirements of the current version relation
+  description: This conformance class defines the requirements for the current version
+    relation between concept versions.
+  target: "/req/relations-concept-version/current-version"
+  tests:
+  - identifier: "/conf/relations-concept-version/current-version/set"
+    name: Concept version current version relation test
+    targets:
+    - "/req/relations-concept-version/current-version/set"
+    purpose: Verify that the current version relation is set between a concept version
+      and its current concept version.
+    method: |
+      . Examine concept-version-to-concept-version relations
+      . Verify that "current version" relations identify current versions
+      . Confirm that version currency is properly tracked
+    type: Conformance
+- identifier: "/conf/relations-concept-version/instance-of"
+  name: Requirements of the instance of relation
+  description: This conformance class defines the requirements for the instance of
+    relation between concept versions.
+  target: "/req/relations-concept-version/instance-of"
+  tests:
+  - identifier: "/conf/relations-concept-version/instance-of/set"
+    name: Concept version instance of relation test
+    targets:
+    - "/req/relations-concept-version/instance-of/set"
+    purpose: Verify that the instance of relation is set between a concept version
+      and its instance concept version.
+    method: |
+      . Examine concept-version-to-concept-version relations
+      . Verify that "instance of" relations indicate instance relationships
+      . Confirm that instance semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations-concept-version/supersedes"
+  name: Requirements of the supersedes relation
+  description: This conformance class defines the requirements for the supersedes
+    relation between concept versions.
+  target: "/req/relations-concept-version/supersedes"
+  tests:
+  - identifier: "/conf/relations-concept-version/supersedes/set"
+    name: Concept version supersedes relation test
+    targets:
+    - "/req/relations-concept-version/supersedes/set"
+    purpose: Verify that the supersedes relation is set between a concept version
+      and its superseding concept version.
+    method: |
+      . Examine concept-version-to-concept-version relations
+      . Verify that "supersedes" relations indicate version replacement
+      . Confirm that supersession chains are properly maintained
+    type: Conformance
+- identifier: "/conf/relations-concept-version/has-part"
+  name: Requirements of the has part relation
+  description: This conformance class defines the requirements for the has part relation
+    between concept versions.
+  target: "/req/relations-concept-version/has-part"
+  tests:
+  - identifier: "/conf/relations-concept-version/has-part/set"
+    name: Concept version has part relation test
+    targets:
+    - "/req/relations-concept-version/has-part/set"
+    purpose: Verify that the has part relation is set between a concept version and
+      its part concept versions.
+    method: |
+      . Examine concept-version-to-concept-version relations
+      . Verify that "has part" relations indicate composition
+      . Confirm that part-whole relationships are properly implemented
+    type: Conformance
+- identifier: "/conf/relations/register-item-class"
+  name: Requirements on register item class relations
+  description: This conformance class defines the requirements for relations between
+    register item classes.
+  dependencies:
+  - "/conf/relations-register-item-class/inherits"
+  - "/conf/relations-register-item-class/has-part"
+  target: "/req/relations/register-item-class"
+- identifier: "/conf/relations-register-item-class/inherits"
+  name: Requirements of the inherits relation
+  description: This conformance class defines the requirements for the inherits relation
+    between register item classes.
+  target: "/req/relations-register-item-class/inherits"
+  tests:
+  - identifier: "/conf/relations-register-item-class/inherits/set"
+    name: Register item class inherits relation test
+    targets:
+    - "/req/relations-register-item-class/inherits/set"
+    purpose: Verify that the inherits relation is set between register item classes
+      that are meant to indicate an inheritance relationship.
+    method: |
+      . Examine register-item-class-to-register-item-class relations
+      . Verify that "inherits" relations indicate inheritance
+      . Confirm that inheritance semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations-register-item-class/has-part"
+  name: Requirements of the has part relation
+  description: This conformance class defines the requirements for the has part relation
+    between register item classes.
+  target: "/req/relations-register-item-class/has-part"
+  tests:
+  - identifier: "/conf/relations-register-item-class/has-part/set"
+    name: Register item class has part relation test
+    targets:
+    - "/req/relations-register-item-class/has-part/set"
+    purpose: Verify that the has part relation is set between register item classes
+      that are meant to indicate a composition relationship.
+    method: |
+      . Examine register-item-class-to-register-item-class relations
+      . Verify that "has part" relations indicate composition
+      . Confirm that composition semantics are correctly implemented
+    type: Conformance
+- identifier: "/conf/relations/register-item-to-register-item-class"
+  name: Requirements on register item to register item class relations
+  description: This conformance class defines the requirements for relations between
+    register items and register item classes.
+  dependencies:
+  - "/conf/relations-register-item-to-register-item-class/instance-of"
+  target: "/req/relations/register-item-to-register-item-class"
+- identifier: "/conf/relations-register-item-to-register-item-class/instance-of"
+  name: Requirements of the instance of relation
+  description: This conformance class defines the requirements for the instance of
+    relation between register items and register item classes.
+  target: "/req/relations-register-item-to-register-item-class/instance-of"
+  tests:
+  - identifier: "/conf/relations-register-item-to-register-item-class/instance-of/set"
+    name: Register item instance of relation test
+    targets:
+    - "/req/relations-register-item-to-register-item-class/instance-of/set"
+    purpose: Verify that the instance of relation is set between register items that
+      are meant to indicate an instance relationship with register item classes.
+    method: |
+      . Examine register-item-to-register-item-class relations
+      . Verify that "instance of" relations link items to their classes
+      . Confirm that instance relationships are properly established
+    type: Conformance

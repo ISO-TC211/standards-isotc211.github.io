@@ -1,0 +1,185 @@
+---
+conformance_classes:
+- identifier: "/conf/concept-version-status"
+  name: Requirements of concept version statuses
+  description: This conformance class defines the requirements for concept version
+    status implementation in a register.
+  dependencies:
+  - "/conf/concept-version-status/core"
+  - "/conf/concept-version-status/validity"
+  - "/conf/concept-version-status/publication"
+  - "/conf/concept-version-status/redaction"
+  - "/conf/concept-version-status/deletion"
+  target: "/req/concept-version-status"
+- identifier: "/conf/concept-version-status/core"
+  name: Core requirements of concept version status
+  description: This conformance class defines the requirements for basic functionality
+    of concept version statuses.
+  target: "/req/concept-version-status/core"
+  tests:
+  - identifier: "/conf/concept-version-status/core/definition"
+    name: Concept version statuses definition test
+    targets:
+    - "/req/concept-version-status/core/definition"
+    purpose: Verify that concept version statuses supported by the register are defined
+      with their meaning documented and are applied as appropriate.
+    method: |
+      . Examine the register's concept version status definitions
+      . Verify that each status has documented meaning
+      . Confirm that statuses are applied appropriately throughout the register
+    type: Conformance
+  - identifier: "/conf/concept-version-status/core/assignment"
+    name: Concept version statuses assignment test
+    targets:
+    - "/req/concept-version-status/core/assignment"
+    purpose: Verify that a concept version status is assigned to each concept version
+      in a register indicating their administrative status.
+    method: |
+      . Examine concept versions in the register
+      . Verify that each concept version has an assigned status
+      . Confirm that status assignments accurately reflect administrative status
+    type: Conformance
+  - identifier: "/conf/concept-version-status/core/temporal-applicability"
+    name: Status temporal applicability test
+    targets:
+    - "/req/concept-version-status/core/temporal-applicability"
+    purpose: Verify that a concept version status supports the specification of one
+      or more temporal constraints in which the status is applicable.
+    method: |
+      . Examine concept version statuses in the register
+      . Verify that temporal constraints can be specified
+      . Confirm that temporal applicability is properly implemented
+    type: Conformance
+  - identifier: "/conf/concept-version-status/core/retention"
+    name: Status changes retention test
+    targets:
+    - "/req/concept-version-status/core/retention"
+    purpose: Verify that changes to concept version statuses are covered by the register's
+      change retention commitments.
+    method: |
+      . Examine the register's change retention policies
+      . Verify that status changes are included in retention commitments
+      . Confirm that historical status changes are preserved
+    type: Conformance
+  - identifier: "/conf/concept-version-status/core/extensibility"
+    name: Status extensibility test
+    targets:
+    - "/req/concept-version-status/core/extensibility"
+    purpose: Verify that additional statuses may be defined for use within a register.
+    method: |
+      . Verify that the register supports defining additional statuses
+      . Confirm that new statuses can be documented and implemented
+      . Validate that extensibility mechanisms are available
+    type: Conformance
+  - identifier: "/conf/concept-version-status/core/versioned"
+    name: Status versioning test
+    targets:
+    - "/req/concept-version-status/core/versioned"
+    purpose: Verify that the register may support versioning of statuses to support
+      necessary changes to those statuses.
+    method: |
+      . Examine if the register supports status versioning
+      . If supported, verify that status versions are properly managed
+      . Confirm that version changes are tracked appropriately
+    type: Conformance
+- identifier: "/conf/concept-version-status/validity"
+  name: Requirements of the validity status
+  description: This conformance class defines the requirements for the validity status
+    of concept versions.
+  target: "/req/concept-version-status/validity"
+  tests:
+  - identifier: "/conf/concept-version-status/validity/set"
+    name: Validity status setting test
+    targets:
+    - "/req/concept-version-status/validity/set"
+    purpose: Verify that the validity of a concept version is set to either "valid"
+      or "invalid".
+    method: |
+      . Examine concept versions in the register
+      . Verify that each concept version has validity status set to "valid" or "invalid"
+      . Confirm that validity status accurately reflects acceptability for use
+    type: Conformance
+- identifier: "/conf/concept-version-status/publication"
+  name: Requirements of the publication status
+  description: This conformance class defines the requirements for the publication
+    status of concept versions.
+  target: "/req/concept-version-status/publication"
+  tests:
+  - identifier: "/conf/concept-version-status/publication/set"
+    name: Publication status setting test
+    targets:
+    - "/req/concept-version-status/publication/set"
+    purpose: Verify that the publication status of a concept version is set to either
+      "published" or "unpublished".
+    method: |
+      . Examine concept versions in the register
+      . Verify that each concept version has publication status set to "published" or "unpublished"
+      . Confirm that publication status accurately reflects currency
+    type: Conformance
+- identifier: "/conf/concept-version-status/redaction"
+  name: Requirements of the redaction status
+  description: This conformance class defines the requirements for the redaction status
+    of concept versions.
+  target: "/req/concept-version-status/redaction"
+  tests:
+  - identifier: "/conf/concept-version-status/redaction/set"
+    name: Redaction status setting test
+    targets:
+    - "/req/concept-version-status/redaction/set"
+    purpose: Verify that a concept version is marked as either "not redacted" when
+      it has no redacted content or "redacted" when at least a part of its managed
+      content is redacted.
+    method: |
+      . Examine concept versions in the register
+      . Verify that redaction status is set appropriately based on content state
+      . Confirm that redacted content is properly marked
+    type: Conformance
+  - identifier: "/conf/concept-version-status/redaction/record"
+    name: Redaction date and time recording test
+    targets:
+    - "/req/concept-version-status/redaction/record"
+    purpose: Verify that the date and time of redaction of the managed content is
+      recorded.
+    method: |
+      . Examine concept versions with redacted content
+      . Verify that redaction date and time are recorded
+      . Confirm that redaction timestamps are accurate and complete
+    type: Conformance
+- identifier: "/conf/concept-version-status/deletion"
+  name: Requirements of the deletion status
+  description: This conformance class defines the requirements for the deletion status
+    of concept versions.
+  target: "/req/concept-version-status/deletion"
+  tests:
+  - identifier: "/conf/concept-version-status/deletion/set"
+    name: Deletion status setting test
+    targets:
+    - "/req/concept-version-status/deletion/set"
+    purpose: Verify that a concept version is marked as "not deleted" when it has
+      no deleted content or "deleted" when its managed content is deleted.
+    method: |
+      . Examine concept versions in the register
+      . Verify that deletion status is set appropriately based on content state
+      . Confirm that deleted content is properly marked
+    type: Conformance
+  - identifier: "/conf/concept-version-status/deletion/record"
+    name: Deletion date and time recording test
+    targets:
+    - "/req/concept-version-status/deletion/record"
+    purpose: Verify that the date and time of deletion of the managed content is recorded.
+    method: |
+      . Examine concept versions with deleted content
+      . Verify that deletion date and time are recorded
+      . Confirm that deletion timestamps are accurate and complete
+    type: Conformance
+  - identifier: "/conf/concept-version-status/deletion/retention"
+    name: Deleted content retention test
+    targets:
+    - "/req/concept-version-status/deletion/retention"
+    purpose: Verify that a concept version representing deleted managed content retains
+      its metadata and its associated register item.
+    method: |
+      . Examine concept versions with deleted content
+      . Verify that metadata is retained for deleted content
+      . Confirm that associated register items are preserved
+    type: Conformance

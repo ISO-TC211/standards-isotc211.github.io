@@ -1,0 +1,307 @@
+---
+normative_statements_classes:
+- identifier: "/req/relations"
+  name: Requirements of relations
+  subject: relations
+  description: |
+    A relation represents a defined linkage between two objects
+    within a register.
+  dependencies:
+  - "/req/relations/core"
+  - "/req/relations/concept"
+  - "/req/relations/concept-version"
+  - "/req/relations/concept-to-concept-version"
+  - "/req/relations/register-item-class"
+  - "/req/relations/register-item-to-register-item-class"
+  - "/req/concept"
+  - "/req/concept-version"
+  - "/req/register-item-class"
+- identifier: "/req/relations/core"
+  name: Core requirements of relations
+  subject: relations
+  description: 'Basic functionality of relations.
+
+    '
+  normative_statements:
+  - identifier: "/req/relations/core/definition"
+    name: Relations are defined
+    statement: Relations supported by the register shall be defined with their meaning
+      documented and are applied as appropriate.
+  - identifier: "/req/relations/core/assignment"
+    name: Relations are assigned
+    statement: A relation shall be assigned to objects in a register as required.
+  - identifier: "/req/relations/core/temporal-applicability"
+    name: Specification of temporal applicability
+    statement: A relation shall support the specification of one or more temporal
+      constraints in which the relation is applicable.
+    guidance:
+    - Types of temporal constraints supported are implementation specific.
+  - identifier: "/req/relations/core/retention"
+    name: Retention of relation changes
+    statement: Changes to relations shall be covered by the register's change retention
+      commitments.
+  - identifier: "/req/relations/core/extensibility"
+    name: Extensibility
+    statement: Additional relations suitable and applicable for use of the register,
+      if any, shall be defined for use within a register.
+    guidance:
+    - For instance, a register that includes concepts representing bibliographic items
+      may wish to adopt additional relations from <<iso-690>>.
+    - Additional relations and their usage are to be defined and documented in the
+      register specification.
+  - identifier: "/req/relations/core/versioned"
+    name: Relations are versioned
+    statement: The register shall support versioning of relations to support necessary
+      changes to those relations if required.
+- identifier: "/req/relations/concept"
+  name: Requirements on concept-to-concept relations
+  subject: relations
+  description: 'Concept-to-concept relations.
+
+    '
+  dependencies:
+  - "/req/relations-concept/has-concept"
+  - "/req/relations-concept/instance-of"
+  - "/req/relations-concept/has-definition"
+  - "/req/relations-concept/supersedes"
+  - "/req/relations-concept/inherits"
+  - "/req/relations-concept/has-part"
+- identifier: "/req/relations-concept/has-concept"
+  name: Requirements of the has concept relation
+  subject: concept
+  description: |
+    The "has concept" relation is a relation between concepts and indicates
+    that a concept has the nominated concept as a specialisation of its definition.
+  normative_statements:
+  - identifier: "/req/relations-concept/has-concept/set"
+    name: Setting the has concept relation
+    statement: The has concept relation shall be set between concepts that are meant
+      to indicate a specialisation relationship.
+- identifier: "/req/relations-concept/instance-of"
+  name: Requirements of the instance of relation
+  subject: concept
+  description: |
+    The "instance of" relation is a relation between concepts and indicates
+    that the current concept is an instance of the nominated concept.
+  normative_statements:
+  - identifier: "/req/relations-concept/instance-of/set"
+    name: Setting the instance of relation
+    statement: The instance of relation shall be set between concepts that are meant
+      to indicate an instance relationship.
+- identifier: "/req/relations-concept/has-definition"
+  name: Requirements of the has definition relation
+  subject: concept
+  description: |
+    The "has definition" relation is a relation between concepts and
+    indicates that the current concept has the nominated concept as its definition.
+  normative_statements:
+  - identifier: "/req/relations-concept/has-definition/set"
+    name: Setting the has definition relation
+    statement: The has definition relation shall be set from a concept to its concept
+      definition which is also a concept.
+- identifier: "/req/relations-concept/supersedes"
+  name: Requirements of the supersedes relation
+  subject: concept
+  description: |
+    The supersedes relation is used to indicate that a concept has been replaced
+    by the nominated concept.
+  guidance:
+  - This indicates that the superseded concept is no longer recommended for use, and
+    instead the superseding concept should be used.
+  normative_statements:
+  - identifier: "/req/relations-concept/supersedes/set"
+    name: Setting the supersedes relation
+    statement: The supersedes relation shall be set from a concept to its superseding
+      concept which is also a concept.
+    guidance:
+    - The supersession relation is a many-to-many relation.
+- identifier: "/req/relations-concept/inherits"
+  name: Requirements of the inherits relation
+  subject: concept
+  description: |
+    The "inherits" relation is a relation where the nominated entity
+    inherits and extends properties from the source entity.
+  guidance:
+  - This is an optional relation.
+  normative_statements:
+  - identifier: "/req/relations-concept/inherits/set"
+    name: Setting the inherits relation
+    statement: The inherits relation shall be set from a concept to its inherited
+      concept which is also a concept.
+- identifier: "/req/relations-concept/has-part"
+  name: Requirements of the has part relation
+  subject: concept
+  description: |
+    The "has part" relation is a relation where the nominated entity
+    has part and extends properties from the source entity.
+  guidance:
+  - This is an optional relation.
+  normative_statements:
+  - identifier: "/req/relations-concept/has-part/set"
+    name: Setting the has part relation
+    statement: The has part relation shall be set from a concept to its composing
+      concept which is also a concept.
+- identifier: "/req/relations/concept-to-concept-version"
+  name: Requirements on concept-to-concept-version relations
+  subject: relations
+  description: 'Concept-to-concept-version relations.
+
+    '
+  dependencies:
+  - "/req/relations-concept-concept-version/has-version"
+  - "/req/relations-concept-concept-version/current-version"
+- identifier: "/req/relations-concept-concept-version/has-version"
+  name: Requirements of the has version relation
+  subject: concept
+  description: |
+    The "has version" relation is a relation between concepts and concept
+    versions, indicating that the current concept has the nominated concept version
+    as its definition.
+  normative_statements:
+  - identifier: "/req/relations-concept-concept-version/has-version/set"
+    name: Setting the has version relation
+    statement: The has version relation shall be set between a concept and its concept
+      versions.
+- identifier: "/req/relations-concept-concept-version/current-version"
+  name: Requirements of the current version relation
+  subject: concept
+  description: |
+    The "current version" relation is a relation between concepts and
+    concept versions, indicating that the current concept has the nominated concept
+    version as its current version.
+  normative_statements:
+  - identifier: "/req/relations-concept-concept-version/current-version/set"
+    name: Setting the current version relation
+    statement: The current version relation shall be set between a concept and its
+      current concept version.
+- identifier: "/req/relations/concept-version"
+  name: Requirements on concept-version-to-concept-version relations
+  subject: relations
+  description: 'Concept version to concept version relations.
+
+    '
+  dependencies:
+  - "/req/relations-concept-version/has-version"
+  - "/req/relations-concept-version/current-version"
+  - "/req/relations-concept-version/instance-of"
+  - "/req/relations-concept-version/supersedes"
+  - "/req/relations-concept-version/has-part"
+- identifier: "/req/relations-concept-version/has-version"
+  name: Requirements of the has version relation
+  subject: concept
+  description: |
+    The "has version" relation between concept versions indicates that the
+    current concept version has the nominated concept version as a more granular
+    version of itself.
+  normative_statements:
+  - identifier: "/req/relations-concept-version/has-version/set"
+    name: Setting the has version relation
+    statement: The has version relation shall be set between a concept version and
+      its concept versions.
+- identifier: "/req/relations-concept-version/current-version"
+  name: Requirements of the current version relation
+  subject: concept
+  description: |
+    The "current version" relation between concept versions indicates that the
+    current concept version has the nominated concept version as its current
+    version.
+  normative_statements:
+  - identifier: "/req/relations-concept-version/current-version/set"
+    name: Setting the current version relation
+    statement: The current version relation shall be set between a concept version
+      and its current concept version.
+- identifier: "/req/relations-concept-version/instance-of"
+  name: Requirements of the instance of relation
+  subject: concept
+  description: |
+    The "instance of" relation between concept versions indicates that the
+    current concept version is an instance of the nominated concept version.
+  normative_statements:
+  - identifier: "/req/relations-concept-version/instance-of/set"
+    name: Setting the instance of relation
+    statement: The instance of relation shall be set between a concept version and
+      its instance concept version.
+- identifier: "/req/relations-concept-version/supersedes"
+  name: Requirements of the supersedes relation
+  subject: concept
+  description: |
+    The supersedes relation between concept versions indicates that the current
+    concept version has been replaced by the nominated concept version.
+  guidance:
+  - This indicates that the superseded concept version is no longer recommended for
+    use, and instead the superseding concept version should be used.
+  - In the previous edition (<<iso19135-1-2015>>), a "register item series" is composed
+    of a series of supersession relations between register items. This document no
+    longer uses the notion of a "register item series".
+  normative_statements:
+  - identifier: "/req/relations-concept-version/supersedes/set"
+    name: Setting the supersedes relation
+    statement: The supersedes relation shall be set between a concept version and
+      its superseding concept version.
+- identifier: "/req/relations-concept-version/has-part"
+  name: Requirements of the has part relation
+  subject: concept
+  description: |
+    The "has part" relation between concept versions indicates that a concept
+    version is composed of one or more other concept versions.
+  normative_statements:
+  - identifier: "/req/relations-concept-version/has-part/set"
+    name: Setting the has part relation
+    statement: The has part relation shall be set between a concept version and its
+      part concept versions.
+- identifier: "/req/relations/register-item-class"
+  name: Requirements on register item class relations
+  subject: relations
+  description: 'Relations between register item classes.
+
+    '
+  dependencies:
+  - "/req/relations-register-item-class/inherits"
+  - "/req/relations-register-item-class/has-part"
+- identifier: "/req/relations-register-item-class/inherits"
+  name: Requirements of the inherits relation
+  subject: register item class
+  description: |
+    The "inherits" relation is a relation between register item classes
+    and indicates that the current register item class inherits requirements from the
+    nominated register item class and selectively overrides them.
+  normative_statements:
+  - identifier: "/req/relations-register-item-class/inherits/set"
+    name: Setting the inherits relation
+    statement: The inherits relation shall be set between register item classes that
+      are meant to indicate an inheritance relationship.
+- identifier: "/req/relations-register-item-class/has-part"
+  name: Requirements of the has part relation
+  subject: register item class
+  description: |
+    The "has part" relation is a relation between register item classes
+    and indicates that the current register item class has the nominated register item
+    class as a part of its definition, where the combined parts constitute the whole
+    of the current register item class.
+  guidance:
+  - This is an optional relation.
+  normative_statements:
+  - identifier: "/req/relations-register-item-class/has-part/set"
+    name: Setting the has part relation
+    statement: The has part relation shall be set between register item classes that
+      are meant to indicate a composition relationship.
+- identifier: "/req/relations/register-item-to-register-item-class"
+  name: Requirements on register item to register item class relations
+  subject: relations
+  description: 'Relations between register items and register item classes.
+
+    '
+  dependencies:
+  - "/req/relations-register-item-to-register-item-class/instance-of"
+- identifier: "/req/relations-register-item-to-register-item-class/instance-of"
+  name: Requirements of the instance of relation
+  subject: register item class
+  description: |
+    The "instance of" relation between register item classes and register items
+    indicates that the current register item has the nominated register item class
+    as its definition.
+  normative_statements:
+  - identifier: "/req/relations-register-item-to-register-item-class/instance-of/set"
+    name: Setting the instance of relation
+    statement: The instance of relation shall be set between register items that are
+      meant to indicate an instance relationship with register item classes.

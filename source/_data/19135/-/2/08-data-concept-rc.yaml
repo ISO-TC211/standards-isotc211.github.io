@@ -1,0 +1,80 @@
+---
+normative_statements_classes:
+- identifier: "/req/concept"
+  name: Requirements on concept
+  subject: concept
+  description: 'A concept represents an aspect of the real-world whether abstract
+    or concrete.
+
+    '
+  dependencies:
+  - "/req/identifiers"
+  normative_statements:
+  - identifier: "/req/concept/system"
+    name: Concept system
+    statement: A concept shall be defined and managed in a concept system.
+    guidance:
+    - The concept system could be implemented as part of, or external to, the register
+      framework.
+  - identifier: "/req/concept/creation"
+    name: Concept creation
+    statement: The register shall support creation of general concepts, concept definitions,
+      and realised concepts.
+    guidance:
+    - A general concept represents an abstract idea or notion not tied to a specific
+      instance.
+    - A concept definition represents information requirements allowing for concept
+      realisation.
+    - A realised concept represents an instance of a general concept materialised
+      into concrete information.
+    dependencies:
+    - "/req/concept/definition"
+  - identifier: "/req/concept/general-concept"
+    name: General concept
+    statement: The register shall support the creation of general concepts.
+    guidance:
+    - A general concept is a conceptual entity that does not have a specific instance
+      or realisation.
+  - identifier: "/req/concept/definition"
+    name: Concept definition
+    statement: The register shall support the creation of concept definitions, which
+      are concepts themselves, that provide information requirements for the realisation
+      of concepts.
+  - identifier: "/req/concept/realised-concept"
+    name: Realised concept
+    statement: The register shall support the creation of realised concepts, which
+      are concepts themselves, that represent an instance of a general concept that
+      is realised in the register according to the concept definition of the general
+      concept.
+    guidance:
+    - A realised concept is also called a concept instance.
+  - identifier: "/req/concept/link-versions"
+    name: Concept links to all concept versions
+    statement: The concept shall link to all concept versions of the concept using
+      the "has version" concept-to-concept-version relation.
+  - identifier: "/req/concept/link-current-version"
+    name: Concept links to a current concept version
+    statement: The concept shall link to one of the concept versions as the current
+      version.
+    guidance:
+    - It is typically expected that the "current version" of a concept links to the
+      most recent concept version (and the most recent subordinate concept versions)
+      within it. However, exceptions to this rule exist. For instance, if the most
+      recent version has been marked invalid and should not be used, the current version
+      can point to an earlier valid version. This is best handled by defining desired
+      behaviour in the register specification.
+    - The current version is also called the preferred version in cases where the
+      notion of "current" is deemed confusing.
+  - identifier: "/req/concept/identifier"
+    name: Concepts are assigned functional identifiers
+    statement: A concept in the register shall be assigned a functional identifier.
+    examples:
+    - "/concept/crs/wgs84/g873 is a kind of a functional identifier assigned to a
+      concept."
+  - identifier: "/req/concept/object-identifier"
+    name: Concepts are assigned object identifiers
+    statement: A concept in the register shall be assigned an object identifier for
+      permanent identification.
+    guidance:
+    - Object identifiers are non-redirectable and permanently assigned to specific
+      objects.

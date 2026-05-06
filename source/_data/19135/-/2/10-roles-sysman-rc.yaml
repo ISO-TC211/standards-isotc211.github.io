@@ -1,0 +1,13 @@
+---
+normative_statements_classes:
+- identifier: "/req/roles/register-system-manager"
+  name: Responsibilities of the register system manager
+  subject: register system manager
+  description: |
+    The register system manager is appointed by the register owner to implement,
+    operate, manage, and provide access to the register system.
+  normative_statements:
+  - identifier: "/req/roles/register-system-manager/conform-to-governance"
+    name: Conformance to governance processes by the register system manager
+    statement: The register system manager shall follow the rules and procedures defined
+      in the register specification (<<register-specification>>).

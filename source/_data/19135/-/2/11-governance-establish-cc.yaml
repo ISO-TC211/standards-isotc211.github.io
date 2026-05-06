@@ -1,0 +1,80 @@
+---
+conformance_classes:
+- identifier: "/conf/establishment-process"
+  name: Requirements of the establishment process
+  description: This conformance class defines the requirements for the establishment
+    process implementation in a register.
+  target: "/req/establishment-process"
+  tests:
+  - identifier: "/conf/establishment-process/consider-scope"
+    name: Scope consideration test
+    targets:
+    - "/req/establishment-process/consider-scope"
+    purpose: Verify that in establishing the register, the purpose and scope of the
+      register are considered.
+    method: |
+      . Examine the register's establishment documentation
+      . Verify that the purpose of the register is clearly defined
+      . Confirm that the scope of the register is explicitly considered
+      . Validate that purpose and scope considerations are documented
+    type: Conformance
+  - identifier: "/conf/establishment-process/consider-audience"
+    name: Audience consideration test
+    targets:
+    - "/req/establishment-process/consider-audience"
+    purpose: Verify that in establishing the register, the intended audience of the
+      register is considered.
+    method: |
+      . Examine the register's establishment documentation
+      . Verify that the intended audience is identified
+      . Confirm that audience needs and requirements are considered
+      . Validate that audience considerations are documented
+    type: Conformance
+  - identifier: "/conf/establishment-process/consider-governance"
+    name: Governance consideration test
+    targets:
+    - "/req/establishment-process/consider-governance"
+    purpose: Verify that in establishing the register, governance processes that are
+      applicable and suitable for the register are considered.
+    method: |
+      . Examine the register's establishment documentation
+      . Verify that governance processes are identified and evaluated
+      . Confirm that the suitability of governance processes for the register is assessed
+      . Validate that governance considerations are documented
+    type: Conformance
+  - identifier: "/conf/establishment-process/consider-content"
+    name: Content consideration test
+    targets:
+    - "/req/establishment-process/consider-content"
+    purpose: Verify that in establishing the register, the type of content of the
+      register and the requirements of them are considered.
+    method: |
+      . Examine the register's establishment documentation
+      . Verify that the type of content is clearly defined
+      . Confirm that content requirements are specified
+      . Validate that content considerations are documented
+    type: Conformance
+  - identifier: "/conf/establishment-process/consider-commitments"
+    name: Commitments consideration test
+    targets:
+    - "/req/establishment-process/consider-commitments"
+    purpose: Verify that in establishing the register, the commitments that the register
+      adheres to are considered.
+    method: |
+      . Examine the register's establishment documentation
+      . Verify that register commitments are identified and defined
+      . Confirm that adherence to commitments is considered
+      . Validate that commitment considerations are documented
+    type: Conformance
+  - identifier: "/conf/establishment-process/document-consider"
+    name: Documentation of considerations test
+    targets:
+    - "/req/establishment-process/document-consider"
+    purpose: Verify that the considerations taken into account during the establishment
+      process are documented.
+    method: |
+      . Examine the register's establishment documentation
+      . Verify that all considerations are properly documented
+      . Confirm that documentation is complete and accessible
+      . Validate that the documentation covers scope, audience, governance, content, and commitment considerations
+    type: Conformance

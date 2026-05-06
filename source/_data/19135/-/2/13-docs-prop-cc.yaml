@@ -1,0 +1,31 @@
+---
+conformance_classes:
+- identifier: "/conf/proposal-instructions"
+  name: Requirements of proposal instructions
+  description: This conformance class defines the requirements for proposal instructions
+    implementation in a register.
+  target: "/req/proposal-instructions"
+  tests:
+  - identifier: "/conf/proposal-instructions/document-information"
+    name: Proposal submission documentation test
+    targets:
+    - "/req/proposal-instructions/document-information"
+    purpose: Verify that information necessary to facilitate the proposal submission
+      process is documented as proposal instructions.
+    method: |
+      . Examine the register's proposal instructions documentation
+      . Verify that all necessary information for proposal submission is included
+      . Confirm that the instructions facilitate the proposal submission process
+      . Validate that the documentation is complete and comprehensive
+    type: Conformance
+  - identifier: "/conf/proposal-instructions/provide-information"
+    name: Proposal instructions availability test
+    targets:
+    - "/req/proposal-instructions/provide-information"
+    purpose: Verify that proposal instructions are made available to eligible proposers.
+    method: |
+      . Verify that proposal instructions are accessible to eligible proposers
+      . Confirm that the instructions are readily available
+      . Validate that access mechanisms are appropriate for the intended audience
+      . Ensure that proposers can easily locate and access the instructions
+    type: Conformance

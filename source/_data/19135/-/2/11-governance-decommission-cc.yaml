@@ -1,0 +1,38 @@
+---
+conformance_classes:
+- identifier: "/conf/decommission-process"
+  name: Requirements of the decommission process
+  description: This conformance class defines the requirements for decommission process
+    implementation in a register.
+  target: "/req/decommission-process"
+  tests:
+  - identifier: "/conf/decommission-process/considerations"
+    name: Decommission decision consideration
+    targets:
+    - "/req/decommission-process/considerations"
+    purpose: Verify that the register owner carefully considers the decision to decommission
+      a register
+    method: Check that the register owner has thoroughly considered the impact on
+      users and interested parties, continued availability needs, recourse options,
+      and archival versus deletion decisions before making the decommission decision
+    type: Conformance
+  - identifier: "/conf/decommission-process/document-information"
+    name: Decommission information documentation
+    targets:
+    - "/req/decommission-process/document-information"
+    purpose: Verify that the register owner documents the decision and information
+      relevant to the decommissioning of a register
+    method: Check that the register owner has documented the justification for decommissioning,
+      reactivation instructions if applicable, information discovery steps for legal
+      needs, and recourse instructions for users
+    type: Validation
+  - identifier: "/conf/decommission-process/inform-interested-parties"
+    name: Interested parties notification
+    targets:
+    - "/req/decommission-process/inform-interested-parties"
+    purpose: Verify that the register owner informs interested parties about the decommission
+      of the register
+    method: Check that the register owner has properly notified all interested parties,
+      including users, about the register decommission and any available recourse
+      options
+    type: Conformance

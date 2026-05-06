@@ -1,0 +1,68 @@
+{% comment %}Individual conformance test page content.{% endcomment %}
+{% assign uri_base = include.uri_base %}
+{% assign data = include.data %}
+{% assign xrefs = include.xrefs %}
+{% assign identifier = include.identifier %}
+
+<div class="provision-field">
+  <div class="provision-field__label">Identifier</div>
+  <div class="provision-field__value">
+    <code class="provision-uri">https://standards.isotc211.org/{{ uri_base }}{{ identifier }}</code>
+  </div>
+</div>
+
+{% if xrefs.targets and xrefs.targets.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Targets</div>
+  <div class="provision-field__value">
+    {% include provision_xref_list.html items=xrefs.targets uri_base=uri_base %}
+  </div>
+</div>
+{% endif %}
+
+{% if data.purpose %}
+<div class="provision-field">
+  <div class="provision-field__label">Purpose</div>
+  <div class="provision-field__value">{{ data.purpose }}</div>
+</div>
+{% endif %}
+
+{% if data.method %}
+<div class="provision-field">
+  <div class="provision-field__label">Method</div>
+  <div class="provision-field__value">{{ data.method }}</div>
+</div>
+{% endif %}
+
+{% if data.type %}
+<div class="provision-field">
+  <div class="provision-field__label">Test Type</div>
+  <div class="provision-field__value">{{ data.type }}</div>
+</div>
+{% endif %}
+
+{% if data.guidance and data.guidance.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Guidance</div>
+  <div class="provision-field__value">
+    <ul>
+      {% for g in data.guidance %}
+      <li>{{ g }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+{% if data.examples and data.examples.size > 0 %}
+<div class="provision-field">
+  <div class="provision-field__label">Examples</div>
+  <div class="provision-field__value">
+    <ul>
+      {% for e in data.examples %}
+      <li>{{ e }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}

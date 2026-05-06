@@ -1,0 +1,77 @@
+---
+conformance_classes:
+- identifier: "/conf/proposal-process"
+  name: Requirements of the proposal process
+  description: This conformance class defines the requirements for proposal process
+    implementation in a register.
+  target: "/req/proposal-process"
+  tests:
+  - identifier: "/conf/proposal-process/satisfy-requirements"
+    name: Proposal requirements satisfaction
+    targets:
+    - "/req/proposal-process/satisfy-requirements"
+    purpose: Verify that submitted proposals satisfy the requirements defined in the
+      register specification
+    method: Check that all submitted proposals meet the requirements and criteria
+      as documented in the register specification
+    type: Conformance
+  - identifier: "/conf/proposal-process/submit-proposal-role"
+    name: Proposal submission to register manager
+    targets:
+    - "/req/proposal-process/submit-proposal-role"
+    purpose: Verify that the proposer submits proposals to the register manager
+    method: Check that proposers follow the correct procedure for submitting proposals
+      to the register manager
+    type: Conformance
+  - identifier: "/conf/proposal-process/verify-eligibility-role"
+    name: Proposal clarification capability
+    targets:
+    - "/req/proposal-process/verify-eligibility-role"
+    purpose: Verify that the proposer clarifies proposals when requested
+    method: Check that proposers provide clarification to the control body, register
+      manager, or register owner when requested
+    type: Conformance
+  - identifier: "/conf/proposal-process/withdraw-proposal"
+    name: Proposal withdrawal capability
+    targets:
+    - "/req/proposal-process/withdraw-proposal"
+    purpose: Verify that the proposer has the option to withdraw a proposal at any
+      time during the approval process
+    method: Check that the proposal process allows proposers to withdraw their proposals
+      at any stage of the approval process
+    type: Conformance
+  - identifier: "/conf/proposal-process/verify-eligibility"
+    name: Proposer eligibility verification
+    targets:
+    - "/req/proposal-process/verify-eligibility"
+    purpose: Verify that the register manager verifies proposer eligibility when a
+      proposal is received
+    method: Check that the register manager verifies proposer eligibility in accordance
+      with defined eligibility criteria when proposals are received
+    type: Conformance
+  - identifier: "/conf/proposal-process/reject-failed-proposals"
+    name: Non-compliant proposal rejection
+    targets:
+    - "/req/proposal-process/reject-failed-proposals"
+    purpose: Verify that the register manager rejects proposals that do not meet requirements
+    method: Check that the register manager properly rejects proposals that do not
+      meet the proposal requirements as defined in the register specification
+    type: Conformance
+  - identifier: "/conf/proposal-process/forward-eligible-proposals"
+    name: Eligible proposal forwarding
+    targets:
+    - "/req/proposal-process/forward-eligible-proposals"
+    purpose: Verify that the register manager forwards eligible proposals to the control
+      body
+    method: Check that the register manager properly forwards eligible proposals to
+      the control body for deliberations on acceptability
+    type: Conformance
+  - identifier: "/conf/proposal-process/retain-submission-decision"
+    name: Proposal documentation retention
+    targets:
+    - "/req/proposal-process/retain-submission-decision"
+    purpose: Verify that the register manager retains documentation on proposal submission
+      and deliberations
+    method: Check that the register manager maintains comprehensive records of proposal
+      submissions and all related deliberations and decisions
+    type: Conformance

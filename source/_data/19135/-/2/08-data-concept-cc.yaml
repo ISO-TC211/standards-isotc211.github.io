@@ -1,0 +1,91 @@
+---
+conformance_classes:
+- identifier: "/conf/concept"
+  name: Requirements on concept
+  description: This conformance class defines the requirements for concept implementation
+    and management in a register.
+  target: "/req/concept"
+  tests:
+  - identifier: "/conf/concept/system"
+    name: Concept system verification
+    targets:
+    - "/req/concept/system"
+    purpose: Verify that concepts are defined and managed within a concept system.
+    method: Validate that the register implements or integrates with a concept system
+      that properly defines and manages concepts according to the framework requirements.
+    type: Conformance
+  - identifier: "/conf/concept/creation"
+    name: Concept creation support validation
+    targets:
+    - "/req/concept/creation"
+    purpose: Verify that the register supports creation of general concepts, concept
+      definitions, and realised concepts.
+    method: Confirm that the register can create all three types of concepts (general,
+      definition, and realised) and that each type functions according to its specified
+      purpose and characteristics.
+    type: Conformance
+  - identifier: "/conf/concept/general-concept"
+    name: General concept creation verification
+    targets:
+    - "/req/concept/general-concept"
+    purpose: Verify that the register supports creation of general concepts as abstract
+      entities.
+    method: Validate that general concepts can be created as conceptual entities without
+      specific instances or realisations, representing abstract ideas or notions.
+    type: Conformance
+  - identifier: "/conf/concept/definition"
+    name: Concept definition creation verification
+    targets:
+    - "/req/concept/definition"
+    purpose: Verify that the register supports creation of concept definitions that
+      provide information requirements for concept realisation.
+    method: Confirm that concept definitions can be created as concepts themselves
+      and that they properly provide information requirements for realising other
+      concepts.
+    type: Conformance
+  - identifier: "/conf/concept/realised-concept"
+    name: Realised concept creation verification
+    targets:
+    - "/req/concept/realised-concept"
+    purpose: Verify that the register supports creation of realised concepts as instances
+      of general concepts.
+    method: Validate that realised concepts (concept instances) can be created to
+      represent instances of general concepts that are materialised according to concept
+      definitions.
+    type: Conformance
+  - identifier: "/conf/concept/link-versions"
+    name: Concept version linking validation
+    targets:
+    - "/req/concept/link-versions"
+    purpose: Verify that concepts properly link to all their concept versions using
+      "has version" relations.
+    method: Inspect concept-to-concept-version relationships to ensure all concept
+      versions are properly linked to their parent concept through "has version" relations.
+    type: Validation
+  - identifier: "/conf/concept/link-current-version"
+    name: Current concept version linking validation
+    targets:
+    - "/req/concept/link-current-version"
+    purpose: Verify that concepts properly link to one concept version as the current
+      version.
+    method: Validate that each concept designates exactly one concept version as current
+      and that this designation follows the register specification's rules for determining
+      currency.
+    type: Validation
+  - identifier: "/conf/concept/identifier"
+    name: Concept functional identifier assignment
+    targets:
+    - "/req/concept/identifier"
+    purpose: Verify that concepts are assigned functional identifiers.
+    method: Confirm that each concept in the register has a functional identifier
+      assigned according to the register's identifier scheme and that these identifiers
+      function properly for concept resolution.
+    type: Conformance
+  - identifier: "/conf/concept/object-identifier"
+    name: Concept object identifier assignment
+    targets:
+    - "/req/concept/object-identifier"
+    purpose: Verify that concepts are assigned object identifiers for permanent identification.
+    method: Validate that each concept has an object identifier that is non-redirectable
+      and permanently assigned for stable referencing of the specific concept object.
+    type: Conformance

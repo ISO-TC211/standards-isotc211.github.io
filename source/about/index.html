@@ -1,0 +1,80 @@
+---
+layout: default
+title: About
+---
+
+<div class="content-page">
+  <header class="content-page__header">
+    <nav class="content-page__breadcrumb">
+      <a href="/">Home</a>
+      &rsaquo;
+      About
+    </nav>
+    <h1 class="content-page__title">About This Site</h1>
+  </header>
+
+  <div class="documentation">
+    <h2>What is standards.isotc211.org?</h2>
+    <p>
+      This site is a <strong>URI dereferencing service</strong> for
+      ISO/TC 211 Geographic information/Geomatics standards. It provides
+      human-readable pages for every normative statement, conformance class,
+      and conformance test URI defined in published ISO/TC 211 standards.
+    </p>
+
+    <h2>Why URI dereferencing?</h2>
+    <p>
+      ISO/TC 211 standards assign unique, persistent URIs to each requirements
+      class, requirement, conformance class, and conformance test. These URIs
+      are used in machine-readable artifacts (XML schemas, ontologies, test
+      scripts) and need to resolve to a page that explains what they mean.
+    </p>
+    <p>
+      For example, a conformance test suite can reference
+      <code>https://standards.isotc211.org/19135/-/2/req/identifiers/uniqueness</code>
+      and that URI will resolve to a page describing the requirement.
+    </p>
+
+    <h2>URI Format</h2>
+    <div class="standards-url-demo">
+      <div class="standards-url-demo__label">Requirements class</div>
+      <code class="standards-url-demo__code">https://standards.isotc211.org/{Standard}/-{Part}/{Edition}/req/{ClassId}[/{ItemId}]</code>
+    </div>
+    <div class="standards-url-demo" style="margin-top: 0.75rem;">
+      <div class="standards-url-demo__label">Conformance class</div>
+      <code class="standards-url-demo__code">https://standards.isotc211.org/{Standard}/-{Part}/{Edition}/conf/{ClassId}[/{TestId}]</code>
+    </div>
+
+    <p>
+      The statement type segment can be <code>req</code> (requirements),
+      <code>rec</code> (recommendations), <code>per</code> (permissions), or
+      <code>conf</code> (conformance).
+    </p>
+
+    <h2>Content and Copyright</h2>
+    <p>
+      Full requirement statements, descriptions, and test methods are
+      copyrighted by ISO and are <strong>not</strong> reproduced here. Each
+      page links to the relevant standard for the complete text. Identifiers,
+      names, guidance, and cross-references are provided for discoverability.
+    </p>
+
+    <h2>Model-Driven Architecture</h2>
+    <p>
+      This site is generated from structured YAML data files using the
+      <a href="https://github.com/metanorma/modspec-ruby">modspec-ruby</a>
+      library, which provides OGC ModSpec-compliant models for requirements
+      and conformance classes. The generator plugin loads these models and
+      creates a page for each provision.
+    </p>
+
+    <h2>Contributing</h2>
+    <p>
+      Comments, suggestions, and change requests are maintained in the
+      <a href="https://github.com/ISO-TC211/standards.isotc211.org">GitHub repository</a>.
+    </p>
+    <p style="color: #64748b; font-size: 0.875rem; margin-top: 1rem;">
+      This site is managed jointly by the ISO/TC 211 Resources Group and Ribose.
+    </p>
+  </div>
+</div>

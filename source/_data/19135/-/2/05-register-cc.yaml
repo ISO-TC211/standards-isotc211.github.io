@@ -1,0 +1,79 @@
+---
+conformance_classes:
+- identifier: "/conf/content-register"
+  name: Content register requirements
+  description: This conformance class defines the requirements for content register
+    implementation in a register.
+  dependencies:
+  - "/conf/conceptual-model"
+  - "/conf/identifiers"
+  - "/conf/versioning"
+  - "/conf/register-item-class"
+  - "/conf/register-item"
+  - "/conf/actions"
+  - "/conf/relations/register-item-to-register-item-class"
+  - "/conf/relations/register-item-class"
+  - "/conf/register-specification"
+  - "/conf/proposal-instructions"
+  target: "/req/content-register"
+- identifier: "/conf/concept-register"
+  name: Concept register requirements
+  description: This conformance class defines the requirements for concept register
+    implementation in a register.
+  dependencies:
+  - "/conf/concept"
+  - "/conf/concept-version"
+  - "/conf/concept-version-status"
+  - "/conf/relations"
+  target: "/req/concept-register"
+- identifier: "/conf/governance"
+  name: Governance requirements
+  description: This conformance class defines the requirements for governance implementation
+    in a register.
+  dependencies:
+  - "/conf/roles/control-body"
+  - "/conf/roles/register-manager"
+  - "/conf/roles/register-owner"
+  - "/conf/roles/proposer"
+  - "/conf/roles/register-system-manager"
+  - "/conf/roles/register-user"
+  - "/conf/content-management-process"
+  - "/conf/proposal-process"
+  - "/conf/approval-process"
+  - "/conf/establishment-process"
+  - "/conf/appeal-process"
+  - "/conf/decommission-process"
+  target: "/req/governance"
+- identifier: "/conf/governed-content-register"
+  name: Governed content register requirements
+  description: This conformance class defines the requirements for governed content
+    register implementation in a register.
+  dependencies:
+  - "/conf/content-register"
+  - "/conf/governance"
+  target: "/req/governed-content-register"
+- identifier: "/conf/governed-concept-register"
+  name: Governed concept register requirements
+  description: This conformance class defines the requirements for governed concept
+    register implementation in a register.
+  dependencies:
+  - "/conf/concept-register"
+  - "/conf/governance"
+  target: "/req/governed-concept-register"
+- identifier: "/conf/comprehensive-concept-register"
+  name: Comprehensive concept register requirements
+  description: This conformance class defines the requirements for comprehensive concept
+    register implementation with advanced concept composition methods.
+  dependencies:
+  - "/conf/concept-register"
+  - "/conf/governance"
+  - "/conf/relations-concept/inherits"
+  - "/conf/relations-concept/has-part"
+  - "/conf/relations-register-item-class/has-part"
+  - "/conf/actions/correctional-change"
+  - "/conf/actions/migrate-concept-definition"
+  - "/conf/actions/concept-domains"
+  - "/conf/actions/concept-incorporation"
+  - "/conf/actions/concept-composition"
+  - "/conf/actions/concept-inheritance"
+  target: "/req/comprehensive-concept-register"

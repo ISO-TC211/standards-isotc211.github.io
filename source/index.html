@@ -1,0 +1,133 @@
+---
+layout: home
+title: Home
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-surface"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-mesh"></div>
+  <div class="hero-orb hero-orb--1"></div>
+  <div class="hero-orb hero-orb--2"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10" style="padding-top: 8rem; padding-bottom: 6rem;">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        ISO/TC 211
+      </div>
+
+      <h1>
+        ISO/TC 211<br>
+        Normative Statements &amp; <span class="accent">Conformance</span>
+      </h1>
+
+      <p class="hero-lede">
+        This site provides URI dereferencing for normative statements,
+        conformance classes, and conformance tests defined in
+        ISO/TC 211 Geographic information/Geomatics standards.
+        Every URI used in a published standard resolves to a page here.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#standards" class="hero-btn hero-btn--fill">
+          Browse Standards
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+        </a>
+        <a href="#uri-format" class="hero-btn hero-btn--ghost">
+          URI Format
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Standards Listing -->
+<section id="standards" class="section section--white">
+  <div style="max-width: 80rem; margin: 0 auto;">
+    <div class="section__header">
+      <span class="section__kicker">Standards</span>
+      <h2 class="section__title">Supported Standards</h2>
+      <p class="section__desc">
+        Each standard provides dereferenceable URIs for its requirements
+        and conformance classes.
+      </p>
+    </div>
+
+    <div class="standards-catalog">
+      {% for std in site.data.standards_catalog %}
+      <a href="{{ std.url }}" class="standards-card">
+        <div class="standards-card__icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+          </svg>
+        </div>
+        <div class="standards-card__body">
+          <h3 class="standards-card__title">{{ std.label }}</h3>
+          <p class="standards-card__desc">{{ std.subtitle }}</p>
+          <div class="standards-card__meta">
+            <span class="standards-card__badge">Edition {{ std.edition }}</span>
+            <span class="standards-card__count">{{ std.req_count }} req classes &middot; {{ std.conf_count }} conf classes</span>
+          </div>
+        </div>
+        <svg class="standards-card__chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+        </svg>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- URI Format -->
+<section id="uri-format" class="section section--muted">
+  <div style="max-width: 48rem; margin: 0 auto;">
+    <div class="section__header">
+      <span class="section__kicker">URIs</span>
+      <h2 class="section__title">URI Dereferencing</h2>
+      <p class="section__desc">
+        ISO/TC 211 defines unique, persistent URIs for every provision statement
+        and conformance test. This site resolves those URIs to structured pages.
+      </p>
+    </div>
+
+    <div class="standards-url-demo">
+      <div class="standards-url-demo__label">Provision class URI</div>
+      <code class="standards-url-demo__code">https://standards.isotc211.org/{Standard}/-{Part}/{Edition}/{req|rec|per}/{ClassId}</code>
+    </div>
+
+    <div class="standards-url-demo" style="margin-top: 0.75rem;">
+      <div class="standards-url-demo__label">Conformance class URI</div>
+      <code class="standards-url-demo__code">https://standards.isotc211.org/{Standard}/-{Part}/{Edition}/conf/{ClassId}[/{TestId}]</code>
+    </div>
+
+    <div class="standards-examples" style="margin-top: 1.5rem;">
+      <div class="standards-examples__label">Examples</div>
+      <div class="standards-example-list">
+        {% for std in site.data.standards_catalog %}
+          {% if std.example_conf_path %}
+        <a href="{{ std.example_conf_uri }}" class="standards-example-link">
+          <code>{{ std.example_conf_path }}</code>
+          <span>{{ std.label }} conformance class</span>
+        </a>
+          {% endif %}
+          {% if std.example_req_path %}
+        <a href="{{ std.example_req_uri }}" class="standards-example-link">
+          <code>{{ std.example_req_path }}</code>
+          <span>{{ std.label }} requirement</span>
+        </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

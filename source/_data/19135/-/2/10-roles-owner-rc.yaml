@@ -1,0 +1,80 @@
+---
+normative_statements_classes:
+- identifier: "/req/roles/register-owner"
+  name: Responsibilities of the register owner
+  subject: register owner
+  description: |
+    The register owner holds ultimate responsibility over the register.
+
+    Some of these responsibilities include, but are not limited to, the following:
+
+    * management, such as the appointment of supporting roles;
+
+    * purpose, scope and content of the register;
+
+    * dissemination of the contents of the register.
+  normative_statements:
+  - identifier: "/req/roles/register-owner/specify-register-specification"
+    name: Creation of a register specification
+    statement: A register owner shall document the governance procedures and requirements
+      of the register in a register specification.
+  - identifier: "/req/roles/register-owner/appoint-register-manager"
+    name: Appointment of a register manager
+    statement: The register owner shall appoint a register manager.
+    guidance: The register owner can serve as the register manager or appoint another
+      entity to serve as the register manager.
+  - identifier: "/req/roles/register-owner/appoint-control-body"
+    name: Appointment of a control body
+    statement: The register owner shall appoint a control body.
+    guidance: The register owner can serve as the control body, or delegate that role
+      to the register manager or another entity.
+  - identifier: "/req/roles/register-owner/appoint-register-system-manager"
+    name: Appointment of a register system manager
+    statement: The register owner shall appoint a register system manager.
+  - identifier: "/req/roles/register-owner/specify-proposer-criteria"
+    name: Specification of proposer criteria
+    statement: The register owner shall specify the criteria to qualify as a proposer.
+  - identifier: "/req/roles/register-owner/specify-user-access-eligibility"
+    name: Specification of user access eligibility
+    statement: The register owner shall specify the register users eligible for access
+      to the register.
+  - identifier: "/req/roles/register-owner/specify-proposal-process"
+    name: Definition of proposal process
+    statement: The register owner shall specify the process for a proposer to submit
+      a proposal (<<process-approval>>).
+  - identifier: "/req/roles/register-owner/specify-approval-time-limit"
+    name: Specification of approval process time limit
+    statement: The register owner shall specify the time limit in which the approval
+      process will be completed (<<process-approval>>).
+  - identifier: "/req/roles/register-owner/specify-appeal-process"
+    name: Specification of process for appeals
+    statement: The register owner shall define the process for a proposer to appeal
+      decisions of the control body (<<process-appeal>>).
+  - identifier: "/req/roles/register-owner/specify-appeal-time-limit"
+    name: Specification of appeal process time limit
+    statement: The register owner shall specify the time limit in which the appeal
+      process will be completed (<<process-appeal>>).
+  - identifier: "/req/roles/register-owner/consider-user-needs"
+    name: Consideration of register user needs
+    statement: The register owner shall consider the needs of register users (<<role-register-user>>)
+      when selecting methods of access to and publication of the content of the register.
+  - identifier: "/req/roles/register-owner/specify-publication-method"
+    name: Specify publication method
+    statement: The register owner shall specify the method of publication of the content
+      of the register, to provide access to its intended audience.
+    dependencies:
+    - "/req/roles/register-owner/consider-user-needs"
+  - identifier: "/req/roles/register-owner/set-terms-conditions"
+    name: Specify terms and conditions
+    statement: The register owner shall set the terms and conditions regarding different
+      levels of access to the register.
+    dependencies:
+    - "/req/roles/register-owner/consider-user-needs"
+  - identifier: "/req/roles/register-owner/define-addition-modification"
+    name: Definition of rules and guidelines on addition and modification
+    statement: The register owner shall set rules and guidelines on what constitutes
+      an addition or modification.
+  - identifier: "/req/roles/register-owner/define-substantive-change"
+    name: Definition of what kind of modification constitutes a substantive change
+    statement: The register owner shall define what kind of modification constitutes
+      a substantive change.

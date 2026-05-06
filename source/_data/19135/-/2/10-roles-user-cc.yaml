@@ -1,0 +1,18 @@
+---
+conformance_classes:
+- identifier: "/conf/roles/register-user"
+  name: Responsibilities of the register user
+  description: This conformance class defines the requirements for register user implementation
+    in a register.
+  target: "/req/roles/register-user"
+  tests:
+  - identifier: "/conf/roles/register-user/conform-to-governance"
+    name: Governance process conformance
+    targets:
+    - "/req/roles/register-user/conform-to-governance"
+    purpose: Verify that the register user follows the rules and procedures defined
+      in the register specification
+    method: Check that the register user adheres to all rules and procedures as documented
+      in the register specification when accessing register content through the register
+      system
+    type: Conformance

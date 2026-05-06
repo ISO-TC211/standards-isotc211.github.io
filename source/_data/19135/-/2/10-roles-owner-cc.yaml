@@ -1,0 +1,133 @@
+---
+conformance_classes:
+- identifier: "/conf/roles/register-owner"
+  name: Responsibilities of the register owner
+  description: This conformance class defines the requirements for register owner
+    implementation in a register.
+  target: "/req/roles/register-owner"
+  tests:
+  - identifier: "/conf/roles/register-owner/specify-register-specification"
+    name: Register specification creation
+    targets:
+    - "/req/roles/register-owner/specify-register-specification"
+    purpose: Verify that the register owner documents governance procedures and requirements
+      in a register specification
+    method: Check that the register has a documented register specification that defines
+      governance procedures and requirements
+    type: Validation
+  - identifier: "/conf/roles/register-owner/appoint-register-manager"
+    name: Register manager appointment
+    targets:
+    - "/req/roles/register-owner/appoint-register-manager"
+    purpose: Verify that the register owner appoints a register manager
+    method: Check that the register has an appointed register manager with defined
+      responsibilities
+    type: Conformance
+  - identifier: "/conf/roles/register-owner/appoint-control-body"
+    name: Control body appointment
+    targets:
+    - "/req/roles/register-owner/appoint-control-body"
+    purpose: Verify that the register owner appoints a control body
+    method: Check that the register has an appointed control body with defined responsibilities
+    type: Conformance
+  - identifier: "/conf/roles/register-owner/appoint-register-system-manager"
+    name: Register system manager appointment
+    targets:
+    - "/req/roles/register-owner/appoint-register-system-manager"
+    purpose: Verify that the register owner appoints a register system manager
+    method: Check that the register has an appointed register system manager with
+      defined responsibilities
+    type: Conformance
+  - identifier: "/conf/roles/register-owner/specify-proposer-criteria"
+    name: Proposer criteria specification
+    targets:
+    - "/req/roles/register-owner/specify-proposer-criteria"
+    purpose: Verify that the register owner specifies criteria to qualify as a proposer
+    method: Check that the register specification defines clear criteria for qualifying
+      as a proposer
+    type: Validation
+  - identifier: "/conf/roles/register-owner/specify-user-access-eligibility"
+    name: User access eligibility specification
+    targets:
+    - "/req/roles/register-owner/specify-user-access-eligibility"
+    purpose: Verify that the register owner specifies register users eligible for
+      access
+    method: Check that the register specification defines which register users are
+      eligible for access to the register
+    type: Validation
+  - identifier: "/conf/roles/register-owner/specify-proposal-process"
+    name: Proposal process definition
+    targets:
+    - "/req/roles/register-owner/specify-proposal-process"
+    purpose: Verify that the register owner specifies the process for proposers to
+      submit proposals
+    method: Check that the register specification defines a clear process for proposers
+      to submit proposals
+    type: Validation
+  - identifier: "/conf/roles/register-owner/specify-approval-time-limit"
+    name: Approval process time limit specification
+    targets:
+    - "/req/roles/register-owner/specify-approval-time-limit"
+    purpose: Verify that the register owner specifies time limits for the approval
+      process
+    method: Check that the register specification defines time limits within which
+      the approval process will be completed
+    type: Validation
+  - identifier: "/conf/roles/register-owner/specify-appeal-process"
+    name: Appeal process specification
+    targets:
+    - "/req/roles/register-owner/specify-appeal-process"
+    purpose: Verify that the register owner defines the process for appeals
+    method: Check that the register specification defines a process for proposers
+      to appeal decisions of the control body
+    type: Validation
+  - identifier: "/conf/roles/register-owner/specify-appeal-time-limit"
+    name: Appeal process time limit specification
+    targets:
+    - "/req/roles/register-owner/specify-appeal-time-limit"
+    purpose: Verify that the register owner specifies time limits for the appeal process
+    method: Check that the register specification defines time limits within which
+      the appeal process will be completed
+    type: Validation
+  - identifier: "/conf/roles/register-owner/consider-user-needs"
+    name: Register user needs consideration
+    targets:
+    - "/req/roles/register-owner/consider-user-needs"
+    purpose: Verify that the register owner considers register user needs
+    method: Check that the register owner has considered the needs of register users
+      when selecting methods of access and publication
+    type: Conformance
+  - identifier: "/conf/roles/register-owner/specify-publication-method"
+    name: Publication method specification
+    targets:
+    - "/req/roles/register-owner/specify-publication-method"
+    purpose: Verify that the register owner specifies the method of publication
+    method: Check that the register specification defines the method of publication
+      to provide access to the intended audience
+    type: Validation
+  - identifier: "/conf/roles/register-owner/set-terms-conditions"
+    name: Terms and conditions specification
+    targets:
+    - "/req/roles/register-owner/set-terms-conditions"
+    purpose: Verify that the register owner sets terms and conditions for access
+    method: Check that the register specification defines terms and conditions regarding
+      different levels of access to the register
+    type: Validation
+  - identifier: "/conf/roles/register-owner/define-addition-modification"
+    name: Addition and modification rules definition
+    targets:
+    - "/req/roles/register-owner/define-addition-modification"
+    purpose: Verify that the register owner sets rules and guidelines on addition
+      and modification
+    method: Check that the register specification defines rules and guidelines on
+      what constitutes an addition or modification
+    type: Validation
+  - identifier: "/conf/roles/register-owner/define-substantive-change"
+    name: Substantive change definition
+    targets:
+    - "/req/roles/register-owner/define-substantive-change"
+    purpose: Verify that the register owner defines what constitutes a substantive
+      change
+    method: Check that the register specification defines what kind of modification
+      constitutes a substantive change
+    type: Validation

@@ -1,0 +1,26 @@
+---
+conformance_classes:
+- identifier: "/conf/roles/proposer"
+  name: Responsibilities of the proposer
+  description: This conformance class defines the requirements for proposer implementation
+    in a register.
+  target: "/req/roles/proposer"
+  tests:
+  - identifier: "/conf/roles/proposer/meet-eligibility-criteria"
+    name: Eligibility criteria conformance
+    targets:
+    - "/req/roles/proposer/meet-eligibility-criteria"
+    purpose: Verify that the proposer meets the eligibility criteria defined in the
+      register specification
+    method: Check that the proposer satisfies all eligibility criteria as documented
+      in the register specification
+    type: Conformance
+  - identifier: "/conf/roles/proposer/conform-to-governance"
+    name: Governance process conformance
+    targets:
+    - "/req/roles/proposer/conform-to-governance"
+    purpose: Verify that the proposer follows the rules and procedures defined in
+      the register specification
+    method: Check that the proposer adheres to all rules and procedures as documented
+      in the register specification when submitting proposals
+    type: Conformance

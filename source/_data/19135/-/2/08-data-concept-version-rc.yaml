@@ -1,0 +1,74 @@
+---
+normative_statements_classes:
+- identifier: "/req/concept-version"
+  name: Requirements of concept version
+  subject: concept version
+  description: 'A concept version represents the concept at a certain point in time.
+
+    '
+  dependencies:
+  - "/req/register-item-class"
+  - "/req/register-item"
+  - "/req/concept"
+  - "/req/identifiers"
+  normative_statements:
+  - identifier: "/req/concept-version/version"
+    name: Concept version version assignment
+    statement: A concept version shall be assigned a version from a register-defined
+      versioning scheme.
+    dependencies:
+    - "/req/versioning"
+  - identifier: "/req/concept-version/creation"
+    name: Concept version creation
+    statement: The register shall support creation of concept versions that serve
+      as version indirections or as realisation of instances of a concept.
+    dependencies:
+    - "/req/concept-version/indirection"
+    - "/req/concept-version/realisation"
+  - identifier: "/req/concept-version/indirection"
+    name: Concept version as indirection
+    statement: The register shall support the creation of concept versions that serve
+      as indirection points, referencing one or more hierarchically subordinate concept
+      versions.
+    guidance:
+    - Such a concept version links to subordinate concept versions via the "has version"
+      and "current version" relations.
+  - identifier: "/req/concept-version/realisation"
+    name: Concept version as realisation
+    statement: The register shall support the creation of concept versions that represent
+      a realised concept by implementing an associated concept definition, with a
+      reference to a register item containing information that defines the realised
+      concept.
+    guidance:
+    - Such a concept version does not point to other concept versions.
+  - identifier: "/req/concept-version/link-versions"
+    name: Concept version links to all subordinate concept versions
+    statement: The concept version shall link to all concept versions that have a
+      subordinate version to it via the "has version" concept-version-to-concept-version
+      relation.
+  - identifier: "/req/concept-version/link-current-version"
+    name: Concept links to a current concept version
+    statement: The concept shall link to one of the concept versions as the current
+      version.
+    guidance:
+    - It is typically expected that the "current version" of a concept version links
+      to the most recent concept version (and the most recent subordinate concept
+      versions) within it. However, exceptions to this rule exist. For instance, if
+      the most recent version has been marked invalid and should not be used, the
+      current version can point to an earlier valid version. This is best handled
+      by defining desired behaviour in the register specification.
+    - The current version is also called the preferred version in cases where the
+      notion of "current" is deemed confusing.
+  - identifier: "/req/concept-version/identifier"
+    name: Concepts versions are assigned functional identifiers
+    statement: A concept version in the register shall be assigned a functional identifier.
+    examples:
+    - "/concept/crs/wgs84/g873/v1 is a kind of a functional identifier assigned to
+      a concept version."
+  - identifier: "/req/concept-version/object-identifier"
+    name: Concepts versions are assigned object identifiers
+    statement: A concept version in the register shall be assigned an object identifier
+      for permanent identification.
+    guidance:
+    - Object identifiers are non-redirectable and permanently assigned to specific
+      objects.
