@@ -21,6 +21,8 @@
 }
 
 @layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -28,6 +30,7 @@
   }
 
   body {
+    margin: 0;
     @apply font-sans text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-900;
   }
 
