@@ -9,6 +9,18 @@
     isolation: isolate;
   }
 
+  .hero-inner {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 8rem 1.5rem 6rem;
+    position: relative;
+    z-index: 10;
+  }
+  @media (min-width: 768px) {
+    .hero-inner { padding-left: 2rem; padding-right: 2rem; }
+  }
+
   .hero-surface {
     position: absolute;
     inset: 0;
