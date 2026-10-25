@@ -7,6 +7,7 @@
   type: IS
   iso_id: 75147
   published: '2022-09-27'
+  pending: true
 - reference: ISO 19101-2:2018
   title: 'Geographic information — Reference model — Part 2: Imagery'
   number: '19101'
@@ -15,6 +16,7 @@
   type: IS
   iso_id: 69325
   published: '2018-05-24'
+  pending: false
 - reference: ISO 19103:2024
   title: Geographic information — Conceptual schema language
   number: '19103'
@@ -23,6 +25,7 @@
   type: IS
   iso_id: 83454
   published: '2024-09-27'
+  pending: false
 - reference: ISO 19104:2016
   title: Geographic information — Terminology
   number: '19104'
@@ -31,6 +34,7 @@
   type: IS
   iso_id: 63541
   published: '2016-09-23'
+  pending: false
 - reference: ISO 19105:2022
   title: Geographic information — Conformance and testing
   number: '19105'
@@ -39,6 +43,7 @@
   type: IS
   iso_id: 76457
   published: '2022-07-06'
+  pending: false
 - reference: ISO 19106:2004
   title: Geographic information — Profiles
   number: '19106'
@@ -47,6 +52,7 @@
   type: IS
   iso_id: 26011
   published: '2004-06-28'
+  pending: false
 - reference: ISO 19107:2019
   title: Geographic information — Spatial schema
   number: '19107'
@@ -55,6 +61,7 @@
   type: IS
   iso_id: 66175
   published: '2019-12-02'
+  pending: false
 - reference: ISO 19109:2025
   title: Geographic information — General feature model and rules for application
     schema
@@ -64,6 +71,7 @@
   type: IS
   iso_id: 84700
   published: '2025-07-08'
+  pending: false
 - reference: ISO 19110:2016
   title: Geographic information — Methodology for feature cataloguing
   number: '19110'
@@ -72,6 +80,7 @@
   type: IS
   iso_id: 57303
   published: '2016-11-28'
+  pending: false
 - reference: ISO 19112:2019
   title: Geographic information — Spatial referencing by geographic identifiers
   number: '19112'
@@ -80,6 +89,7 @@
   type: IS
   iso_id: 70742
   published: '2019-02-14'
+  pending: false
 - reference: ISO 19115-2:2019
   title: 'Geographic information — Metadata — Part 2: Extensions for acquisition and
     processing'
@@ -89,6 +99,7 @@
   type: IS
   iso_id: 67039
   published: '2019-01-10'
+  pending: false
 - reference: ISO 19115-3:2023
   title: 'Geographic information — Metadata — Part 3: XML schema implementation for
     fundamental concepts'
@@ -98,6 +109,7 @@
   type: IS
   iso_id: 80874
   published: '2023-08-23'
+  pending: false
 - reference: ISO 19116:2025
   title: Geographic information — Positioning services
   number: '19116'
@@ -106,6 +118,7 @@
   type: IS
   iso_id: 87480
   published: '2025-04-10'
+  pending: false
 - reference: ISO 19117:2012
   title: Geographic information — Portrayal
   number: '19117'
@@ -114,6 +127,7 @@
   type: IS
   iso_id: 46226
   published: '2012-12-06'
+  pending: false
 - reference: ISO 19118:2011
   title: Geographic information — Encoding
   number: '19118'
@@ -122,6 +136,7 @@
   type: IS
   iso_id: 44212
   published: '2011-10-10'
+  pending: false
 - reference: ISO/TR 19120:2001
   title: Geographic information — Functional standards
   number: '19120'
@@ -130,6 +145,7 @@
   type: TR
   iso_id: 28928
   published: '2001-07-12'
+  pending: false
 - reference: ISO/TR 19122:2004
   title: Geographic information / Geomatics — Qualification and certification of personnel
   number: '19122'
@@ -138,6 +154,7 @@
   type: TR
   iso_id: 31088
   published: '2004-11-23'
+  pending: false
 - reference: ISO 19123-1:2023
   title: 'Geographic information — Schema for coverage geometry and functions — Part
     1: Fundamentals'
@@ -147,6 +164,17 @@
   type: IS
   iso_id: 70743
   published: '2023-06-21'
+  pending: false
+- reference: ISO 19123-2:2026
+  title: 'Geographic information — Schema for coverage geometry and functions — Part
+    2: Coverage implementation schema'
+  number: '19123'
+  part: '2'
+  edition: 2
+  type: IS
+  iso_id: 89116
+  published: '2026-10-16'
+  pending: false
 - reference: ISO 19123-3:2023
   title: 'Geographic information — Schema for coverage geometry and functions — Part
     3: Processing fundamentals'
@@ -156,6 +184,7 @@
   type: IS
   iso_id: 83611
   published: '2023-06-21'
+  pending: false
 - reference: ISO/TS 19124-1:2023
   title: 'Geographic information — Calibration and validation of remote sensing data
     and derived products — Part 1: Fundamentals'
@@ -165,6 +194,7 @@
   type: TS
   iso_id: 79352
   published: '2023-04-27'
+  pending: false
 - reference: ISO/TS 19124-2:2025
   title: 'Geographic information — Calibration and validation of remote sensing data
     and derived products — Part 2: Synthetic aperture radar (SAR)'
@@ -174,6 +204,7 @@
   type: TS
   iso_id: 85496
   published: '2025-12-16'
+  pending: false
 - reference: ISO 19126:2021
   title: Geographic information — Feature concept dictionaries and registers
   number: '19126'
@@ -182,6 +213,16 @@
   type: IS
   iso_id: 78898
   published: '2021-05-26'
+  pending: false
+- reference: ISO 19127:2026
+  title: Geographic information — Geodetic register
+  number: '19127'
+  part:
+  edition: 2
+  type: IS
+  iso_id: 87031
+  published: '2026-08-03'
+  pending: false
 - reference: ISO/TS 19129:2009
   title: Geographic information — Imagery, gridded and coverage data framework
   number: '19129'
@@ -190,6 +231,7 @@
   type: TS
   iso_id: 43041
   published: '2009-03-23'
+  pending: false
 - reference: ISO 19130-1:2018
   title: 'Geographic information — Imagery sensor models for geopositioning — Part
     1: Fundamentals'
@@ -199,6 +241,7 @@
   type: IS
   iso_id: 66847
   published: '2018-09-05'
+  pending: false
 - reference: ISO/TS 19130-3:2022
   title: 'Geographic information — Imagery sensor models for geopositioning — Part
     3: Implementation schema'
@@ -208,6 +251,7 @@
   type: TS
   iso_id: 74074
   published: '2022-03-10'
+  pending: false
 - reference: ISO 19131:2022
   title: Geographic information — Data product specifications
   number: '19131'
@@ -216,6 +260,7 @@
   type: IS
   iso_id: 85092
   published: '2022-11-28'
+  pending: false
 - reference: ISO 19132:2007
   title: Geographic information — Location-based services — Reference model
   number: '19132'
@@ -224,6 +269,7 @@
   type: IS
   iso_id: 40601
   published: '2007-10-16'
+  pending: false
 - reference: ISO 19134:2007
   title: Geographic information — Location-based services  — Multimodal routing and
     navigation
@@ -233,6 +279,7 @@
   type: IS
   iso_id: 32552
   published: '2007-01-10'
+  pending: false
 - reference: ISO/TS 19135-2:2012
   title: 'Geographic information - Procedures for item registration — Part 2: XML
     schema implementation'
@@ -242,6 +289,7 @@
   type: TS
   iso_id: 55998
   published: '2012-04-19'
+  pending: false
 - reference: ISO 19135:2026
   title: Geographic information — Registration and register governance
   number: '19135'
@@ -250,6 +298,7 @@
   type: IS
   iso_id: 87753
   published: '2026-02-05'
+  pending: false
 - reference: ISO 19136-1:2020
   title: 'Geographic information — Geography Markup Language (GML) — Part 1: Fundamentals'
   number: '19136'
@@ -258,6 +307,7 @@
   type: IS
   iso_id: 75676
   published: '2020-01-09'
+  pending: false
 - reference: ISO 19136-2:2015
   title: 'Geographic information — Geography Markup Language (GML) — Part 2: Extended
     schemas and encoding rules'
@@ -267,6 +317,7 @@
   type: IS
   iso_id: 61585
   published: '2015-08-04'
+  pending: false
 - reference: ISO 19137:2007
   title: Geographic information — Core profile of the spatial schema
   number: '19137'
@@ -275,6 +326,7 @@
   type: IS
   iso_id: 32555
   published: '2007-04-30'
+  pending: false
 - reference: ISO/TS 19139-1:2019
   title: 'Geographic information — XML schema implementation — Part 1: Encoding rules'
   number: '19139'
@@ -283,6 +335,7 @@
   type: TS
   iso_id: 67253
   published: '2019-02-25'
+  pending: false
 - reference: ISO/TS 19139-2:2012
   title: 'Geographic information — Metadata — XML schema implementation — Part 2:
     Extensions for imagery and gridded data'
@@ -292,6 +345,7 @@
   type: TS
   iso_id: 57104
   published: '2012-12-06'
+  pending: false
 - reference: ISO 19141:2008
   title: Geographic information — Schema for moving features
   number: '19141'
@@ -300,15 +354,7 @@
   type: IS
   iso_id: 41445
   published: '2008-05-21'
-- reference: ISO 19144-1:2009
-  title: 'Geographic information — Classification systems — Part 1: Classification
-    system structure'
-  number: '19144'
-  part: '1'
-  edition: 1
-  type: IS
-  iso_id: 32562
-  published: '2009-08-14'
+  pending: false
 - reference: ISO 19144-2:2023
   title: 'Geographic information — Classification systems — Part 2: Land Cover Meta
     Language (LCML)'
@@ -318,6 +364,7 @@
   type: IS
   iso_id: 81259
   published: '2023-12-12'
+  pending: false
 - reference: ISO/TS 19144-3:2024
   title: 'Geographic information — Classification systems — Part 3: Land Use Meta
     Language (LUML)'
@@ -327,6 +374,7 @@
   type: TS
   iso_id: 85091
   published: '2024-11-13'
+  pending: false
 - reference: ISO 19145:2013
   title: Geographic information — Registry of representations of geographic point
     location
@@ -336,6 +384,7 @@
   type: IS
   iso_id: 32563
   published: '2013-02-20'
+  pending: false
 - reference: ISO 19146:2018
   title: Geographic information — Cross-domain vocabularies
   number: '19146'
@@ -344,6 +393,7 @@
   type: IS
   iso_id: 72217
   published: '2018-05-22'
+  pending: false
 - reference: ISO 19147:2015
   title: Geographic information — Transfer Nodes
   number: '19147'
@@ -352,6 +402,7 @@
   type: IS
   iso_id: 44874
   published: '2015-06-09'
+  pending: false
 - reference: ISO 19148:2021
   title: Geographic information — Linear referencing
   number: '19148'
@@ -360,6 +411,7 @@
   type: IS
   iso_id: 75150
   published: '2021-04-06'
+  pending: false
 - reference: ISO 19149:2011
   title: Geographic information — Rights expression language for geographic information
     — GeoREL
@@ -369,6 +421,7 @@
   type: IS
   iso_id: 32567
   published: '2011-11-17'
+  pending: false
 - reference: ISO 19150-2:2015
   title: 'Geographic information — Ontology — Part 2: Rules for developing ontologies
     in the Web Ontology Language (OWL)'
@@ -378,6 +431,7 @@
   type: IS
   iso_id: 57466
   published: '2015-06-19'
+  pending: false
 - reference: ISO 19150-4:2019
   title: 'Geographic information — Ontology — Part 4: Service ontology'
   number: '19150'
@@ -386,6 +440,7 @@
   type: IS
   iso_id: 72177
   published: '2019-05-22'
+  pending: false
 - reference: ISO 19150-6:2023
   title: 'Geographic information — Ontology — Part 6: Service ontology register'
   number: '19150'
@@ -394,6 +449,7 @@
   type: IS
   iso_id: 80867
   published: '2023-06-30'
+  pending: false
 - reference: ISO 19152-1:2024
   title: 'Geographic information — Land Administration Domain Model (LADM) — Part
     1: Generic conceptual model'
@@ -403,6 +459,7 @@
   type: IS
   iso_id: 81263
   published: '2024-01-09'
+  pending: false
 - reference: ISO 19152-2:2025
   title: 'Geographic information — Land Administration Domain Model (LADM) — Part
     2: Land registration'
@@ -412,6 +469,7 @@
   type: IS
   iso_id: 81264
   published: '2025-05-29'
+  pending: false
 - reference: ISO 19152-3:2024
   title: 'Geographic information — Land Administration Domain Model (LADM) — Part
     3: Marine georegulation'
@@ -421,6 +479,7 @@
   type: IS
   iso_id: 81265
   published: '2024-07-08'
+  pending: false
 - reference: ISO 19152-4:2025
   title: 'Geographic information — Land Administration Domain Model (LADM) — Part
     4: Valuation information'
@@ -430,6 +489,7 @@
   type: IS
   iso_id: 81266
   published: '2025-07-08'
+  pending: false
 - reference: ISO 19152-5:2025
   title: 'Geographic information — Land Administration Domain Model (LADM) — Part
     5: Spatial plan information'
@@ -439,6 +499,7 @@
   type: IS
   iso_id: 81267
   published: '2025-08-12'
+  pending: false
 - reference: ISO 19153:2014
   title: Geospatial Digital Rights Management Reference Model (GeoDRM RM)
   number: '19153'
@@ -447,6 +508,7 @@
   type: IS
   iso_id: 32571
   published: '2014-02-10'
+  pending: false
 - reference: ISO 19154:2014
   title: Geographic information — Ubiquitous public access — Reference model
   number: '19154'
@@ -455,6 +517,7 @@
   type: IS
   iso_id: 32572
   published: '2014-11-10'
+  pending: false
 - reference: ISO 19155-2:2017
   title: 'Geographic information — Place Identifier (PI) architecture — Part 2: Place
     Identifier (PI) linking'
@@ -464,6 +527,7 @@
   type: IS
   iso_id: 63593
   published: '2017-08-08'
+  pending: false
 - reference: ISO 19156:2023
   title: Geographic information — Observations, measurements and samples
   number: '19156'
@@ -472,6 +536,7 @@
   type: IS
   iso_id: 82463
   published: '2023-04-27'
+  pending: false
 - reference: ISO 19157-1:2023
   title: 'Geographic information — Data quality — Part 1: General requirements'
   number: '19157'
@@ -480,6 +545,7 @@
   type: IS
   iso_id: 78900
   published: '2023-04-19'
+  pending: false
 - reference: ISO/TS 19157-2:2016
   title: 'Geographic information  — Data quality — Part 2: XML schema implementation'
   number: '19157'
@@ -488,6 +554,7 @@
   type: TS
   iso_id: 66197
   published: '2016-11-28'
+  pending: false
 - reference: ISO/TS 19159-1:2014
   title: 'Geographic information — Calibration and validation of remote sensing imagery
     sensors and data — Part 1: Optical sensors'
@@ -497,6 +564,7 @@
   type: TS
   iso_id: 60080
   published: '2014-07-11'
+  pending: false
 - reference: ISO/TS 19159-2:2016
   title: 'Geographic information — Calibration and validation of remote sensing imagery
     sensors and data — Part 2: Lidar'
@@ -506,6 +574,7 @@
   type: TS
   iso_id: 64768
   published: '2016-04-29'
+  pending: false
 - reference: ISO/TS 19159-3:2018
   title: 'Geographic information — Calibration and validation of remote sensing imagery
     sensors and data — Part 3: SAR/InSAR'
@@ -515,6 +584,7 @@
   type: TS
   iso_id: 74032
   published: '2018-05-07'
+  pending: false
 - reference: ISO/TS 19159-4:2022
   title: 'Geographic information — Calibration and validation of remote sensing imagery
     sensors and data — Part 4: Space-borne passive microwave radiometers'
@@ -524,6 +594,7 @@
   type: TS
   iso_id: 66769
   published: '2022-11-24'
+  pending: false
 - reference: ISO 19160-1:2015
   title: 'Addressing — Part 1: Conceptual model'
   number: '19160'
@@ -532,6 +603,7 @@
   type: IS
   iso_id: 61710
   published: '2015-12-09'
+  pending: false
 - reference: ISO 19160-2:2023
   title: 'Addressing — Part 2: Assigning and maintaining addresses for objects in
     the physical world'
@@ -541,6 +613,7 @@
   type: IS
   iso_id: 81674
   published: '2023-11-10'
+  pending: false
 - reference: ISO 19160-3:2020
   title: 'Addressing — Part 3: Address data quality'
   number: '19160'
@@ -549,6 +622,7 @@
   type: IS
   iso_id: 71247
   published: '2020-02-26'
+  pending: false
 - reference: ISO 19160-4:2023
   title: 'Addressing — Part 4: International postal address components and template
     language'
@@ -558,6 +632,7 @@
   type: IS
   iso_id: 83470
   published: '2023-04-12'
+  pending: false
 - reference: ISO 19161-1:2020
   title: 'Geographic information — Geodetic references — Part 1: International terrestrial
     reference system (ITRS)'
@@ -567,6 +642,7 @@
   type: IS
   iso_id: 70655
   published: '2020-01-24'
+  pending: false
 - reference: ISO 19162:2019
   title: Geographic information — Well-known text representation of coordinate reference
     systems
@@ -576,6 +652,7 @@
   type: IS
   iso_id: 76496
   published: '2019-07-11'
+  pending: false
 - reference: ISO/TS 19163-1:2016
   title: 'Geographic information — Content components and encoding rules for imagery
     and gridded data — Part 1: Content model'
@@ -585,6 +662,7 @@
   type: TS
   iso_id: 32581
   published: '2016-01-07'
+  pending: false
 - reference: ISO 19164:2024
   title: Geographic information — Indoor feature model
   number: '19164'
@@ -593,6 +671,7 @@
   type: IS
   iso_id: 83153
   published: '2024-08-19'
+  pending: false
 - reference: ISO 19165-1:2018
   title: 'Geographic information — Preservation of digital data and metadata — Part
     1: Fundamentals'
@@ -602,6 +681,7 @@
   type: IS
   iso_id: 67325
   published: '2018-04-26'
+  pending: false
 - reference: ISO 19165-2:2020
   title: 'Geographic information — Preservation of digital data and metadata — Part
     2: Content specifications for Earth observation data and derived digital products'
@@ -611,6 +691,7 @@
   type: IS
   iso_id: 73810
   published: '2020-07-07'
+  pending: false
 - reference: ISO/TS 19166:2025
   title: Geographic information — Building information modelling (BIM) to geographic
     information systems (GIS) conceptual mapping (B2GM)
@@ -620,6 +701,7 @@
   type: TS
   iso_id: 90943
   published: '2025-11-27'
+  pending: false
 - reference: ISO/TR 19167:2019
   title: Application of ubiquitous public access to-geographic information to an air
     quality information service
@@ -629,6 +711,7 @@
   type: TR
   iso_id: 75148
   published: '2019-12-18'
+  pending: false
 - reference: ISO 19168-1:2025
   title: 'Geographic information — Geospatial API for features — Part 1: Core'
   number: '19168'
@@ -637,6 +720,7 @@
   type: IS
   iso_id: 86508
   published: '2025-01-10'
+  pending: false
 - reference: ISO 19168-2:2022
   title: 'Geographic information – Geospatial API for features — Part 2: Coordinate
     Reference Systems by Reference'
@@ -646,6 +730,7 @@
   type: IS
   iso_id: 82464
   published: '2022-09-13'
+  pending: false
 - reference: ISO/TR 19169:2021
   title: 'Geographic Information — Gap-analysis: mapping and describing the differences
     between the current GDF and ISO/TC 211 conceptual models to suggest ways to harmonize
@@ -656,6 +741,7 @@
   type: TR
   iso_id: 32587
   published: '2021-06-16'
+  pending: false
 - reference: ISO/TR 19174:2025
   title: Geographic information — Securing interoperability among heterogeneous city
     domain information models
@@ -665,6 +751,7 @@
   type: TR
   iso_id: 32592
   published: '2025-05-23'
+  pending: false
 - reference: ISO/TR 19175:2025
   title: Geographic information — Gap analysis of geospatial standards for indoor-outdoor
     seamless navigation
@@ -674,6 +761,7 @@
   type: TR
   iso_id: 86329
   published: '2025-06-12'
+  pending: false
 - reference: ISO 19177-1:2026
   title: 'Geographic information — Geospatial application programming interface (API)
     for tiles — Part 1: Core'
@@ -683,12 +771,4 @@
   type: IS
   iso_id: 88296
   published: '2026-03-13'
-- reference: ISO 19178-1:2025
-  title: 'Geographic information — Training data markup language for artificial intelligence
-    — Part 1: Conceptual model'
-  number: '19178'
-  part: '1'
-  edition: 1
-  type: IS
-  iso_id: 89050
-  published: '2025-05-27'
+  pending: false
