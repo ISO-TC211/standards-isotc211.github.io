@@ -1,0 +1,60 @@
+@import "./legacy-theme.css";
+@import "@isotc211/astro-ui/components.css";
+@import "./standards.css";
+
+/* Legacy rendering parity: the Jekyll-vite build loaded no Tailwind preflight,
+   so the shipped site renders with UA body margin, content-box sizing
+   everywhere, the theme gem's inline main offset, and an unstyled skip link. */
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+body {
+  margin: 8px !important;
+}
+main {
+  padding-top: 64px !important;
+}
+/* The legacy build was fully unlayered: .documentation code (0,1,1) outranked
+   single-class rules like .standards-url-demo__code. astro-ui layers these
+   prose defaults in @layer base, which loses to @layer components — mirror the
+   legacy outcome unlayered. */
+.documentation code {
+  font-family: 'Noto Sans Mono', Consolas, monospace;
+  font-size: 0.875em;
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+.dark .documentation code {
+  color: #e2e8f0;
+  background: #1e293b;
+}
+.documentation a {
+  color: #0061ad;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.documentation a:hover {
+  color: #005090;
+}
+.dark .documentation a {
+  color: #66a3e0;
+}
+.skip-link {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  text-decoration: underline !important;
+}
+.skip-link:focus {
+  position: static !important;
+  clip: auto !important;
+}

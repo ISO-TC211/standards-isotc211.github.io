@@ -1,20 +1,23 @@
 SHELL := /bin/bash
 
-all: _site
+all: build
 
 bundle:
-	bundle
+	bundle install
 
 npm:
 	npm install
 
+build: bundle
+	npm run build
+
+serve:
+	npm run dev
+
+test: bundle
+	bundle exec rspec spec
+
 clean:
-	bundle exec jekyll clean
+	rm -rf dist .astro src/data/standards-catalog.json src/data/standards-pages.json
 
-_site: bundle npm
-	bundle exec jekyll build
-
-serve: bundle npm
-	bundle exec jekyll serve
-
-.PHONY: all clean serve bundle npm
+.PHONY: all build serve test clean bundle npm

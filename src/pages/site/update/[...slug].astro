@@ -1,0 +1,37 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro'
+import { getCollection, render } from 'astro:content'
+import { postSlug } from '../../../lib/slug'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news')
+  return posts.map((post) => {
+    const d = post.data.date
+    const yyyy = d.getFullYear()
+    const mm = String(d.getMonth() + 1).padStart(2, '0')
+    const dd = String(d.getDate()).padStart(2, '0')
+    return {
+      params: { slug: `${yyyy}/${mm}/${dd}/${postSlug(post.id)}` },
+      props: { post },
+    }
+  })
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+---
+
+<SiteLayout title={post.data.title}>
+  <article class="blog-page">
+    <div class="blog-page__inner blog-page__inner--narrow">
+      <span class="section__kicker">News Article</span>
+      <h1 class="section__title" style="margin-top: 0.5rem;">{post.data.title}</h1>
+      <p class="blog-item__date" style="margin-bottom: 2rem;">
+        {post.data.date.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' })}
+      </p>
+      <div class="blog-content">
+        <Content />
+      </div>
+    </div>
+  </article>
+</SiteLayout>

@@ -1,0 +1,35 @@
+---
+interface XrefClass {
+  id: string
+  kind: 'req_class' | 'requirement' | 'conf_class' | 'conf_test'
+}
+interface Props {
+  items: XrefClass[]
+  uriBase: string
+}
+const { items, uriBase } = Astro.props
+
+const badge = (kind: string) => {
+  if (kind === 'req_class') return { cls: 'req', label: 'req class' }
+  if (kind === 'requirement') return { cls: 'req', label: 'req' }
+  if (kind === 'conf_class') return { cls: 'conf', label: 'conf class' }
+  // the legacy generator only matched conf_test here — kind 'test' rendered
+  // no badge at all, reproduced for parity
+  if (kind === 'conf_test') return { cls: 'conf', label: 'test' }
+  return null
+}
+---
+
+<ul class="provision-xref-list">
+  {items.map((item) => {
+    const b = badge(item.kind)
+    return (
+      <li>
+        <a href={`/${uriBase}${item.id}`} class="provision-xref-link">
+          {b && <span class={`provision-xref-badge provision-xref-badge--${b.cls}`}>{b.label}</span>}
+          {item.id}
+        </a>
+      </li>
+    )
+  })}
+</ul>

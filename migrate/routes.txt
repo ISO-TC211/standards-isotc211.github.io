@@ -1,0 +1,15 @@
+/
+/about/
+/news/
+/site/update/2019/03/25/normative-statements-and-conformance-site-created.html
+/site/update/2026/05/05/site-redesign-modern-uri-dereferencing.html
+/19112/
+/19101-2/
+/19115/
+/19112/-1/2/conf/gaz/
+/19112/-1/2/req/gaz/
+/19112/-1/2/req/gaz/mng/
+/19112/-1/2/conf/gaz/mng/
+/19115/-3/2/conf/metadata-core/basic/
+/19115/-3/2/req/metadata-core/
+/6709/

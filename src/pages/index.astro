@@ -1,0 +1,204 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro'
+import catalog from '../data/standards-catalog.json'
+import StandardsCard from '../components/StandardsCard.astro'
+import { getCollection } from 'astro:content'
+import { postPath } from '../lib/slug'
+
+const populated = catalog.filter((e) => e.populated)
+const pending = catalog.filter((e) => !e.populated && e.pending)
+const other = catalog.filter((e) => !e.populated && !e.pending)
+
+const posts = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+)
+
+const excerptOf = (body: string) => {
+  const first = body.split('\n\n')[0] ?? ''
+  const plain = first.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[*_`>[\]()#]/g, '').replace(/\s+/g, ' ').trim()
+  return plain.length > 200 ? plain.slice(0, 200).trimEnd() + '…' : plain
+}
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })
+---
+<SiteLayout title="Home">
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-surface"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-mesh"></div>
+  <div class="hero-orb hero-orb--1"></div>
+  <div class="hero-orb hero-orb--2"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10" style="padding-top: 8rem; padding-bottom: 6rem;">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        ISO/TC 211
+      </div>
+
+      <h1>
+        ISO/TC 211<br>
+        Normative Statements &amp; <span class="accent">Conformance</span>
+      </h1>
+
+      <p class="hero-lede">
+        This site provides URI dereferencing for normative statements,
+        conformance classes, and conformance tests defined in
+        ISO/TC 211 Geographic information/Geomatics standards.
+        Every URI used in a published standard resolves to a page here.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#standards" class="hero-btn hero-btn--fill">
+          Browse Standards
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+        </a>
+        <a href="#uri-format" class="hero-btn hero-btn--ghost">
+          URI Format
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>
+
+<section id="standards" class="section section--white">
+  <div style="max-width: 80rem; margin: 0 auto;">
+
+    {populated.length > 0 && (
+      <>
+        <div class="section__header">
+          <span class="section__kicker">Standards</span>
+          <h2 class="section__title">Supported Standards</h2>
+          <p class="section__desc">
+            Each standard provides dereferenceable URIs for its requirements
+            and conformance classes.
+          </p>
+        </div>
+
+        <div class="standards-catalog">
+          {populated.map((std) => (
+            <StandardsCard std={std} count={`${std.req_count} req classes &middot; ${std.conf_count} conf classes`} />
+          ))}
+        </div>
+      </>
+    )}
+
+    {pending.length > 0 && (
+      <>
+        <div class="section__header" style="margin-top: 3rem;">
+          <span class="section__kicker">Pending</span>
+          <h2 class="section__title">Standards Without Harmonized URI Requirements</h2>
+          <p class="section__desc">
+            These ISO/TC 211 standards do not specify requirements that utilize
+            the ISO/TC 211 Harmonized URI scheme.
+          </p>
+        </div>
+
+        <div class="standards-catalog">
+          {pending.map((std) => (
+            <StandardsCard std={std} count="No harmonized URI requirements" />
+          ))}
+        </div>
+      </>
+    )}
+
+    {other.length > 0 && (
+      <>
+        <div class="section__header" style="margin-top: 3rem;">
+          <span class="section__kicker">Awaiting Data</span>
+          <h2 class="section__title">Standards Awaiting Data Upload</h2>
+          <p class="section__desc">
+            These ISO/TC 211 standards have been identified but do not yet have
+            machine-readable requirements or conformance data uploaded to this site.
+          </p>
+        </div>
+
+        <div class="standards-catalog">
+          {other.map((std) => (
+            <StandardsCard std={std} count="No data yet" />
+          ))}
+        </div>
+      </>
+    )}
+
+  </div>
+</section>
+
+<!-- URI Format -->
+<section id="uri-format" class="section section--muted">
+  <div style="max-width: 48rem; margin: 0 auto;">
+    <div class="section__header">
+      <span class="section__kicker">URIs</span>
+      <h2 class="section__title">URI Dereferencing</h2>
+      <p class="section__desc">
+        ISO/TC 211 defines unique, persistent URIs for every provision statement
+        and conformance test. This site resolves those URIs to structured pages.
+      </p>
+    </div>
+
+    <div class="standards-url-demo">
+      <div class="standards-url-demo__label">Provision class URI</div>
+      <code class="standards-url-demo__code">https://standards.isotc211.org/{'{Standard}'}/-{'{Part}'}/{'{Edition}'}/{'{req|rec|per}'}/{'{ClassId}'}</code>
+    </div>
+
+    <div class="standards-url-demo" style="margin-top: 0.75rem;">
+      <div class="standards-url-demo__label">Conformance class URI</div>
+      <code class="standards-url-demo__code">https://standards.isotc211.org/{'{Standard}'}/-{'{Part}'}/{'{Edition}'}/conf/{'{ClassId}'}[/{'{TestId}'}]</code>
+    </div>
+
+    <div class="standards-examples" style="margin-top: 1.5rem;">
+      <div class="standards-examples__label">Examples</div>
+      <div class="standards-example-list">
+        {catalog.flatMap((std) => [
+          std.example_conf_path && (
+            <a href={std.example_conf_uri} class="standards-example-link">
+              <code>{std.example_conf_path}</code>
+              <span>{std.label} conformance class</span>
+            </a>
+          ),
+          std.example_req_path && (
+            <a href={std.example_req_uri} class="standards-example-link">
+              <code>{std.example_req_path}</code>
+              <span>{std.label} requirement</span>
+            </a>
+          ),
+        ])}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section section--muted">
+  <div style="max-width: 80rem; margin: 0 auto;">
+    <div class="section__header">
+      <span class="section__kicker">Latest</span>
+      <h2 class="section__title">News</h2>
+    </div>
+
+    <div class="blog-list">
+      {posts.map((post) => (
+        <a href={postPath(post.data.date, post.id)} class="blog-item">
+          <div class="blog-item__date">{formatDate(post.data.date)}</div>
+          <h3 class="blog-item__title">{post.data.title}</h3>
+          {excerptOf(post.body) && <p class="blog-item__excerpt">{excerptOf(post.body)}</p>}
+          <span class="blog-item__arrow">
+            Read more
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+</SiteLayout>

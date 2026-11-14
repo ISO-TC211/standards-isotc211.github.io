@@ -27,21 +27,55 @@ jobs:
         node-version: '22'
         cache: 'npm'
 
-    - run: npm install
+    - run: npm ci
 
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v5
-
+    # prebuild runs the Ruby standards-data generator, Astro builds into dist/
     - name: Build site
-      run: make all
-      env:
-        JEKYLL_ENV: production
+      run: npm run build
+
+    - name: Restore lychee cache
+      uses: actions/cache@v4
+      with:
+        path: .lycheecache
+        key: cache-lychee-${{ github.sha }}
+        restore-keys: cache-lychee-
+
+    # Check the built artifact, not production: serve dist locally and
+    # rewrite same-site URLs to the local server so nothing probes the
+    # live deployment.
+    - name: Point same-site URLs at a local server
+      run: |
+        grep -rl 'https://standards\.isotc211\.org' dist --include='*.html' |
+          xargs -r sed -i 's|https://standards\.isotc211\.org|http://127.0.0.1:8080|g'
+
+    - name: Serve built site
+      run: |
+        python3 -m http.server 8080 --directory "$GITHUB_WORKSPACE/dist" >/dev/null 2>&1 &
+        echo $! > server.pid
+        for i in $(seq 1 30); do
+          curl -fsS -o /dev/null http://127.0.0.1:8080/ && break
+          sleep 1
+        done
 
     - name: Link Checker
       uses: lycheeverse/lychee-action@v2
       with:
-        args: --verbose --no-progress --root-dir _site -- _site/**/*.html
+        args: >-
+          --verbose
+          --no-progress
+          --base-url 'http://127.0.0.1:8080/'
+          --cache
+          --max-cache-age 1d
+          --exclude 'https://committee\.iso\.org/'
+          --exclude 'https://www\.iso\.org/'
+          --exclude 'https://www\.facebook\.com/'
+          --exclude 'https://twitter\.com/'
+          --exclude 'http://iso\.sparxcloud\.com/'
+          'dist/**/*.html'
         fail: true
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Stop local server
+      if: always()
+      run: kill "$(cat server.pid)" 2>/dev/null || true

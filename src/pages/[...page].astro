@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro'
+import StandardIndex from '../components/StandardIndex.astro'
+import ProvisionClass from '../components/ProvisionClass.astro'
+import pages from '../data/standards-pages.json'
+
+export function getStaticPaths() {
+  return (pages as { path: string; kind: string; data: any }[]).map((entry) => ({
+    params: { page: entry.path },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+---
+
+<SiteLayout title={entry.data.title}>
+  {entry.kind === 'provision_class' ? (
+    <ProvisionClass page={entry.data} />
+  ) : (
+    <StandardIndex page={entry.data} />
+  )}
+</SiteLayout>

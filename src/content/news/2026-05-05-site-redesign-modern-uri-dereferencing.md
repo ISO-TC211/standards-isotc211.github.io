@@ -1,0 +1,63 @@
+---
+title: Site redesigned with modern URI dereferencing and data-driven architecture
+date: 2026-05-05 12:00:00 +0800
+categories: [site, update]
+---
+
+The [ISO/TC 211 Standards site](https://standards.isotc211.org) has been redesigned
+to serve as a dedicated URI dereferencing service for ISO geographic information standards.
+
+## Purpose
+
+ISO/TC 211 standards define requirements classes, conformance classes, and
+conformance tests, each identified by a permanent URI (e.g.
+`/19115/-3/2/req/metadata-core/basic`).
+This site ensures every such URI resolves to a page with structured metadata,
+cross-references between related provisions, and direct links to ISO.org.
+
+In the future, the site may also host implementation guidance for each provision.
+
+## What's new
+
+- **URI dereferencing service**&thinsp;—&thinsp;Every URI used in a published ISO/TC 211 standard for requirements classes,
+  conformance classes, and conformance tests now resolves to a dedicated page
+  with structured metadata, cross-references, and direct links to ISO.org.
+
+- **Data-driven standards**&thinsp;—&thinsp;Standards are defined entirely through YAML data files.
+  Adding a new standard requires only dropping `-rc.yaml` **and** `-cc.yaml`
+  files into the data directory—no HTML authoring or configuration changes needed.
+  The generator automatically creates index pages, provision pages, homepage listings,
+  and example URIs from the data.
+
+- **Model-driven architecture**&thinsp;—&thinsp;Provision data is loaded through the
+  [modspec-ruby](https://github.com/lutaml/modspec-ruby) library,
+  providing OGC ModSpec-compliant models for requirements classes,
+  conformance classes, normative statements, and conformance tests.
+
+- **ISO.org integration**&thinsp;—&thinsp;Each standard page links directly to its
+  [ISO.org](https://www.iso.org) listing and full-text preview,
+  making it easy to access the complete published document.
+
+- **Complete standards catalog**&thinsp;—&thinsp;The site now lists all published ISO/TC 211 standards, auto-discovered from
+  ISO public metadata.
+  Standards are organized into three categories:
+
+- **Supported standards** — those with URI-identified requirements and
+  conformance classes (data provided as YAML):
+
+  - [ISO 19115-3:2023](https://www.iso.org/standard/80874.html) — Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts
+
+  - [ISO 19135:2026](https://www.iso.org/standard/87753.html) — Procedures for registration
+
+  - [ISO 19112:2019](https://www.iso.org/standard/70742.html) — Spatial referencing by geographic identifiers
+
+- **Standards without harmonized URI requirements** — standards that do not
+  specify requirements utilizing the ISO/TC 211 Harmonized URI scheme
+- **Standards awaiting data upload** — identified standards where data
+  has not yet been provided
+
+New standards are discovered automatically via a weekly workflow that
+creates pull requests when new publications are detected.
+
+This action is performed by
+[Ribose](https://www.ribose.com).
