@@ -46,8 +46,11 @@ its output exactly (see `src/styles/global.css` and `src/styles/legacy-theme.css
    conformance badges — kind `test` rendered no badge at all
    (`src/components/XrefList.astro`).
 6. The deployed homepage predates the `hero-inner` wrapper in the current
-   source; the port matches the **deployed** markup (Tailwind-utility hero
-   container), not the unreleased source.
+   source; the initial port matched the **deployed** markup (whose hero sat
+   flush-left because the legacy build generated no styles for it). Per Ron's
+   post-deploy report ("hero is stuck to the left") the port now uses the
+   intended `hero-inner` wrapper — the only intentional visual delta vs the
+   `_site/` baseline.
 7. `compressHTML: false` in `astro.config.mjs` — the default compaction
    glues text and inline elements (`reference<code>…`), changing line
    breaking and pixel output.
