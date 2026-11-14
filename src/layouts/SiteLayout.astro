@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@isotc211/astro-ui/BaseLayout.astro'
+import { siteConfig } from '../site.config'
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<BaseLayout config={siteConfig} title={title} description={description}>
+  <slot />
+</BaseLayout>

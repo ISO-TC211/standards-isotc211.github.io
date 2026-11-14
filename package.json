@@ -1,18 +1,26 @@
 {
+  "name": "standards.isotc211.org",
   "private": true,
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "prebuild": "bundle exec ruby script/generate_site_data.rb",
+    "build": "astro build && node scripts/postbuild.mjs",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^7.1.5",
+    "@isotc211/astro-ui": "github:ISO-TC211/astro-ui#b2d6d6fed66f4439e408bb03e03d5ef24d241c68",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.11",
+    "tailwindcss": "^4.3.5",
+    "vue": "^3.5.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.1",
-    "@tailwindcss/typography": "^0.5.19",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.2.1",
-    "terser": "^5.46.0",
-    "vite": "^7.3.1",
-    "vite-plugin-ruby": "^5.1.3"
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.0"
   }
 }

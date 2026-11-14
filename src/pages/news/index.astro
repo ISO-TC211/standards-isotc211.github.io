@@ -1,0 +1,42 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro'
+import { getCollection } from 'astro:content'
+import { postPath } from '../../lib/slug'
+
+const posts = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+)
+
+const excerpt = (body: string) => {
+  const first = body.split('\n\n')[0] ?? ''
+  const plain = first.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[*_`>[\]()#]/g, '').replace(/\s+/g, ' ').trim()
+  return plain.length > 200 ? plain.slice(0, 200).trimEnd() + '…' : plain
+}
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })
+---
+
+<SiteLayout title="News">
+  <div class="blog-page">
+    <div class="blog-page__inner">
+      <div class="section__header">
+        <span class="section__kicker">Latest</span>
+        <h1 class="section__title">News &amp; Articles</h1>
+      </div>
+      <div class="blog-list">
+        {posts.map((post) => (
+          <a href={postPath(post.data.date, post.id)} class="blog-item">
+            <div class="blog-item__date">{formatDate(post.data.date)}</div>
+            <h2 class="blog-item__title">{post.data.title}</h2>
+            {excerpt(post.body) && <p class="blog-item__excerpt">{excerpt(post.body)}</p>}
+            <span class="blog-item__arrow">
+              Read more
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</SiteLayout>

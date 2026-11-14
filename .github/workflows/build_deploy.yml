@@ -37,19 +37,21 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - run: npm install
+      - run: npm ci
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
+      # prebuild runs the Ruby standards-data generator (modspec),
+      # then Astro builds the site into dist/
       - name: Build site
-        env:
-          JEKYLL_ENV: production
-        run: make all
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
 
   deploy:
     environment:

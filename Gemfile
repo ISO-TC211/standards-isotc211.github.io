@@ -1,17 +1,11 @@
 source "https://rubygems.org"
 
+# The standards data generator (script/generate_site_data.rb) loads the
+# modspec models; jekyll remains only because the generator engine classes
+# under source/_plugins/standards are written against Jekyll plugin APIs
+# and the RSpec suite locks their behavior.
 gem "jekyll", "~> 4.3"
-gem "jekyll-theme-isotc211", "~> 1.0"
 gem "modspec", "~> 0.2"
-
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-data"
-  gem "jekyll-vite"
-  gem "jekyll-asciidoc"
-end
-
-gem "webrick"
 
 group :test do
   gem "rspec"
